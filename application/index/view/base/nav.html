@@ -1,0 +1,52 @@
+	<nav class="mui-bar mui-bar-tab">
+      <a class="mui-tab-item" id="r-index">
+        <span class="mui-icon iconfont">&#xe66f;</span>
+        <span class="mui-tab-label">抢单</span>
+      </a>
+      <a class="mui-tab-item" id="r-index2">
+        <span class="mui-icon iconfont">&#xe626;</span>
+        <span class="mui-tab-label">任务</span>
+      </a>
+      <a class="mui-tab-item" id="r-index3" href="{:url('user/index')}">
+        <span class="mui-icon iconfont">&#xe64a;</span>
+        <span class="mui-tab-label">我的</span>
+      </a>
+  </nav>
+  <script src="__STATIC__/index/js/jquery.min.js"></script>
+  <script>
+    //打开关于页面
+    document.getElementById('r-index').addEventListener('tap', function() {
+      mui.openWindow({
+        url: "{:url('order/index')}", 
+        id:'r-index' 
+      });
+    });
+    document.getElementById('r-index2').addEventListener('tap', function() {  
+      mui.openWindow({
+        url: "{:url('order/list')}", 
+        id:'r-index2' 
+      });
+    });
+    document.getElementById('r-index3').addEventListener('tap', function() {
+      mui.openWindow({
+        url: "{:url('user/index')}",  
+        id:'r-index3' 
+      });
+    });
+
+    $(function(){
+      var url = window.location.href;
+
+      $(".mui-tab-item").removeClass('mui-active');
+
+      console.log(url.indexOf('order/index'));
+
+      if(url.indexOf('order/index') != -1)
+        $("#r-index").addClass('mui-active');
+      else if(url.indexOf('order/list') != -1)
+        $("#r-index2").addClass('mui-active');
+      else
+        $("#r-index3").addClass('mui-active');
+    })
+
+  </script>

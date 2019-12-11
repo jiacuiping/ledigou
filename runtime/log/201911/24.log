@@ -1,0 +1,2393 @@
+---------------------------------------------------------------
+[ 2019-11-24T00:02:03+08:00 ] 58.247.206.141 POST dxc.gqwlcm.com//api/sort/GetSortList
+[运行时间：0.134537s] [吞吐率：7.43req/s] [内存消耗：2,674.05kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'sort',
+    2 => 'GetSortList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '16',
+)
+[ info ] [ PARAM ] array (
+  'sorting' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Sort->GetSortList[ /www/wwwroot/ledigou/application/api/controller/Sort.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000335s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.004599s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.002032s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods_sort` [ RunTime:0.002595s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods_sort` WHERE  `sort_status` = 1 ORDER BY `sort_rank` DESC LIMIT 0,100000 [ RunTime:0.001051s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:03+08:00 ] 58.247.206.141 POST dxc.gqwlcm.com//api/rotate/getrotatelist
+[运行时间：0.127458s] [吞吐率：7.85req/s] [内存消耗：2,670.13kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'rotate',
+    2 => 'getrotatelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Rotate->GetRotateList[ /www/wwwroot/ledigou/application/api/controller/Rotate.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000639s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.002923s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.002644s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_rotate` [ RunTime:0.002505s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_rotate` WHERE  `rotate_address` = 'index' ORDER BY `rotate_rank` DESC LIMIT 0,4 [ RunTime:0.000516s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:03+08:00 ] 58.247.206.146 POST dxc.gqwlcm.com//api/limited/GetLimitedList
+[运行时间：0.137427s] [吞吐率：7.28req/s] [内存消耗：2,810.72kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'limited',
+    2 => 'GetLimitedList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '14',
+)
+[ info ] [ PARAM ] array (
+  'unionid' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Limited->GetLimitedList[ /www/wwwroot/ledigou/application/api/controller/Limited.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002624s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.003576s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.002328s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_user` [ RunTime:0.001363s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_user` WHERE  `user_unionid` = '' LIMIT 1 [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_warehouse` [ RunTime:0.001820s ]
+[ sql ] [ SQL ] SELECT `ware_id` FROM `xin_warehouse` WHERE  `ware_school` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_limited` [ RunTime:0.001950s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` `l` INNER JOIN `xin_goods` `g` ON `l`.`limited_goods`=`g`.`goods_id` WHERE  `g`.`goods_warehouse` IN ('1')  AND `l`.`limited_stime` < 1574524923  AND `l`.`limited_etime` > 1574524923 ORDER BY `limited_time` DESC LIMIT 2 [ RunTime:0.000366s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:03+08:00 ] 58.247.206.151 POST dxc.gqwlcm.com//api/goods/GetGoodsList
+[运行时间：0.139691s] [吞吐率：7.16req/s] [内存消耗：2,876.73kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'GetGoodsList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '69',
+)
+[ info ] [ PARAM ] array (
+  'unionid' => '',
+  'keyword' => '',
+  'sort' => 0,
+  'is_top' => true,
+  'page' => 1,
+  'limit' => 4,
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Goods->GetGoodsList[ /www/wwwroot/ledigou/application/api/controller/Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000237s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.010526s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.001887s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_user` [ RunTime:0.001866s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_user` WHERE  `user_unionid` = '' LIMIT 1 [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_warehouse` [ RunTime:0.000662s ]
+[ sql ] [ SQL ] SELECT `ware_id` FROM `xin_warehouse` WHERE  `ware_school` = 1 [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods` [ RunTime:0.001321s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods` WHERE  `goods_warehouse` IN (1)  AND `goods_is_top` = 1 ORDER BY `goods_is_top` DESC,`goods_rank` DESC LIMIT 0,4 [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_limited` [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524923  AND `limited_etime` > 1574524923  AND `limited_goods` = 6 LIMIT 1 [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524923  AND `limited_etime` > 1574524923  AND `limited_goods` = 1 LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524923  AND `limited_etime` > 1574524923  AND `limited_goods` = 2 LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524923  AND `limited_etime` > 1574524923  AND `limited_goods` = 3 LIMIT 1 [ RunTime:0.000167s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:04+08:00 ] 58.247.206.146 POST dxc.gqwlcm.com//api/wechat_base/GetUnionId
+[运行时间：1.167632s] [吞吐率：0.86req/s] [内存消耗：2,655.48kb] [文件加载：53]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'wechat_base',
+    2 => 'GetUnionId',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '43',
+)
+[ info ] [ PARAM ] array (
+  'code' => '0713kh542pKXbP0VRn242GaX4423kh5i',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\WechatBase->GetUnionId[ /www/wwwroot/ledigou/application/api/controller/WechatBase.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002995s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.004132s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.001947s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:09+08:00 ] 58.247.206.151 POST dxc.gqwlcm.com//api/user/CreateUser
+[运行时间：0.099833s] [吞吐率：10.02req/s] [内存消耗：3,222.53kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'user',
+    2 => 'CreateUser',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '219',
+)
+[ info ] [ PARAM ] array (
+  'data' => 
+  array (
+    'nickName' => '王登康',
+    'gender' => 0,
+    'language' => 'zh_CN',
+    'city' => '',
+    'province' => '',
+    'country' => '',
+    'avatarUrl' => 'https://wx.qlogo.cn/mmhead/K0olExic1ZUXqicdicMegBic0kkWw8tp7WXib0B5L68dKyh0/132',
+  ),
+  'openid' => '',
+  'unionid' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\User->CreateUser[ /www/wwwroot/ledigou/application/api/controller/User.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000294s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001014s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_user` [ RunTime:0.000814s ]
+[ sql ] [ SQL ] INSERT INTO `xin_user` (`user_name` , `user_avatar` , `user_wxid` , `user_unionid` , `user_time`) VALUES ('王登康' , 'https://wx.qlogo.cn/mmhead/K0olExic1ZUXqicdicMegBic0kkWw8tp7WXib0B5L68dKyh0/132' , '' , '' , 1574524929) [ RunTime:0.068140s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:10+08:00 ] 58.247.206.146 POST dxc.gqwlcm.com//api/limited/GetLimitedList
+[运行时间：0.056630s] [吞吐率：17.66req/s] [内存消耗：2,811.02kb] [文件加载：57]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'limited',
+    2 => 'GetLimitedList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '14',
+)
+[ info ] [ PARAM ] array (
+  'unionid' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Limited->GetLimitedList[ /www/wwwroot/ledigou/application/api/controller/Limited.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000993s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_user` [ RunTime:0.001075s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_user` WHERE  `user_unionid` = '' LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_warehouse` [ RunTime:0.001159s ]
+[ sql ] [ SQL ] SELECT `ware_id` FROM `xin_warehouse` WHERE  `ware_school` = 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_limited` [ RunTime:0.001838s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` `l` INNER JOIN `xin_goods` `g` ON `l`.`limited_goods`=`g`.`goods_id` WHERE  `g`.`goods_warehouse` IN ('1')  AND `l`.`limited_stime` < 1574524930  AND `l`.`limited_etime` > 1574524930 ORDER BY `limited_time` DESC LIMIT 2 [ RunTime:0.000937s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:10+08:00 ] 58.247.206.156 POST dxc.gqwlcm.com//api/goods/GetGoodsList
+[运行时间：0.062504s] [吞吐率：16.00req/s] [内存消耗：2,876.78kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'GetGoodsList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '69',
+)
+[ info ] [ PARAM ] array (
+  'unionid' => '',
+  'keyword' => '',
+  'sort' => 0,
+  'is_top' => true,
+  'page' => 1,
+  'limit' => 4,
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Goods->GetGoodsList[ /www/wwwroot/ledigou/application/api/controller/Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000782s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001769s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_user` [ RunTime:0.001822s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_user` WHERE  `user_unionid` = '' LIMIT 1 [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_warehouse` [ RunTime:0.001032s ]
+[ sql ] [ SQL ] SELECT `ware_id` FROM `xin_warehouse` WHERE  `ware_school` = 1 [ RunTime:0.001354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods` [ RunTime:0.000746s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods` WHERE  `goods_warehouse` IN (1)  AND `goods_is_top` = 1 ORDER BY `goods_is_top` DESC,`goods_rank` DESC LIMIT 0,4 [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_limited` [ RunTime:0.001076s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524930  AND `limited_etime` > 1574524930  AND `limited_goods` = 6 LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524930  AND `limited_etime` > 1574524930  AND `limited_goods` = 1 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524930  AND `limited_etime` > 1574524930  AND `limited_goods` = 2 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524930  AND `limited_etime` > 1574524930  AND `limited_goods` = 3 LIMIT 1 [ RunTime:0.000318s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:23+08:00 ] 58.247.206.151 POST dxc.gqwlcm.com//api/Evaluate/GetEvaluateList
+[运行时间：0.060476s] [吞吐率：16.54req/s] [内存消耗：2,832.87kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Evaluate',
+    2 => 'GetEvaluateList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '16',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Evaluate->GetEvaluateList[ /www/wwwroot/ledigou/application/api/controller/Evaluate.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000253s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000990s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000726s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_order_item` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT `item_id` FROM `xin_order_item` WHERE  `item_goods` = 6 [ RunTime:0.001121s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_evaluate` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_evaluate` WHERE  `eval_item` IN (37) ORDER BY `eval_time` DESC LIMIT 0,10 [ RunTime:0.000298s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:23+08:00 ] 58.247.206.146 POST dxc.gqwlcm.com//api/goods/GetGoodsInfo
+[运行时间：0.071578s] [吞吐率：13.97req/s] [内存消耗：2,866.22kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'GetGoodsInfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '16',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '6',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Goods->GetGoodsInfo[ /www/wwwroot/ledigou/application/api/controller/Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000232s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods` [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods` WHERE  `goods_id` = 6 LIMIT 1 [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_limited` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524943  AND `limited_etime` > 1574524943  AND `limited_goods` = 6 LIMIT 1 [ RunTime:0.000200s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:27+08:00 ] 58.247.206.156 POST dxc.gqwlcm.com//api/user/JoinCar
+[运行时间：0.044892s] [吞吐率：22.28req/s] [内存消耗：3,106.72kb] [文件加载：65]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'user',
+    2 => 'JoinCar',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '48',
+)
+[ info ] [ PARAM ] array (
+  'unionid' => '',
+  'goods' => 6,
+  'is_offer' => 0,
+  'number' => 1,
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\User->JoinCar[ /www/wwwroot/ledigou/application/api/controller/User.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000248s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001007s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000258s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:28+08:00 ] 58.247.206.156 POST dxc.gqwlcm.com//api/user/BuyNow
+[运行时间：0.028644s] [吞吐率：34.91req/s] [内存消耗：3,106.72kb] [文件加载：65]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'user',
+    2 => 'BuyNow',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '51',
+)
+[ info ] [ PARAM ] array (
+  'unionid' => '',
+  'goods_id' => 6,
+  'is_offer' => 0,
+  'number' => 1,
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\User->BuyNow[ /www/wwwroot/ledigou/application/api/controller/User.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000265s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000985s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000304s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:37+08:00 ] 58.247.206.156 POST dxc.gqwlcm.com//api/goods/GetGoodsInfo
+[运行时间：0.096143s] [吞吐率：10.40req/s] [内存消耗：2,866.78kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'GetGoodsInfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '16',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Goods->GetGoodsInfo[ /www/wwwroot/ledigou/application/api/controller/Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001376s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.002269s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods` [ RunTime:0.036327s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods` WHERE  `goods_id` = 1 LIMIT 1 [ RunTime:0.001114s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_limited` [ RunTime:0.000831s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524957  AND `limited_etime` > 1574524957  AND `limited_goods` = 1 LIMIT 1 [ RunTime:0.000740s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:02:37+08:00 ] 58.247.206.156 POST dxc.gqwlcm.com//api/Evaluate/GetEvaluateList
+[运行时间：0.093618s] [吞吐率：10.68req/s] [内存消耗：2,835.13kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Evaluate',
+    2 => 'GetEvaluateList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '16',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Evaluate->GetEvaluateList[ /www/wwwroot/ledigou/application/api/controller/Evaluate.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001595s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_order_item` [ RunTime:0.001227s ]
+[ sql ] [ SQL ] SELECT `item_id` FROM `xin_order_item` WHERE  `item_goods` = 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_evaluate` [ RunTime:0.000801s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_evaluate` WHERE  `eval_item` IN (16,38,39,40) ORDER BY `eval_time` DESC LIMIT 0,10 [ RunTime:0.000315s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:03:00+08:00 ] 58.247.206.156 POST dxc.gqwlcm.com//api/message/GetMessageInfo
+[运行时间：0.059923s] [吞吐率：16.69req/s] [内存消耗：2,834.42kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'message',
+    2 => 'GetMessageInfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '16',
+)
+[ info ] [ PARAM ] array (
+  'message_id' => 0,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Message->GetMessageInfo[ /www/wwwroot/ledigou/application/api/controller/Message.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000272s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000994s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_message` [ RunTime:0.000766s ]
+[ sql ] [ SQL ] UPDATE `xin_message`  SET `message_show`=1  WHERE  `message_id` = 0 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_message` WHERE  `message_id` = 0 LIMIT 1 [ RunTime:0.000168s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:03:03+08:00 ] 58.247.206.146 POST dxc.gqwlcm.com//api/Sort/GetSortList
+[运行时间：0.080512s] [吞吐率：12.42req/s] [内存消耗：2,673.37kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Sort',
+    2 => 'GetSortList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Sort->GetSortList[ /www/wwwroot/ledigou/application/api/controller/Sort.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000290s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001711s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods_sort` [ RunTime:0.000778s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods_sort` WHERE  `sort_status` = 1 ORDER BY `sort_rank` DESC LIMIT 0,100000 [ RunTime:0.000938s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:03:03+08:00 ] 58.247.206.156 POST dxc.gqwlcm.com//api/goods/GetGoodsList
+[运行时间：0.104851s] [吞吐率：9.54req/s] [内存消耗：2,896.39kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'GetGoodsList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '115',
+)
+[ info ] [ PARAM ] array (
+  'unionid' => '',
+  'keyword' => '',
+  'sort' => 0,
+  'is_top' => false,
+  'ordername' => 'complex',
+  'ordertype' => 'desc',
+  'page' => 1,
+  'limit' => 10000,
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Goods->GetGoodsList[ /www/wwwroot/ledigou/application/api/controller/Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000230s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_user` [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_user` WHERE  `user_unionid` = '' LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_warehouse` [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT `ware_id` FROM `xin_warehouse` WHERE  `ware_school` = 1 [ RunTime:0.000159s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods` WHERE  `goods_warehouse` IN (1) ORDER BY `goods_is_top` DESC,`goods_rank` DESC LIMIT 0,10000 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_limited` [ RunTime:0.000764s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 6 LIMIT 1 [ RunTime:0.000184s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 1 LIMIT 1 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 2 LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 3 LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 4 LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 5 LIMIT 1 [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 7 LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 8 LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 9 LIMIT 1 [ RunTime:0.000155s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 10 LIMIT 1 [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 11 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 15 LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 21 LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 22 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 23 LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 25 LIMIT 1 [ RunTime:0.000201s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 26 LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 28 LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 29 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 30 LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 31 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 32 LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 33 LIMIT 1 [ RunTime:0.000166s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 34 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 35 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 36 LIMIT 1 [ RunTime:0.000163s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_limited` WHERE  `limited_stime` < 1574524983  AND `limited_etime` > 1574524983  AND `limited_goods` = 37 LIMIT 1 [ RunTime:0.000165s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:03:16+08:00 ] 58.247.206.141 POST dxc.gqwlcm.com//api/order/GetOrderInfo
+[运行时间：0.026750s] [吞吐率：37.38req/s] [内存消耗：2,960.40kb] [文件加载：62]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'GetOrderInfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '27',
+)
+[ info ] [ PARAM ] array (
+  'order_id' => 0,
+  'unionid' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Order->GetOrderInfo[ /www/wwwroot/ledigou/application/api/controller/Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000258s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000910s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000256s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:03:27+08:00 ] 58.247.206.146 POST dxc.gqwlcm.com//api/order/GoSettlement
+[运行时间：0.027030s] [吞吐率：37.00req/s] [内存消耗：2,960.05kb] [文件加载：62]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'GoSettlement',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '15',
+)
+[ info ] [ PARAM ] array (
+  'order_sn' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Order->GoSettlement[ /www/wwwroot/ledigou/application/api/controller/Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000248s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000369s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:03:37+08:00 ] 58.247.206.151 POST dxc.gqwlcm.com//api/Evaluate/GetUserEvaluateList
+[运行时间：0.031292s] [吞吐率：31.96req/s] [内存消耗：2,833.13kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'Evaluate',
+    2 => 'GetUserEvaluateList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '14',
+)
+[ info ] [ PARAM ] array (
+  'unionid' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\Evaluate->GetUserEvaluateList[ /www/wwwroot/ledigou/application/api/controller/Evaluate.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000264s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000954s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_user` [ RunTime:0.000928s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_user` WHERE  `user_unionid` = '' LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_evaluate` [ RunTime:0.001611s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_evaluate` WHERE  `eval_user` = 105 ORDER BY `eval_time` DESC [ RunTime:0.000253s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:03:40+08:00 ] 58.247.206.141 POST dxc.gqwlcm.com//api/user/GetAddressList
+[运行时间：0.027915s] [吞吐率：35.82req/s] [内存消耗：3,106.30kb] [文件加载：65]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'user',
+    2 => 'GetAddressList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'en-US,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://servicewechat.com/wxf24c79e7f9eb5a96/0/page-frame.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1  MicroMessenger/6.5.7 Language/zh_CN  token/2b2a103b614be0aedcbc6642c1a26f3a',
+  'origin' => 'http://127.0.0.1:11337',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/json',
+  'content-length' => '12',
+)
+[ info ] [ PARAM ] array (
+  'param' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\User->GetAddressList[ /www/wwwroot/ledigou/application/api/controller/User.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000259s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001032s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000246s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:42:58+08:00 ] 213.159.213.137 GET zhoujinyu.vip/
+[运行时间：0.066076s] [吞吐率：15.13req/s] [内存消耗：2,782.49kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'dnt' => '1',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36',
+  'host' => 'zhoujinyu.vip',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000314s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001076s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.039760s ]
+---------------------------------------------------------------
+[ 2019-11-24T00:42:59+08:00 ] 213.159.213.137 GET zhoujinyu.vip/index/wechat/login.html
+[运行时间：0.023093s] [吞吐率：43.30req/s] [内存消耗：2,648.80kb] [文件加载：54]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=u71peg7rifpmat22v1qm63tpj9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'dnt' => '1',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36',
+  'host' => 'zhoujinyu.vip',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-24T02:31:26+08:00 ] 185.216.140.52 GET 161.117.4.120/yealink/y000000000000.cfg
+[运行时间：0.396938s] [吞吐率：2.52req/s] [内存消耗：1,455.46kb] [文件加载：40]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'yealink',
+    1 => 'y000000000000.cfg',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'Keep-Alive',
+  'host' => '161.117.4.120',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-24T03:49:45+08:00 ] 92.63.111.27 GET formydear.xin/
+[运行时间：0.431756s] [吞吐率：2.32req/s] [内存消耗：2,782.49kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'dnt' => '1',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 5.1; rv:13.0) Gecko/20100101 Firefox/13.0.1',
+  'host' => 'formydear.xin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000303s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000950s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.125533s ]
+---------------------------------------------------------------
+[ 2019-11-24T03:49:47+08:00 ] 92.63.111.27 GET formydear.xin/index/wechat/login.html
+[运行时间：0.021597s] [吞吐率：46.30req/s] [内存消耗：2,648.68kb] [文件加载：54]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7k6h0hhusv8srek1m2b8mrmjfb',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'dnt' => '1',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 5.1; rv:13.0) Gecko/20100101 Firefox/13.0.1',
+  'host' => 'formydear.xin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-24T05:31:36+08:00 ] 137.226.113.28 GET www.forlavida.com/
+[运行时间：0.546014s] [吞吐率：1.83req/s] [内存消耗：2,782.27kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'Mozilla/5.0 zgrab/0.x (compatible; Researchscan/t13rl; +http://researchscan.comsys.rwth-aachen.de)',
+  'host' => 'www.forlavida.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000285s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001079s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.070773s ]
+---------------------------------------------------------------
+[ 2019-11-24T05:31:39+08:00 ] 137.226.113.28 GET 161.117.4.120:443/index/wechat/login.html
+[运行时间：0.033353s] [吞吐率：29.98req/s] [内存消耗：2,725.54kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'referer' => 'https://161.117.4.120:443/',
+  'user-agent' => 'Mozilla/5.0 zgrab/0.x (compatible; Researchscan/t13rl; +http://researchscan.comsys.rwth-aachen.de)',
+  'host' => '161.117.4.120:443',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000300s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2019-11-24T08:14:07+08:00 ] 137.226.113.27 GET www.forlavida.com/
+[运行时间：0.027375s] [吞吐率：36.53req/s] [内存消耗：2,782.36kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 zgrab/0.x (compatible; Researchscan/t12ca; +http://researchscan.comsys.rwth-aachen.de)',
+  'host' => 'www.forlavida.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000283s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001084s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000328s ]
+---------------------------------------------------------------
+[ 2019-11-24T09:36:45+08:00 ] 74.82.47.5 GET 161.117.4.120/
+[运行时间：0.056225s] [吞吐率：17.79req/s] [内存消耗：2,801.92kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '161.117.4.120',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000276s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001153s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.011637s ]
+---------------------------------------------------------------
+[ 2019-11-24T09:53:33+08:00 ] 47.98.105.115 GET www.forlavida.com/
+[运行时间：0.027965s] [吞吐率：35.76req/s] [内存消耗：2,782.30kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.forlavida.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000272s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001080s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2019-11-24T09:53:34+08:00 ] 47.98.105.115 GET www.forlavida.com/index/wechat/login.html
+[运行时间：0.025309s] [吞吐率：39.51req/s] [内存消耗：2,725.42kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.forlavida.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000252s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000978s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000253s ]
+---------------------------------------------------------------
+[ 2019-11-24T10:21:11+08:00 ] 128.14.133.58 GET 161.117.4.120/
+[运行时间：0.026644s] [吞吐率：37.53req/s] [内存消耗：2,782.42kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'host' => '161.117.4.120',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000253s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001054s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000271s ]
+---------------------------------------------------------------
+[ 2019-11-24T10:21:12+08:00 ] 128.14.133.58 GET 161.117.4.120/index/wechat/login.html
+[运行时间：0.027019s] [吞吐率：37.01req/s] [内存消耗：2,725.57kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'referer' => 'https://161.117.4.120/',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'host' => '161.117.4.120',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000291s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001082s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000245s ]
+---------------------------------------------------------------
+[ 2019-11-24T10:30:57+08:00 ] 47.101.193.90 GET www.shiguojingqian.com/
+[运行时间：0.025280s] [吞吐率：39.56req/s] [内存消耗：2,782.27kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.shiguojingqian.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000254s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001175s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000260s ]
+---------------------------------------------------------------
+[ 2019-11-24T10:30:58+08:00 ] 47.101.193.90 GET www.shiguojingqian.com/index/wechat/login.html
+[运行时间：0.039945s] [吞吐率：25.03req/s] [内存消耗：2,725.39kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.shiguojingqian.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000582s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001311s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000346s ]
+---------------------------------------------------------------
+[ 2019-11-24T10:42:03+08:00 ] 47.100.246.14 GET www.zhoujinyu.vip/
+[运行时间：0.042230s] [吞吐率：23.68req/s] [内存消耗：2,782.27kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.zhoujinyu.vip',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000326s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001360s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000420s ]
+---------------------------------------------------------------
+[ 2019-11-24T10:42:03+08:00 ] 47.100.246.14 GET www.zhoujinyu.vip/index/wechat/login.html
+[运行时间：0.062834s] [吞吐率：15.91req/s] [内存消耗：2,725.39kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.zhoujinyu.vip',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000257s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001145s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000265s ]
+---------------------------------------------------------------
+[ 2019-11-24T10:45:26+08:00 ] 47.101.198.179 GET baixuejie.com/
+[运行时间：0.089544s] [吞吐率：11.17req/s] [内存消耗：2,782.24kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'baixuejie.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000311s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001044s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000273s ]
+---------------------------------------------------------------
+[ 2019-11-24T10:45:27+08:00 ] 47.101.198.179 GET baixuejie.com/index/wechat/login.html
+[运行时间：0.026613s] [吞吐率：37.58req/s] [内存消耗：2,725.36kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'baixuejie.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000257s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000967s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000263s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:01:12+08:00 ] 47.101.199.54 GET www.formydear.xin/
+[运行时间：0.043473s] [吞吐率：23.00req/s] [内存消耗：2,782.27kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.formydear.xin',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000294s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000292s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:01:13+08:00 ] 47.101.199.54 GET www.formydear.xin/index/wechat/login.html
+[运行时间：0.024747s] [吞吐率：40.41req/s] [内存消耗：2,725.39kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.formydear.xin',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000268s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001049s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000246s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:05:21+08:00 ] 47.101.198.81 GET pt.ibtv.cc/
+[运行时间：0.026202s] [吞吐率：38.17req/s] [内存消耗：2,782.12kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'pt.ibtv.cc',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000252s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001046s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:07:56+08:00 ] 137.226.113.27 GET www.forlavida.com/
+[运行时间：0.025613s] [吞吐率：39.04req/s] [内存消耗：2,782.36kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 zgrab/0.x (compatible; Researchscan/t12sns; +http://researchscan.comsys.rwth-aachen.de)',
+  'host' => 'www.forlavida.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000249s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000265s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:33:01+08:00 ] 47.103.23.22 GET zhoujinyu.vip/
+[运行时间：0.050338s] [吞吐率：19.87req/s] [内存消耗：2,782.24kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'zhoujinyu.vip',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000328s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001145s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:33:02+08:00 ] 47.103.23.22 GET zhoujinyu.vip/index/wechat/login.html
+[运行时间：0.039146s] [吞吐率：25.55req/s] [内存消耗：2,725.36kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'zhoujinyu.vip',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000306s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000266s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:45:39+08:00 ] 47.103.7.61 GET formydear.xin/
+[运行时间：0.026983s] [吞吐率：37.06req/s] [内存消耗：2,782.24kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'formydear.xin',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000250s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001025s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000279s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:45:39+08:00 ] 47.103.7.61 GET formydear.xin/index/wechat/login.html
+[运行时间：0.026551s] [吞吐率：37.66req/s] [内存消耗：2,725.36kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'formydear.xin',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000254s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001120s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000296s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:55:15+08:00 ] 47.101.192.251 GET dxc.gqwlcm.com/
+[运行时间：0.025647s] [吞吐率：38.99req/s] [内存消耗：2,782.27kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'dxc.gqwlcm.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000249s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000989s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000241s ]
+---------------------------------------------------------------
+[ 2019-11-24T11:55:16+08:00 ] 47.101.192.251 GET dxc.gqwlcm.com/index/wechat/login.html
+[运行时间：0.046063s] [吞吐率：21.71req/s] [内存消耗：2,725.39kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'dxc.gqwlcm.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000300s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.019935s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000342s ]
+---------------------------------------------------------------
+[ 2019-11-24T12:29:12+08:00 ] 93.174.93.84 GET 161.117.4.120/devicecfg/yealink/y000000000000.cfg
+[运行时间：0.072412s] [吞吐率：13.81req/s] [内存消耗：1,455.51kb] [文件加载：40]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'devicecfg',
+    1 => 'yealink',
+    2 => 'y000000000000.cfg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'Keep-Alive',
+  'host' => '161.117.4.120',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-24T12:32:11+08:00 ] 47.102.153.146 GET forlavida.com/
+[运行时间：0.064097s] [吞吐率：15.60req/s] [内存消耗：2,782.24kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'forlavida.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000395s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001133s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.036485s ]
+---------------------------------------------------------------
+[ 2019-11-24T12:32:11+08:00 ] 47.102.153.146 GET forlavida.com/index/wechat/login.html
+[运行时间：0.025759s] [吞吐率：38.82req/s] [内存消耗：2,725.36kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'forlavida.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000284s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001047s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2019-11-24T12:40:59+08:00 ] 59.32.101.55 HEAD www.google.com.hk/search?q=g
+[运行时间：0.013083s] [吞吐率：76.44req/s] [内存消耗：1,455.49kb] [文件加载：40]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'search',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.google.com.hk',
+)
+[ info ] [ PARAM ] array (
+  'q' => 'g',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-24T12:47:56+08:00 ] 47.101.178.254 GET ibtv.cc/
+[运行时间：0.025944s] [吞吐率：38.54req/s] [内存消耗：2,782.12kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'ibtv.cc',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000249s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.000996s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000242s ]
+---------------------------------------------------------------
+[ 2019-11-24T12:47:56+08:00 ] 47.101.178.254 GET ibtv.cc/index/wechat/login.html
+[运行时间：0.027603s] [吞吐率：36.23req/s] [内存消耗：2,725.23kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'ibtv.cc',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000320s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001278s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000383s ]
+---------------------------------------------------------------
+[ 2019-11-24T13:00:34+08:00 ] 139.162.116.133 GET 161.117.4.120/
+[运行时间：0.025332s] [吞吐率：39.48req/s] [内存消耗：2,802.33kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'user-agent' => 'HTTP Banner Detection (https://security.ipip.net)',
+  'host' => '161.117.4.120',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000288s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000252s ]
+---------------------------------------------------------------
+[ 2019-11-24T15:26:12+08:00 ] 52.12.24.188 GET ibtv.cc/
+[运行时间：0.062071s] [吞吐率：16.11req/s] [内存消耗：2,781.95kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'Go-http-client/1.1',
+  'host' => 'ibtv.cc',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000352s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001266s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000422s ]
+---------------------------------------------------------------
+[ 2019-11-24T17:11:22+08:00 ] 52.5.149.249 GET 161.117.4.120/
+[运行时间：0.177573s] [吞吐率：5.63req/s] [内存消耗：2,782.05kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 zgrab/0.x',
+  'host' => '161.117.4.120',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000291s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001099s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.024876s ]
+---------------------------------------------------------------
+[ 2019-11-24T17:11:24+08:00 ] 52.5.149.249 GET 161.117.4.120:443/index/wechat/login.html
+[运行时间：0.042974s] [吞吐率：23.27req/s] [内存消耗：2,725.41kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'referer' => 'https://161.117.4.120:443/',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 zgrab/0.x',
+  'host' => '161.117.4.120:443',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000286s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001135s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2019-11-24T21:02:43+08:00 ] 18.236.240.97 GET zhoujinyu.vip/
+[运行时间：0.054119s] [吞吐率：18.48req/s] [内存消耗：2,781.95kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'Go-http-client/1.1',
+  'host' => 'zhoujinyu.vip',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000302s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001081s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000251s ]
+---------------------------------------------------------------
+[ 2019-11-24T21:51:57+08:00 ] 47.92.138.160 GET www.baixuejie.com/
+[运行时间：0.041561s] [吞吐率：24.06req/s] [内存消耗：2,782.30kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.baixuejie.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000332s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001371s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000451s ]
+---------------------------------------------------------------
+[ 2019-11-24T23:44:45+08:00 ] 183.60.141.184 GET 161.117.4.120/
+[运行时间：0.065607s] [吞吐率：15.24req/s] [内存消耗：2,781.95kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'Mozilla/5.0',
+  'host' => '161.117.4.120',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000318s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001078s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000268s ]

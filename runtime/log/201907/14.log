@@ -1,0 +1,204 @@
+---------------------------------------------------------------
+[ 2019-07-14T05:16:46+08:00 ] 66.249.79.224 GET www.thebestwe.com/
+[运行时间：0.226649s] [吞吐率：4.41req/s] [内存消耗：1,219.68kb] [文件加载：34]
+[ info ] [ LANG ] /www/wwwroot/thebestwe/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip,deflate,br',
+  'user-agent' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+  'from' => 'googlebot(at)googlebot.com',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'host' => 'www.thebestwe.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/thebestwe/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/thebestwe/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-14T05:44:08+08:00 ] 66.249.79.253 GET www.thebestwe.com/web/index.php?c=user&a=login&
+[运行时间：0.078656s] [吞吐率：12.71req/s] [内存消耗：1,027.85kb] [文件加载：28]
+[ info ] [ LANG ] /www/wwwroot/thebestwe/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index.php',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'if-modified-since' => 'Wed, 10 Jul 2019 21:16:45 GMT',
+  'accept-encoding' => 'gzip,deflate,br',
+  'user-agent' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+  'from' => 'googlebot(at)googlebot.com',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'host' => 'www.thebestwe.com',
+)
+[ info ] [ PARAM ] array (
+  'c' => 'user',
+  'a' => 'login',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-14T05:44:10+08:00 ] 66.249.79.227 GET www.thebestwe.com/web/index.php?c=account&a=display
+[运行时间：0.010782s] [吞吐率：92.75req/s] [内存消耗：1,027.70kb] [文件加载：28]
+[ info ] [ LANG ] /www/wwwroot/thebestwe/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'web',
+    1 => 'index.php',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip,deflate,br',
+  'user-agent' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+  'from' => 'googlebot(at)googlebot.com',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'host' => 'www.thebestwe.com',
+)
+[ info ] [ PARAM ] array (
+  'c' => 'account',
+  'a' => 'display',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-14T07:11:37+08:00 ] 47.92.98.215 GET www.thebestwe.com/
+[运行时间：0.041008s] [吞吐率：24.39req/s] [内存消耗：1,219.22kb] [文件加载：34]
+[ info ] [ LANG ] /www/wwwroot/thebestwe/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.thebestwe.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D))',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/thebestwe/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/thebestwe/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-14T08:10:21+08:00 ] 112.232.130.132 GET www.thebestwe.com/admin/rotate/index.html
+[运行时间：0.351929s] [吞吐率：2.84req/s] [内存消耗：2,542.53kb] [文件加载：49]
+[ info ] [ LANG ] /www/wwwroot/thebestwe/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rotate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'we7install_accesstoken=%7B%22accessToken%22%3A%22KIA98e129TPzKTzYjadyI23SXfapZLaaAtt9TkEA1dex14Ez11XtYIPSjzIaaA4y%22%2C%22expireTime%22%3A1562559701%7D; we7install_cdn_source_size=20237417; Mrq5___session=799cRs7sQ9EMuvugAYgLQ2WhAzTSKQTPzkfs6SJH%2Bo8MpDnPn0BmnhEqQ8kidAU0%2Fhn2WKrg5Z3oyqbFcXHhYZxeb2cCiLSWBxTdIsY1Md2pK4tyDMLZluD4Fug67zvdm%2BoNVrH13q%2FWkRQLDQ; Mrq5___uniacid=1; Mrq5_jsMenuLock=1; Mrq5_menu_fold_tag:mc=1; Mrq5_menu_fold_tag:profile=1; Mrq5_menu_fold_tag:platform=1; PHPSESSID=1807565db9e49598d48f0f52d0d80cbc; Mrq5_jsMenuScroll=; Mrq5___lastvisit_1=1%2Chttp%3A//www.thebestwe.com/web/index.php%3Fc%3Daccount%26a%3Dmanage; we7install_registered_site=1; b9yw___session=9cb7VtrZkZpdMErwJiAph96%2BC7OhnR7R6tXaoZW%2FfK5DPNlbD8gCg9Nqlzw2cnE8LEoUVnqxY8pnpRvyVHhveSYm7uIDY8RneOfCXm4iyojPFuigfyRB7J1Ix3bvsrvvSh0YkJHd5dvulfBlng; b9yw_jsMenuScroll=; b9yw___uniacid=1; b9yw___lastvisit_1=1%2Chttp%3A//www.thebestwe.com/web/index.php%3Fc%3Dhome%26a%3Dwelcome%26uniacid%3D1; 3788___session=653dszHTSwBhGsdHgch1ZKg8b23J%2BaAp8tk%2FEKuxTcTd3cUHT4FCc841l%2FzlVWDyQ%2FtPJ8pJE1ZfNq%2Bdz%2BJ7QJQ8yloBUPdFjNpFMJfS%2BiYShQZbsPJuUen%2BSURB2HN6zqmDPAKiV66gvUsir%2FY; 3788_jsMenuScroll=; 3788___lastvisit_1=%2Chttp%3A//www.thebestwe.com/web/index.php%3Fc%3Dmodule%26a%3Dmanage-system%26do%3Dinstalled',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.thebestwe.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.thebestwe.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Rotate->index[ /www/wwwroot/thebestwe/application/admin/controller/Rotate.php ]
+[ info ] [ VIEW ] /www/wwwroot/thebestwe/public/../application/admin/view/rotate/index.html [ array (
+  0 => 'condition',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063805s ] mysql:host=localhost;dbname=xiaochengxu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_rotate` [ RunTime:0.048464s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_rotate` LIMIT 1 [ RunTime:0.002454s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_rotate` ORDER BY `rotate_rank` DESC LIMIT 0,15 [ RunTime:0.000226s ]
+---------------------------------------------------------------
+[ 2019-07-14T08:10:22+08:00 ] 112.232.130.132 GET www.thebestwe.com/admin/rotate/index.html?page=1&limit=10
+[运行时间：0.111568s] [吞吐率：8.96req/s] [内存消耗：2,481.24kb] [文件加载：48]
+[ info ] [ LANG ] /www/wwwroot/thebestwe/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rotate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'we7install_accesstoken=%7B%22accessToken%22%3A%22KIA98e129TPzKTzYjadyI23SXfapZLaaAtt9TkEA1dex14Ez11XtYIPSjzIaaA4y%22%2C%22expireTime%22%3A1562559701%7D; we7install_cdn_source_size=20237417; Mrq5___session=799cRs7sQ9EMuvugAYgLQ2WhAzTSKQTPzkfs6SJH%2Bo8MpDnPn0BmnhEqQ8kidAU0%2Fhn2WKrg5Z3oyqbFcXHhYZxeb2cCiLSWBxTdIsY1Md2pK4tyDMLZluD4Fug67zvdm%2BoNVrH13q%2FWkRQLDQ; Mrq5___uniacid=1; Mrq5_jsMenuLock=1; Mrq5_menu_fold_tag:mc=1; Mrq5_menu_fold_tag:profile=1; Mrq5_menu_fold_tag:platform=1; PHPSESSID=1807565db9e49598d48f0f52d0d80cbc; Mrq5_jsMenuScroll=; Mrq5___lastvisit_1=1%2Chttp%3A//www.thebestwe.com/web/index.php%3Fc%3Daccount%26a%3Dmanage; we7install_registered_site=1; b9yw___session=9cb7VtrZkZpdMErwJiAph96%2BC7OhnR7R6tXaoZW%2FfK5DPNlbD8gCg9Nqlzw2cnE8LEoUVnqxY8pnpRvyVHhveSYm7uIDY8RneOfCXm4iyojPFuigfyRB7J1Ix3bvsrvvSh0YkJHd5dvulfBlng; b9yw_jsMenuScroll=; b9yw___uniacid=1; b9yw___lastvisit_1=1%2Chttp%3A//www.thebestwe.com/web/index.php%3Fc%3Dhome%26a%3Dwelcome%26uniacid%3D1; 3788___session=653dszHTSwBhGsdHgch1ZKg8b23J%2BaAp8tk%2FEKuxTcTd3cUHT4FCc841l%2FzlVWDyQ%2FtPJ8pJE1ZfNq%2Bdz%2BJ7QJQ8yloBUPdFjNpFMJfS%2BiYShQZbsPJuUen%2BSURB2HN6zqmDPAKiV66gvUsir%2FY; 3788_jsMenuScroll=; 3788___lastvisit_1=%2Chttp%3A//www.thebestwe.com/web/index.php%3Fc%3Dmodule%26a%3Dmanage-system%26do%3Dinstalled',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.thebestwe.com/admin/rotate/index.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.thebestwe.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Rotate->index[ /www/wwwroot/thebestwe/application/admin/controller/Rotate.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000331s ] mysql:host=localhost;dbname=xiaochengxu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_rotate` [ RunTime:0.001003s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_rotate` LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_rotate` ORDER BY `rotate_rank` DESC LIMIT 0,10 [ RunTime:0.000193s ]

@@ -1,0 +1,64 @@
+---------------------------------------------------------------
+[ 2019-07-15T04:35:30+08:00 ] 47.92.50.96 GET www.thebestwe.com/
+[运行时间：0.144922s] [吞吐率：6.90req/s] [内存消耗：1,219.21kb] [文件加载：34]
+[ info ] [ LANG ] /www/wwwroot/thebestwe/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.thebestwe.com',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_0_2 like Mac OS X)',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/thebestwe/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/thebestwe/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-15T06:31:42+08:00 ] 47.100.53.146 GET www.thebestwe.com/
+[运行时间：0.014318s] [吞吐率：69.84req/s] [内存消耗：1,219.22kb] [文件加载：34]
+[ info ] [ LANG ] /www/wwwroot/thebestwe/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'www.thebestwe.com',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D))',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/thebestwe/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/thebestwe/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File

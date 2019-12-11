@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>商品列表</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--标准mui.css-->
+<style>
+  
+  .mui-content {
+    padding-bottom:100px !important;
+  }
+
+  .addbat {
+    position:fixed;
+    bottom:60px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ffb212;
+    color:#fff;
+  }
+
+</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+      <h1 class="mui-title">我是团长</h1>
+		</h1>
+	</header>
+
+  {include file='base/headnav'}
+
+    <div class="mui-content">
+		<!-- 商品列表 -->
+      <div class="mui-input-row mui-search l-select">
+          <input type="search" class="mui-input-clear" placeholder="在商城内搜索">
+      </div>
+
+      {volist name="goods" id="item"}
+        <div class="l-zong">
+            <div class="l-img">
+                <img src="{$item.goods_image}" alt="">
+            </div>
+            <div class="l-zi">
+                <p>{$item.goods_name}</p>
+                <p>￥<span class="l-span">{$item.goods_price}</span></p>
+                <p class="l-jia" data-id="{$item.goods_id}">佣金: ￥{$item.goods_brokerage}</p>
+            </div>
+        </div>
+      {/volist}
+      <div class="addbat">确认添加</div>
+	  </div>
+</body>
+
+<script type="text/javascript">
+
+  // 点击改变样式
+  $(document).ready(function() {
+    $(".l-jia").click(function() {
+      if($(this).hasClass('gaibian1'))
+        $(this).removeClass("gaibian1");
+      else
+        $(this).addClass("gaibian1");
+    });}
+  );
+
+  layui.use('layer', function(){
+    var layer = layui.layer;
+
+    $(".addbat").click(function(){
+      var ids = '';
+      $(".gaibian1").each(function(){
+        ids += $(this).attr("data-id")+',';
+       });
+
+      if(ids != ''){
+        window.location.href="{:url('release')}?ids="+ids.substring(0,ids.length-1);
+      }else
+        layer.msg('请选择至少一个商品！');
+    });
+  });
+
+</script>

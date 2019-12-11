@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>查看详情</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="__STATIC__/layui/css/layui.css" media="all">
+        <link rel="stylesheet" href="__CSS__/admin.css" media="all">
+        <style>
+          
+            .orderdata {
+                width: 100%;
+                height: 300px;
+                border-collapse:collapse;
+            }
+
+            .rowbox {
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+            }
+
+            .rowtitle {
+                background-color: #444;
+            }
+
+            .piece {
+                float: left;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="layui-fluid">
+            <div class="layui-card">
+                <div class="layui-card-body" style="padding: 15px;">
+
+                    <table class="layui-table" lay-size="sm">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th rowspan="3">用户信息</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr> 
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>用户名称</td>
+                                <td>{$data.user_name}</td>
+                                <td>用户来源</td>
+                                <td>{$data.user_parent}</td>
+                                <td>用户年龄</td>
+                                <td>{$data.user_age}</td>
+                            </tr>
+                            <tr>
+                                <td>用户手机</td>
+                                <td>{$data.user_mobile}</td>
+                                <td>用户头像</td>
+                                <td><a href="{$data.user_avatar}" target="_blank">点击查看</a></td>
+                                <td>用户身份证号</td>
+                                <td>{$data.user_idcard}</td>
+                            </tr>
+                            <tr>
+                                <td>用户类型</td>
+                                <td>{if $data.user_type eq 1} 普通会员 {elseif $data.user_type eq 2} 骑手 {elseif $data.user_type eq 3} 团长 {else} 骑手、团长 {/if}</td>
+                                <td>用户状态</td>
+                                <td>{if $data.user_status eq 1} 正常 {else/} 禁用 {/if}</td>
+                                <td>注册时间</td>
+                                <td>{$data.user_time}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    {if $data.user_type eq 2 || $data.user_type eq 4}
+                        <table class="layui-table" lay-size="sm" style="margin-top: 20px;">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th rowspan="5">骑手统计信息</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr> 
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>总接单数</td>
+                                    <td>完成数</td>
+                                    <td>总佣金</td>
+                                    <td>已提现佣金</td>
+                                    <td>账户余额</td>
+                                </tr>
+                                <tr>
+                                    <td>{$statistics.rider_ordercount}</td>
+                                    <td>{$statistics.rider_ordercomplete}</td>
+                                    <td>{$statistics.rider_moneycount}元</td>
+                                    <td>{$statistics.rider_moneyextract}元</td>
+                                    <td>{$statistics.rideer_money}元</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    {/if}
+
+                    {if $data.user_type eq 3 || $data.user_type eq 4}
+                        <table class="layui-table" lay-size="sm" style="margin-top: 20px;">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th rowspan="5">团长统计信息</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr> 
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>分享次数</td>
+                                    <td>销量</td>
+                                    <td>流量统计</td>
+                                    <td>总佣金</td>
+                                    <td>已提现佣金</td>
+                                    <td>账户余额</td>
+                                </tr>
+                                <tr>
+                                    <td>{$statistics.head_sharecount}</td>
+                                    <td>{$statistics.head_salescount}</td>
+                                    <td>{$statistics.head_userscount}人</td>
+                                    <td>{$statistics.head_moneycount}元</td>
+                                    <td>{$statistics.head_withdcount}元</td>
+                                    <td>{$statistics.head_money}元</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    {/if}
+
+                    <table class="layui-table" lay-size="sm" style="margin-top: 20px;">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th rowspan="5">收货地址</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr> 
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>省</td>
+                                <td>市</td>
+                                <td>区</td>
+                                <td>学校名称</td>
+                                <td>详细地址</td>
+                                <td>联系人</td>
+                                <td>联系电话</td>
+                                <td>是否默认地址</td>
+                            </tr>
+                            {volist name="address" id="item"}
+                              <tr>
+                                  <td>{$item.address_province}</td>
+                                  <td>{$item.address_city}</td>
+                                  <td>{$item.address_area}</td>
+                                  <td>{$item.address_school}</td>
+                                  <td>{$item.address_info}</td>
+                                  <td>{$item.address_contact}</td>
+                                  <td>{$item.address_mobile}</td>
+                                  <td>{if $item.address_default eq 0} 否 {else/} 是 {/if}</td>
+                              </tr>
+                            {/volist}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script src="__STATIC__/layui/layui.js"></script>  
+        <script>
+            layui.config({
+                base: '__STATIC__/admin/'
+            }).extend({
+                index: 'lib/index'
+            }).use(['index', 'form', 'upload'], function(){
+                var $ = layui.$
+                ,layer = layui.layer
+                ,upload = layui.upload
+                ,form = layui.form;
+            });
+        </script>
+    </body>
+</html>

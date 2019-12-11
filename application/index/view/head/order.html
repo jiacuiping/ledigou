@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>推广记录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+  <header class="mui-bar mui-bar-nav">
+      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+      <h1 class="mui-title">我是团长</h1>
+    </h1>
+  </header>
+
+  {include file='base/headnav'}
+
+    <div class="mui-content">
+        <!-- 推广记录 -->
+        {volist name="order" id="item"}
+          <div id="c-tuiguang">
+              <div class="c-tuiguang">
+                  <li class="mui-table-view-cell">
+                      <a class="mui-navigate-right">
+                          <i class="mui-icon iconfont">&#xe606;</i>交易单号:{$item.order_sn}
+                      </a>
+                  </li>
+                  <p>销售价格: <span>{$item.order_paymoney}</span></p>
+                  <p>佣金: {$item.sumprice}元</p>
+                  <p class="h-yichu">货物名称: {$item.goods_names}</p>
+                  <p>交易时间: <span>{:date('Y-m-d H:i:s',$item.order_paytime)}</span></p>
+              </div>
+              <div class="c-hui"></div>
+          </div>
+        {/volist}
+
+        <!-- 以下重复上面 -->
+<!--         <div id="c-tuiguang">
+            <div class="c-tuiguang">
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <i class="mui-icon iconfont">&#xe606;</i>交易单号:S17052545481
+                    </a>
+                </li>
+                <p>销售价格: <span>267元</span></p>
+                <p>佣金: 5元</p>
+                <p class="h-yichu">货物名称: 【三只松鼠_小美初恋时光115g】水果水果水果</p>
+                <p>交易时间: <span>2017/09/12 14:40</span></p>
+            </div>
+            <div class="c-hui"></div>
+        </div>
+        <div id="c-tuiguang">
+            <div class="c-tuiguang">
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <i class="mui-icon iconfont">&#xe606;</i>交易单号:S17052545481
+                    </a>
+                </li>
+                <p>销售价格: <span>267元</span></p>
+                <p>佣金: 5元</p>
+                <p class="h-yichu">货物名称: 【三只松鼠_小美初恋时光115g】水果水果水果</p>
+                <p>交易时间: <span>2017/09/12 14:40</span></p>
+            </div>
+            <div class="c-hui"></div>
+        </div>
+        <div id="c-tuiguang">
+            <div class="c-tuiguang">
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <i class="mui-icon iconfont">&#xe606;</i>交易单号:S17052545481
+                    </a>
+                </li>
+                <p>销售价格: <span>267元</span></p>
+                <p>佣金: 5元</p>
+                <p class="h-yichu">货物名称: 【三只松鼠_小美初恋时光115g】水果水果水果</p>
+                <p>交易时间: <span>2017/09/12 14:40</span></p>
+            </div>
+            <div class="c-hui"></div>
+        </div> -->
+    </div>
+</body>
+<script type="text/javascript">
+
+</script>

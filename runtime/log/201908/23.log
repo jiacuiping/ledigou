@@ -1,0 +1,1385 @@
+---------------------------------------------------------------
+[ 2019-08-23T13:21:24+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/
+[运行时间：0.842345s] [吞吐率：1.19req/s] [内存消耗：2,777.81kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.031283s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.057243s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.002524s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:21:24+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/index/wechat/login.html
+[运行时间：0.091471s] [吞吐率：10.93req/s] [内存消耗：2,637.57kb] [文件加载：54]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T13:21:33+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin
+[运行时间：0.035363s] [吞吐率：28.28req/s] [内存消耗：2,029.09kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T13:21:33+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/login/login.html
+[运行时间：0.067803s] [吞吐率：14.75req/s] [内存消耗：2,675.97kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /www/wwwroot/ledigou/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/login/login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T13:21:41+08:00 ] 113.128.88.140 POST dxc.gqwlcm.com/admin/login/login.html
+[运行时间：0.093692s] [吞吐率：10.67req/s] [内存消耗：2,797.45kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://dxc.gqwlcm.com/admin/login/login.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://dxc.gqwlcm.com',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '34',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '18365976266',
+  'password' => '123456',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /www/wwwroot/ledigou/application/admin/controller/Login.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000271s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_member` [ RunTime:0.022480s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_member` WHERE  `member_mobile` = '18365976266' LIMIT 1 [ RunTime:0.002147s ]
+[ sql ] [ SQL ] UPDATE `xin_member`  SET `member_last_ip`='113.128.88.140',`member_last_time`=1566537701  WHERE  `member_id` = 1 [ RunTime:0.020278s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:21:44+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/index/index.html
+[运行时间：0.128925s] [吞吐率：7.76req/s] [内存消耗：2,874.84kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->Index[ /www/wwwroot/ledigou/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/index/index.html [ array (
+  0 => 'adminmenu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000257s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_menu` [ RunTime:0.013712s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_status` = 1  AND `menu_parent` = 0 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.002180s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 1  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 5  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 18  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 10  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 12  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 14  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 16  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000215s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 22  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 24  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 26  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000215s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 29  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000205s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:21:44+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/index/welcome.html
+[运行时间：0.019483s] [吞吐率：51.33req/s] [内存消耗：2,016.45kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->Welcome[ /www/wwwroot/ledigou/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/index/welcome.html [ array (
+  0 => 'Greetings',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T13:21:50+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/school/index.html
+[运行时间：0.137925s] [吞吐率：7.25req/s] [内存消耗：2,876.67kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'school',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\School->index[ /www/wwwroot/ledigou/application/admin/controller/School.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/school/index.html [ array (
+  0 => 'condition',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000339s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_school` [ RunTime:0.002416s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_school` LIMIT 1 [ RunTime:0.002040s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_school` ORDER BY `school_id` DESC LIMIT 0,15 [ RunTime:0.000222s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:21:51+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/school/index.html?page=1&limit=10
+[运行时间：0.026911s] [吞吐率：37.16req/s] [内存消耗：2,815.25kb] [文件加载：60]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'school',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/school/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\School->index[ /www/wwwroot/ledigou/application/admin/controller/School.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000245s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_school` [ RunTime:0.001119s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_school` LIMIT 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_school` ORDER BY `school_id` DESC LIMIT 0,10 [ RunTime:0.000179s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:21+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/warehouse/index.html
+[运行时间：0.143458s] [吞吐率：6.97req/s] [内存消耗：2,894.63kb] [文件加载：62]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'warehouse',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Warehouse->index[ /www/wwwroot/ledigou/application/admin/controller/Warehouse.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/warehouse/index.html [ array (
+  0 => 'condition',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000264s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_warehouse` [ RunTime:0.010327s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_warehouse` LIMIT 1 [ RunTime:0.001950s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_warehouse` ORDER BY `ware_id` DESC LIMIT 0,15 [ RunTime:0.000174s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_school` [ RunTime:0.000936s ]
+[ sql ] [ SQL ] SELECT `school_name` FROM `xin_school` WHERE  `school_id` = 3 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SELECT `school_name` FROM `xin_school` WHERE  `school_id` = 1 LIMIT 1 [ RunTime:0.000147s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:22+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/warehouse/index.html?page=1&limit=10
+[运行时间：0.027047s] [吞吐率：36.97req/s] [内存消耗：2,834.91kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'warehouse',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/warehouse/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Warehouse->index[ /www/wwwroot/ledigou/application/admin/controller/Warehouse.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000241s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_warehouse` [ RunTime:0.001131s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_warehouse` LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_warehouse` ORDER BY `ware_id` DESC LIMIT 0,10 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_school` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT `school_name` FROM `xin_school` WHERE  `school_id` = 3 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SELECT `school_name` FROM `xin_school` WHERE  `school_id` = 1 LIMIT 1 [ RunTime:0.000174s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:26+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/sort/index.html
+[运行时间：0.108465s] [吞吐率：9.22req/s] [内存消耗：2,866.13kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'sort',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Sort->index[ /www/wwwroot/ledigou/application/admin/controller/Sort.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/sort/index.html [ array (
+  0 => 'condition',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000287s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods_sort` [ RunTime:0.021670s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_goods_sort` LIMIT 1 [ RunTime:0.002033s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods_sort` ORDER BY `sort_rank` DESC LIMIT 0,15 [ RunTime:0.000257s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:26+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/sort/index.html?page=1&limit=10
+[运行时间：0.025701s] [吞吐率：38.91req/s] [内存消耗：2,806.44kb] [文件加载：60]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'sort',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/sort/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Sort->index[ /www/wwwroot/ledigou/application/admin/controller/Sort.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000250s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods_sort` [ RunTime:0.001151s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_goods_sort` LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods_sort` ORDER BY `sort_rank` DESC LIMIT 0,10 [ RunTime:0.000205s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:27+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/goods/index.html
+[运行时间：0.158356s] [吞吐率：6.31req/s] [内存消耗：2,934.84kb] [文件加载：63]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->index[ /www/wwwroot/ledigou/application/admin/controller/Goods.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/goods/index.html [ array (
+  0 => 'sorts',
+  1 => 'condition',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000263s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods` [ RunTime:0.036985s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_goods` LIMIT 1 [ RunTime:0.019604s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods` ORDER BY `goods_is_top` DESC,`goods_id` LIMIT 0,15 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods_sort` [ RunTime:0.001049s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods_sort` WHERE  `sort_status` = 1 ORDER BY `sort_rank` DESC [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT `sort_name` FROM `xin_goods_sort` WHERE  `sort_id` = 1 LIMIT 1 [ RunTime:0.000152s ]
+[ sql ] [ SQL ] SELECT `sort_name` FROM `xin_goods_sort` WHERE  `sort_id` = 2 LIMIT 1 [ RunTime:0.000151s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:28+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/goods/index.html?page=1&limit=10
+[运行时间：0.027287s] [吞吐率：36.65req/s] [内存消耗：2,863.33kb] [文件加载：62]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/goods/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->index[ /www/wwwroot/ledigou/application/admin/controller/Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000246s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods` [ RunTime:0.001149s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_goods` LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods` ORDER BY `goods_is_top` DESC,`goods_id` LIMIT 0,10 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_goods_sort` [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_goods_sort` WHERE  `sort_status` = 1 ORDER BY `sort_rank` DESC [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT `sort_name` FROM `xin_goods_sort` WHERE  `sort_id` = 1 LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SELECT `sort_name` FROM `xin_goods_sort` WHERE  `sort_id` = 2 LIMIT 1 [ RunTime:0.000132s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:40+08:00 ] 101.227.139.178 GET dxc.gqwlcm.com/
+[运行时间：0.044650s] [吞吐率：22.40req/s] [内存消耗：2,797.70kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'referer' => 'sogou',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000285s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001145s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000266s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:42+08:00 ] 61.151.178.174 GET dxc.gqwlcm.com/admin
+[运行时间：0.025665s] [吞吐率：38.96req/s] [内存消耗：2,803.98kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'referer' => 'sogou',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000264s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001122s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000260s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:49+08:00 ] 61.129.7.235 GET dxc.gqwlcm.com/admin/login/login.html
+[运行时间：0.026455s] [吞吐率：37.80req/s] [内存消耗：2,835.66kb] [文件加载：60]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'referer' => 'sogou',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /www/wwwroot/ledigou/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/login/login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000252s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001077s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000248s ]
+---------------------------------------------------------------
+[ 2019-08-23T13:22:52+08:00 ] 101.89.19.197 GET dxc.gqwlcm.com/admin/index/index.html
+[运行时间：0.040311s] [吞吐率：24.81req/s] [内存消耗：2,804.16kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'referer' => 'sogou',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000253s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001126s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.000264s ]
+---------------------------------------------------------------
+[ 2019-08-23T14:46:21+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/
+[运行时间：0.021197s] [吞吐率：47.18req/s] [内存消耗：2,061.78kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T14:46:21+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/index/wechat/login.html
+[运行时间：0.077928s] [吞吐率：12.83req/s] [内存消耗：2,676.40kb] [文件加载：55]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T14:46:30+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin
+[运行时间：0.098748s] [吞吐率：10.13req/s] [内存消耗：2,874.33kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->Index[ /www/wwwroot/ledigou/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/index/index.html [ array (
+  0 => 'adminmenu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000265s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_menu` [ RunTime:0.001338s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_status` = 1  AND `menu_parent` = 0 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.028493s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 1  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 5  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 18  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 10  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 12  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 14  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 16  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 22  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 24  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 26  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 29  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000232s ]
+---------------------------------------------------------------
+[ 2019-08-23T14:46:30+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/index/welcome.html
+[运行时间：0.018476s] [吞吐率：54.12req/s] [内存消耗：2,016.45kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->Welcome[ /www/wwwroot/ledigou/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/index/welcome.html [ array (
+  0 => 'Greetings',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T14:46:32+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/rotate/index.html
+[运行时间：0.158797s] [吞吐率：6.30req/s] [内存消耗：2,867.62kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rotate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Rotate->index[ /www/wwwroot/ledigou/application/admin/controller/Rotate.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/rotate/index.html [ array (
+  0 => 'condition',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000260s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_rotate` [ RunTime:0.024879s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_rotate` LIMIT 1 [ RunTime:0.002068s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_rotate` ORDER BY `rotate_rank` DESC LIMIT 0,15 [ RunTime:0.000229s ]
+---------------------------------------------------------------
+[ 2019-08-23T14:46:33+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/rotate/index.html?page=1&limit=10
+[运行时间：0.026340s] [吞吐率：37.97req/s] [内存消耗：2,806.95kb] [文件加载：60]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rotate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sq74it60hjdg469d6ltbv5fmi5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://dxc.gqwlcm.com/admin/rotate/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Rotate->index[ /www/wwwroot/ledigou/application/admin/controller/Rotate.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000257s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_rotate` [ RunTime:0.001160s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_rotate` LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_rotate` ORDER BY `rotate_rank` DESC LIMIT 0,10 [ RunTime:0.000208s ]
+---------------------------------------------------------------
+[ 2019-08-23T14:50:27+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/
+[运行时间：0.066588s] [吞吐率：15.02req/s] [内存消耗：2,778.59kb] [文件加载：58]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://161.117.4.120:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000276s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_config` [ RunTime:0.001351s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_config` WHERE  `config_id` = 1 LIMIT 1 [ RunTime:0.038882s ]
+---------------------------------------------------------------
+[ 2019-08-23T14:50:27+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/index/wechat/login.html
+[运行时间：0.022093s] [吞吐率：45.26req/s] [内存消耗：2,637.91kb] [文件加载：54]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'wechat',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://161.117.4.120:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Wechat->Login[ /www/wwwroot/ledigou/application/index/controller/Wechat.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T14:50:37+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin
+[运行时间：0.019598s] [吞吐率：51.03req/s] [内存消耗：2,029.09kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T14:50:37+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/login/login.html
+[运行时间：0.023439s] [吞吐率：42.66req/s] [内存消耗：2,675.97kb] [文件加载：59]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /www/wwwroot/ledigou/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/login/login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T14:50:43+08:00 ] 113.128.88.140 POST dxc.gqwlcm.com/admin/login/login.html
+[运行时间：0.102914s] [吞吐率：9.72req/s] [内存消耗：2,797.45kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://dxc.gqwlcm.com/admin/login/login.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://dxc.gqwlcm.com',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '34',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '18365976266',
+  'password' => '123456',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /www/wwwroot/ledigou/application/admin/controller/Login.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000271s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_member` [ RunTime:0.001444s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_member` WHERE  `member_mobile` = '18365976266' LIMIT 1 [ RunTime:0.032327s ]
+[ sql ] [ SQL ] UPDATE `xin_member`  SET `member_last_ip`='113.128.88.140',`member_last_time`=1566543043  WHERE  `member_id` = 1 [ RunTime:0.003136s ]
+---------------------------------------------------------------
+[ 2019-08-23T14:50:46+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/index/index.html
+[运行时间：0.030593s] [吞吐率：32.69req/s] [内存消耗：2,875.09kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://dxc.gqwlcm.com/admin/login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->Index[ /www/wwwroot/ledigou/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/index/index.html [ array (
+  0 => 'adminmenu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000252s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_menu` [ RunTime:0.001128s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_status` = 1  AND `menu_parent` = 0 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 1  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 5  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 18  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 10  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 12  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 14  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 16  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 22  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 24  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 26  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_menu` WHERE  `menu_parent` = 29  AND `menu_status` = 1 ORDER BY `menu_rank` DESC LIMIT 0,100 [ RunTime:0.000205s ]
+---------------------------------------------------------------
+[ 2019-08-23T14:50:46+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/index/welcome.html
+[运行时间：0.018783s] [吞吐率：53.24req/s] [内存消耗：2,016.45kb] [文件加载：52]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://dxc.gqwlcm.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->Welcome[ /www/wwwroot/ledigou/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/index/welcome.html [ array (
+  0 => 'Greetings',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-23T14:50:49+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/rotate/index.html
+[运行时间：0.027122s] [吞吐率：36.87req/s] [内存消耗：2,867.87kb] [文件加载：61]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rotate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://dxc.gqwlcm.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Rotate->index[ /www/wwwroot/ledigou/application/admin/controller/Rotate.php ]
+[ info ] [ VIEW ] /www/wwwroot/ledigou/public/../application/admin/view/rotate/index.html [ array (
+  0 => 'condition',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000249s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_rotate` [ RunTime:0.001229s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_rotate` LIMIT 1 [ RunTime:0.000182s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_rotate` ORDER BY `rotate_rank` DESC LIMIT 0,15 [ RunTime:0.000197s ]
+---------------------------------------------------------------
+[ 2019-08-23T14:50:49+08:00 ] 113.128.88.140 GET dxc.gqwlcm.com/admin/rotate/index.html?page=1&limit=10
+[运行时间：0.025894s] [吞吐率：38.62req/s] [内存消耗：2,806.95kb] [文件加载：60]
+[ info ] [ LANG ] /www/wwwroot/ledigou/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'rotate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=c8jdo307pi0lu51c2l7370nsop',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://dxc.gqwlcm.com/admin/rotate/index.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'dxc.gqwlcm.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Rotate->index[ /www/wwwroot/ledigou/application/admin/controller/Rotate.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000255s ] mysql:host=localhost;dbname=ledigou;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `xin_rotate` [ RunTime:0.001134s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `xin_rotate` LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ SQL ] SELECT * FROM `xin_rotate` ORDER BY `rotate_rank` DESC LIMIT 0,10 [ RunTime:0.000222s ]

@@ -1,0 +1,70 @@
+<link href="__STATIC__/index/css/mui.min.css" rel="stylesheet">
+<link href="__STATIC__/index/css/iconfont.css" rel="stylesheet" >
+<link href="__STATIC__/index/css/style.css" rel="stylesheet" >
+
+<nav class="mui-bar mui-bar-tab">
+  <a class="mui-tab-item" id="c-index">
+    <span class="mui-icon iconfont">&#xe605;</span>
+    <span class="mui-tab-label">商品列表</span>
+  </a>
+  <a class="mui-tab-item" id="c-index2">
+    <span class="mui-icon iconfont">&#xe6a2;</span>
+    <span class="mui-tab-label">商品发布</span>
+  </a>
+  <a class="mui-tab-item" id="c-index3">
+    <span class="mui-icon iconfont">&#xe60d;</span>
+    <span class="mui-tab-label">推广记录</span>
+  </a>
+  <a class="mui-tab-item mui-active" id="c-index4">
+    <span class="mui-icon iconfont">&#xe81e;</span>
+    <span class="mui-tab-label">佣金汇总</span>
+  </a>
+</nav>
+<script src="__STATIC__/index/js/mui.min.js"></script>
+<script src="__STATIC__/index/js/jquery.min.js"></script>
+<script src="__STATIC__/layui/layui.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script>
+  //打开关于页面
+  document.getElementById('c-index').addEventListener('tap', function() {
+    mui.openWindow({
+      url: "{:url('Head/GoodsList')}", 
+      id:'c-index' 
+    });
+  });
+  document.getElementById('c-index2').addEventListener('tap', function() {  
+    mui.openWindow({
+      url: "{:url('head/release')}", 
+      id:'c-index2' 
+    });
+  });
+  document.getElementById('c-index3').addEventListener('tap', function() {
+    mui.openWindow({
+      url: "{:url('head/order')}",  
+      id:'c-index3' 
+    });
+  });
+  document.getElementById('c-index4').addEventListener('tap', function() {
+    mui.openWindow({
+      url: "{:url('head/income')}", 
+      id:'c-index4'
+    });
+  });
+
+  $(function(){
+
+    var url = window.location.href;
+
+    $(".mui-tab-item").removeClass('mui-active');
+    
+    if(url.indexOf('head/goodslist') != -1)
+      $("#c-index").addClass('mui-active');
+    else if(url.indexOf('head/release') != -1)
+      $("#c-index2").addClass('mui-active');
+    else if(url.indexOf('head/order') != -1)
+      $("#c-index3").addClass('mui-active');
+    else
+      $("#c-index4").addClass('mui-active');
+  })
+
+</script>

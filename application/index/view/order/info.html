@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>订单详情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--标准mui.css-->
+  <link href="__STATIC__/index/css/mui.min.css" rel="stylesheet">
+  <link href="__STATIC__/index/css/iconfont.css" rel="stylesheet" >
+  <link href="__STATIC__/index/css/style.css" rel="stylesheet" >
+</head>
+<style>
+.mui-table-view-cell{border-bottom: 1px solid #f0eef1}
+</style>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+      <h1 class="mui-title">订单详情</h1>
+		</h1>
+	</header>
+  <div class="mui-content">
+		  <!-- 订单详情 -->
+      <div class="rider-detail">
+          <!-- 第一块 商品信息 -->
+          <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                  <span>商品信息</span>
+              </li>
+              {if $order.order_desc == '商品购买'}
+                {volist name="item" id="items"}
+                  <li class="mui-table-view-cell">
+                      <span>{$items.goods_name}</span>
+                      <span><span style="margin-right: 130px">x{$items.item_number}</span>￥{$items.item_money}</span>
+                  </li>
+                {/volist}
+              {else/}
+                <li class="mui-table-view-cell">
+                      <span>{$task.task_title}</span>
+                  </li>
+              {/if}
+              <li class="mui-table-view-cell">
+                  <span>联系方式</span>
+                  <span>{$task.task_pickupmobile}</span>
+              </li>
+              <li class="mui-table-view-cell">
+                  <span>取货地址</span>
+                  <span>{$task.task_pickupaddress}</span>
+              </li>
+          </ul>
+          <div class="c-hui"></div>
+
+          <!-- 第二块 配送信息 -->
+          <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                  <span>配送信息</span>
+              </li>
+              <li class="mui-table-view-cell">
+                  <span>联系人</span>
+                  <span>{$user}</span>
+              </li>
+              <li class="mui-table-view-cell">
+                  <span>联系方式</span>
+                  <span>{$task.task_shippingmobile}</span>
+              </li>
+              <li class="mui-table-view-cell">
+                  <span>收货地址</span>
+                  <span>{$task.task_shippingaddress}</span>
+              </li>
+          </ul>
+          <div class="c-hui"></div>
+          
+          <!-- 第三块 佣金 -->
+          <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                  <span>佣金</span>
+                  <span style="color: #b32124">￥{$task.task_price}</span>
+              </li>
+          </ul>
+          <div class="c-hui"></div>
+
+          <!-- 第四块 订单信息 -->
+          <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                  <span>订单信息</span>
+              </li>
+              <li class="mui-table-view-cell">
+                  <span>订单编号</span>
+                  <span>{$order.order_sn}</span>
+              </li>
+              <li class="mui-table-view-cell">
+                  <span>下单时间</span>
+                  <span>{$order.order_time}</span>
+              </li>
+<!--               <li class="mui-table-view-cell">
+                  <span>取货时间</span>
+                  <span>2017-10-12 20:35:15</span>
+              </li> -->
+              <li class="mui-table-view-cell">
+                  <span>订单状态</span>
+                  <!-- 情况一 : 已完成 -->
+                  <span style="color: #b32124">
+                    {if $task.task_schedule eq 0} 未接单 {elseif $task.task_schedule eq 10} 待取货 {elseif $task.task_schedule eq 20} 配送中 {else/} 已完成  {/if}
+                  </span>
+                  <!-- 情况二 : 配送中 (ps: 这种情况时下面的送达时间为空白) -->
+                  <!-- <span style="color: #b32124">配送中</span> -->
+              </li>
+              <li class="mui-table-view-cell">
+                  <span>送达时间</span>
+                  <span>{if $task.task_complete != 0} {:date('Y-m-d H:i:s',$task.task_complete)} {else/} 未送达 {/if}</span>
+              </li>
+          </ul>
+          
+          <!-- 第五部分 备注 -->
+          <div class="beizhu">
+              <p>备注</p>
+              <textarea disabled>{$task.task_desc}</textarea>
+
+              {if $task.task_schedule == 0}
+                <button type="button" class="mui-btn xiadan-btn detail-btn GrabTheOrder" data-id="{$task.task_id}">点击抢单</button>
+              {/if}
+
+              {if $task.task_ordersuser eq $Think.session.user.user_id}
+
+                {if $task.task_schedule eq 10}
+                  <button type="button" class="mui-btn xiadan-btn detail-btn changeSchedule" data-id="{$task.task_id}" data-schedule="{$task.task_schedule}">已取货</button>
+                {elseif $task.task_schedule eq 20}
+                  <button type="button" class="mui-btn xiadan-btn detail-btn changeSchedule" data-id="{$task.task_id}" data-schedule="{$task.task_schedule}">已送达</button>
+                {elseif $task.task_schedule eq 30}
+                  <button type="button" class="mui-btn xiadan-btn detail-btn">已完成</button>
+                {/if}
+
+              {/if}
+          </div>
+      </div>
+	</div>
+
+</body>
+<script src="__STATIC__/index/js/mui.min.js"></script>
+<script src="__STATIC__/index/js/jquery.min.js"></script>
+<script src="__STATIC__/layui/layui.js"></script>
+<script>
+  layui.use('layer', function(){
+    var layer = layui.layer;
+
+    $(".GrabTheOrder").click(function(){
+      $.ajax({
+        url:"{:url('GrabTheOrder')}",
+        type:"GET",
+        data:{task_id:$(this).attr('data-id')},
+        success:function(res){
+          layer.msg(res.msg);
+          if(res.code)
+            setTimeout(function(){window.location.reload()},2000);
+        },error:function(){
+          layer.msg('抢单失败');
+        }
+      })
+    });
+
+    $(".changeSchedule").click(function(){
+      $.ajax({
+        url:"{:url('changeSchedule')}",
+        type:"GET",
+        data:{task_id:$(this).attr('data-id'),schedule:$(this).attr('data-schedule')},
+        success:function(res){
+          layer.msg(res.msg);
+          if(res.code)
+            setTimeout(function(){window.location.reload()},2000);
+        },error:function(){
+          layer.msg('操作失败，请刷新重试');
+        }
+      })
+    });
+
+  });
+</script>
