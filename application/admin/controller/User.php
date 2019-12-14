@@ -2,6 +2,7 @@
 
 namespace app\admin\controller;
 
+use think\Config;
 use app\admin\model\Task;
 use app\admin\model\Order;
 use app\admin\model\Wallet;
@@ -438,12 +439,12 @@ class User extends LoginBase
         return $data;
     }
 
-
-
+    // 物流接口测试
     public function test()
     {
-        $uName = "dev_tester9";
-        $uToken = "5f4824273ccca103a9cdb2841369beef";
+        $uName = Config::get('boudata.uName');
+        $uToken = Config::get('boudata.uToken');
+        $url = Config::get('boudata.url');
         $timestamp = date("Y-m-d H:i:s", time());
         $uSign = md5($uToken . $timestamp);
 
@@ -453,74 +454,9 @@ class User extends LoginBase
         $data['timestamp'] = $timestamp;
         $data['params'] = '{"ccode":"Erp0000004","code":"Erp0000004","send_man":"张三","send_phone":"18767166222","send_province":"浙江省","send_city":"杭州市","send_district":"江干区","send_town":"","send_street_no":"11","receive_man":"李四","receive_phone":"18767166333","receive_province":"江苏省","receive_city":"扬州市","receive_district":"高邮市","receive_town":"","receive_street_no":"22","amount":1,"volume":10.00,"weight":10.00,"service_mode":"派送","insurance_limit":10.00,"pay_type":"寄付","cod":10.00,"if_visit":true,"if_fast":"","remark":"","settle_type":"1"}';
 
-        $url = "http://tms.boudata.com/tss/tms/api/order/create";
-//        $res = $this->curl($url, $data);
-        $res = $this->curl_request($url, $data);
+        $res = $this->curl($url, $data);
         dump($res);die;
     }
-
-    function curl_request($url,$post='',$cookie='', $returnCookie=0)
-    {
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)');
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($curl, CURLOPT_AUTOREFERER, 1);
-        curl_setopt($curl, CURLOPT_REFERER, "http://XXX");
-        if($post) {
-            curl_setopt($curl, CURLOPT_POST, 1);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($post));
-        }
-        if($cookie) {
-            curl_setopt($curl, CURLOPT_COOKIE, $cookie);
-        }
-        curl_setopt($curl, CURLOPT_HEADER, $returnCookie);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE );
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE );
-
-        $data = curl_exec($curl);
-
-        if (curl_errno($curl)) {
-            return $data;
-        }
-        curl_close($curl);
-        if($returnCookie){
-            list($header, $body) = explode("\r\n\r\n", $data, 2);
-            preg_match_all("/Set\-Cookie:([^;]*);/", $header, $matches);
-            $info['cookie']  = substr($matches[1][0], 1);
-            $info['content'] = $body;
-            return $info;
-        }else{
-            return $data;
-        }
-    }
-
-
-    function http_post($url, $data_string) {
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-                'X-AjaxPro-Method:ShowList',
-                'Content-Type: application/json; charset=utf-8',
-                'Content-Length: ' . strlen($data_string))
-        );
-        curl_setopt($curl, CURLOPT_POST, 1);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
-
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE );
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE );
-
-
-        $data = curl_exec($curl);
-        curl_close($curl);
-        return $data;
-    }
-
 
     //请求方法
     public function curl($url,$data=array())

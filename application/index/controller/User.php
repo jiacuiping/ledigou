@@ -99,4 +99,12 @@ class User extends LoginBase
 		$this->assign('data',$data);
 		return view();
 	}
+
+    //提示信息页面
+    public function mess()
+    {
+        $mess = input('param.mess');
+        $this->assign('data',$mess);
+        return view();
+    }
 }

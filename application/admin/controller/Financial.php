@@ -53,12 +53,6 @@ class Financial extends LoginBase
             $map['order_desc'] = $type;
         }
 
-        $ispay = input('param.ispay');
-        if($ispay && $ispay !== ""){
-            $condition['ispay'] = $ispay;
-            $map['order_ispay'] = $ispay;
-        }
-
         $time = input('param.time');
         if($time && $time !== ""){
             $condition['time'] = $time;
@@ -83,7 +77,7 @@ class Financial extends LoginBase
         $summary['order_num'] = $count;  // 订单总数
         $orderMoney = $this->Order->GetField(['order_status' => ['in', '10, 20, 30, 35, 40']], 'sum(order_money)'); // 订单总额
         $summary['order_money'] = round($orderMoney, 2); // 订单总额
-        $summary['order_type1'] = $this->Order->GetCount(['order_desc' => '跑腿任务']); // 跑腿
+        $summary['order_type1'] = $this->Order->GetCount(['order_desc' => '跑腿任务']);
         $summary['order_type2'] = $this->Order->GetCount(['order_desc' => '商品购买']);
 
         if(input('page'))

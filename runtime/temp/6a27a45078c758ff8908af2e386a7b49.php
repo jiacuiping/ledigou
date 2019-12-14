@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\financial\order.html";i:1575971745;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\financial\order.html";i:1576030301;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -166,56 +166,10 @@
             });
 
 
-            $("#create").click(function(){
-                layer.open({
-                    type: 2
-                    ,title:'添加轮播图'
-                    ,content: "<?php echo url('create'); ?>"
-                    ,shadeClose: true
-                    ,area: ['70%', '71%']
-                    ,maxmin: true
-                });
-            });
-
             $("#keyword").click(function(){
                 RenderingTable($("#statusSelect").val(),$("#myform").serializeArray());
             });
 
-            //监听工具条
-            table.on('tool(test-table-form)', function(obj){
-
-                if(obj.data.member_group == 1)
-                    layer.msg('超级管理员不允许修改或删除');
-                else{
-                    var dataid = obj.data.order_id;
-                    if(obj.event === 'update'){
-                        var url = "<?php echo url('update','',false); ?>/id/" + dataid;
-                        layer.open({
-                            type: 2
-                            ,title:'查看订单'
-                            ,content: url
-                            ,shadeClose: true
-                            ,area: ['70%', '80%']
-                            ,maxmin: true
-                        });
-                    } else if(obj.event === 'del'){
-                        // var url = "<?php echo url('delete','',false); ?>/id/" + dataid;
-                        // layer.confirm('您确定要删除该订单吗？', function(index){
-                        //     $.ajax({
-                        //         url:url,
-                        //         success:function(res){
-                        //             layer.msg(res.msg);
-                        //             if(res.code)
-                        //                 setTimeout(function(){window.location.reload()},2000);
-                        //         },error:function(){
-                        //             layer.msg('服务器错误，请稍后重试！');
-                        //         }
-                        //     })
-                        //     layer.close(index);
-                        // });
-                    }
-                }
-            });
 
             //筛选
             function RenderingTable(status=-1,where=array())

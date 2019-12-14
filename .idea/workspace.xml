@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d82e489c-408b-4bbd-a93d-daeab8b8c1df" name="Default Changelist" comment="" />
+    <list default="true" id="d82e489c-408b-4bbd-a93d-daeab8b8c1df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/application/index/view/user/mess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/Financial.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Financial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Wechat.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Wechat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/6a27a45078c758ff8908af2e386a7b49.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/6a27a45078c758ff8908af2e386a7b49.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ad97cc621f0c2d366fc8a8aba95778fd.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/ad97cc621f0c2d366fc8a8aba95778fd.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,15 +73,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/admin/view/financial" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/index/view/user" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\view" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\phpstudy_pro\WWW\ledigou\application\index\view\user" />
       <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\view\financial" />
       <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\phpstudy_pro\WWW\ledigou\application\index\view\user" />
+      <recent name="D:\phpstudy_pro\WWW\ledigou\application\index\view\index" />
+      <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\view" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -99,22 +111,53 @@
       <updated>1575885628781</updated>
       <workItem from="1575885638231" duration="185000" />
       <workItem from="1575938615908" duration="27763000" />
-      <workItem from="1576026587938" duration="22810000" />
+      <workItem from="1576026587938" duration="24010000" />
+      <workItem from="1576112950537" duration="23106000" />
+      <workItem from="1576198651562" duration="27813000" />
+      <workItem from="1576284054220" duration="20653000" />
     </task>
+    <task id="LOCAL-00001" summary="卜数物流接口设置">
+      <created>1576144084853</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576144084853</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="卜数物流接口设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="卜数物流接口设置" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576144030754">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576144030754" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575969361145">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575969361145" />
-    <state x="651" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1576026590143">
+    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1576144083370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="651" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576026590143" />
+    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576144083370" />
+    <state x="776" y="443" key="NewPhpFileDialog" timestamp="1576137799269">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="776" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576137799269" />
+    <state x="651" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1576284062147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="651" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576284062147" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1576292615386">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576292615386" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1576041438718">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

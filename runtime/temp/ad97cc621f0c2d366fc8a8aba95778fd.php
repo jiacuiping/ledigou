@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\order\update.html";i:1575961982;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\order\update.html";i:1575971793;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -262,8 +262,6 @@
                     })
                 });
             });
-
-
         </script>
     </body>
 </html>
