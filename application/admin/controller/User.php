@@ -76,10 +76,18 @@ class User extends LoginBase
         foreach ($data as $key => $value) {
 
             if($type != 1){
+                // 骑手状态
                 if($value['user_review'] == 0)
                     $data[$key]['user_review'] = "<button type='button' class='layui-btn layui-btn-normal review' data-id=".$value['user_id'].">未审核</button>";
                 else
                     $data[$key]['user_review'] = $value['user_review'] == 1 ? "<button type='button' class='layui-btn layui-btn-normal'>审核通过</button>" : "<button type='button' class='layui-btn layui-btn-danger'>审核未通过</button>";
+
+                // 团长状态
+                if($value['user_review_head'] == 0)
+                    $data[$key]['user_review_head'] = "<button type='button' class='layui-btn layui-btn-normal review_head' data-id=".$value['user_id'].">未审核</button>";
+                else
+                    $data[$key]['user_review_head'] = $value['user_review_head'] == 1 ? "<button type='button' class='layui-btn layui-btn-normal'>审核通过</button>" : "<button type='button' class='layui-btn layui-btn-danger'>审核未通过</button>";
+
             }
 
             $data[$key]['user_school'] = $this->School->GetField(array('school_id'=>$value['user_school']),'school_name');
@@ -126,6 +134,24 @@ class User extends LoginBase
         if($user['user_review'] != 0) return array('code'=>0,'msg'=>'用户已审核');
 
         return $this->User->UpdateData(array('user_id'=>$id,'user_review'=>$status));
+    }
+
+    //审核用户
+    public function reviewHead()
+    {
+        $id = input('post.id');
+
+        $status = input('post.status');
+
+        $user = $this->User->GetOneDataById($id);
+
+        if(!$user) return array('code'=>0,'msg'=>'用户不存在');
+
+        if($user['user_type'] == 1 || $user['user_type'] == 2) return array('code'=>0,'msg'=>'用户不需要审核');
+
+        if($user['user_review_head'] != 0) return array('code'=>0,'msg'=>'用户已审核');
+
+        return $this->User->UpdateData(array('user_id'=>$id,'user_review_head'=>$status));
     }
 
     //查看用户

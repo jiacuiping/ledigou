@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\user\index.html";i:1575944384;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\user\index.html";i:1576477525;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -140,7 +140,7 @@
                             ,{field:'user_parent', title:'团长来源'}
                             // ,{field:'user_avatar', title:'团长头像'}
                             ,{field:'user_school', title:'所属学校', minWidth:80, sort: true}
-                            ,{field:'user_review', title:'审核状态', width:150, unresize: true}
+                            ,{field:'user_review_head', title:'审核状态', width:150, unresize: true}
                             ,{field:'PurchaseRecord', title:'订单记录', width:150, unresize: true}
                             ,{field:'ShoreRecord', title:'分享记录', width:150, unresize: true}
                             ,{field:'CommissionRecord', title:'佣金记录', width:150, unresize: true}
@@ -272,7 +272,7 @@
                 });
             });
 
-            //审核用户
+            //审核骑手
             $("body").on('click','.review',function(){
 
                 var id = $(this).attr('data-id');
@@ -292,6 +292,38 @@
             {
                 $.ajax({
                     url:"<?php echo url('review'); ?>",
+                    type:"POST",
+                    data:{id:id,status:status},
+                    success:function(res){
+                        layer.msg(res.msg);
+                        if(res.code == 1)
+                            setTimeout(function(){window.location.reload()},1000);
+                    },error:function(){
+                        layer.msg('服务器错误，请稍后重试！');
+                    }
+                })
+            }
+
+            //审核团长
+            $("body").on('click','.review_head',function(){
+
+                var id = $(this).attr('data-id');
+
+                layer.confirm('审核之后不可取消，您确定要审核用户吗？', {
+                    btn: ['通过','拒绝'] //按钮
+                }, function(){
+                    review_head(id,1);
+                }, function(){
+                    review_head(id,-1);
+                });
+
+            });
+
+
+            function review_head(id,status)
+            {
+                $.ajax({
+                    url:"<?php echo url('reviewhead'); ?>",
                     type:"POST",
                     data:{id:id,status:status},
                     success:function(res){

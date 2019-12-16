@@ -39,8 +39,6 @@ class Login extends LoginBase
 			if(!CheckIdCard($data['user_idcard'])) return array('code'=>0,'msg'=>'请输入正确的身份证号');
 			if($this->User->GetOneData(array('user_idcard'=>$data['user_idcard']))) return array('code'=>0,'msg'=>'该身份证已注册');
 
-			$data['user_id'] = session::get('user.user_id');
-
 			$userresult = $this->User->UpdateData($data);
 
 			if($userresult['code']){
@@ -54,8 +52,8 @@ class Login extends LoginBase
 					);
 					db('address')->insert($address);
 				}
-				
-				return array('code'=>1,'msg'=>'申请信息已提交，等待后台审核');
+                $this->redirect(url('user/mess',['mess'=>"申请信息已提交，等待后台审核"]));
+//				return array('code'=>1,'msg'=>'申请信息已提交，等待后台审核');
 			}else
 				return array('code'=>0,'msg'=>$userresult['msg']);
 			
@@ -64,7 +62,7 @@ class Login extends LoginBase
 			if($type != 2 && $type != 3) return json_encode(array('code'=>0,'msg'=>'参数错误'));
 
 
-			$user = $this->User->GetOneData(array('user_openid'=>session::get('user.user_openid')));
+			$user = $this->User->GetOneData(array('user_openid'=>session::get('user')));
 
 			if(!$user) $this->redirect('Wechat/Login');
 
@@ -73,7 +71,20 @@ class Login extends LoginBase
 			$this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
 			$this->assign('name',$type == 2 ? '骑手' : '团长');
 			$this->assign('type',$type);
-			return view();	
+			$this->assign('user_id',$user['user_id']);
+			return view();
 		}
 	}
+
+	// 申请团长
+	public function applyHead ()
+    {
+
+    }
+
+    // 申请骑手
+    public function applyTask ()
+    {
+
+    }
 }

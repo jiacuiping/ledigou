@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d82e489c-408b-4bbd-a93d-daeab8b8c1df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/index/view/user/mess.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/Financial.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Financial.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/rotate/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/rotate/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/rotate/update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Wechat.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Wechat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/6a27a45078c758ff8908af2e386a7b49.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/6a27a45078c758ff8908af2e386a7b49.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/ad97cc621f0c2d366fc8a8aba95778fd.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/ad97cc621f0c2d366fc8a8aba95778fd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/login/registered.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/login/registered.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/17c82c8ebc1dde6826ccb17364fa65d5.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/17c82c8ebc1dde6826ccb17364fa65d5.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +117,8 @@
       <workItem from="1576026587938" duration="24010000" />
       <workItem from="1576112950537" duration="23106000" />
       <workItem from="1576198651562" duration="27813000" />
-      <workItem from="1576284054220" duration="20653000" />
+      <workItem from="1576284054220" duration="22205000" />
+      <workItem from="1576460105734" duration="17622000" />
     </task>
     <task id="LOCAL-00001" summary="卜数物流接口设置">
       <created>1576144084853</created>
@@ -150,10 +154,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="776" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576137799269" />
-    <state x="651" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1576284062147">
+    <state x="651" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1576460108653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="651" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576284062147" />
+    <state x="651" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576460108653" />
+    <state x="636" y="127" width="647" height="786" key="find.popup" timestamp="1576463777827">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="127" width="647" height="786" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576463777827" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1576292615386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

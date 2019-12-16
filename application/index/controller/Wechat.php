@@ -76,7 +76,6 @@ class Wechat extends Base
             $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this->appid."&secret=".$this->appsecret."&code=$code&grant_type=authorization_code";
             $data =  $this->curl($url);
             session::set('access_token',$data['access_token']);
-            session::set('user',$data['openid']);
             Cookie::set('openid',$data['openid']);
             return $data;
         } else {
@@ -90,6 +89,7 @@ class Wechat extends Base
         $data = $this->curl($url);
         if(isset($data['openid'])) {
             // 授权成功
+            session::set('user',$data['openid']);
             return $data;
         } else {
             $this->error('授权失败');
@@ -138,25 +138,26 @@ class Wechat extends Base
     public function userIndex($user) {
         // 判断用户状态
         if($user['user_status'] != 1) {
-            $this->redirect(url('user/mess',['mess'=>"您的账号被禁用，请联系管理员"]));//分享商品
+            $this->redirect(url('user/mess',['mess'=>"您的账号被禁用，请联系管理员"]));
 //                $this->error('此用户已被禁用', "user/mess");//被禁用 跳转到被禁用页面
+        }
+
+        if ($user['user_type'] == 1) { // 普通用户
+            $this->redirect(url('login/Registered'));
         }
 
         // 判断审核状态
         if($user['user_review'] != 1) {
             $this->redirect(url('user/mess',['mess'=>"您的账号还未通过审核，请耐心等候"]));//分享商品
-//                $this->error('您未通过审核，请稍后重试！', 'user/index');
         }
 
         // 用户状态正常，根据用户类型跳转页面
-        if ($user['user_type'] == 1) { // 普通用户
-            echo "普通用户";die;
-        } else if ($user['user_type'] == 2) { // 骑手
+        if ($user['user_type'] == 2) { // 骑手
             $this->redirect(url('user/index'));
         } else if ($user['user_type'] == 3) { // 团长
             $this->redirect(url('head/goodslist'));
         } else {
-            $this->redirect(url('login/Registered'));//未审核或者用户
+            $this->redirect(url('login/Registered')); //未审核或者用户
         }
     }
 
