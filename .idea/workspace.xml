@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d82e489c-408b-4bbd-a93d-daeab8b8c1df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/rotate/create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/rotate/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/rotate/update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/goods/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/goods/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/goods/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/goods/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/limited/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/limited/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/limited/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/limited/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Goods.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Wechat.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Wechat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/login/registered.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/login/registered.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/user/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/17c82c8ebc1dde6826ccb17364fa65d5.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/17c82c8ebc1dde6826ccb17364fa65d5.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,18 +73,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/index/view/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/admin/view/prize" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\phpstudy_pro\WWW\ledigou\application\index\view\user" />
-      <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\view\financial" />
-      <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\controller" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\phpstudy_pro\WWW\ledigou\application\index\view\user" />
       <recent name="D:\phpstudy_pro\WWW\ledigou\application\index\view\index" />
       <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\view" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\view\prize" />
+      <recent name="D:\phpstudy_pro\WWW\ledigou\application\index\view\user" />
+      <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\view\financial" />
+      <recent name="D:\phpstudy_pro\WWW\ledigou\application\admin\controller" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -118,7 +116,7 @@
       <workItem from="1576112950537" duration="23106000" />
       <workItem from="1576198651562" duration="27813000" />
       <workItem from="1576284054220" duration="22205000" />
-      <workItem from="1576460105734" duration="17622000" />
+      <workItem from="1576460105734" duration="25057000" />
     </task>
     <task id="LOCAL-00001" summary="卜数物流接口设置">
       <created>1576144084853</created>

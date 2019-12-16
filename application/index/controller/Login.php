@@ -58,33 +58,43 @@ class Login extends LoginBase
 				return array('code'=>0,'msg'=>$userresult['msg']);
 			
 		}else{
-
 			if($type != 2 && $type != 3) return json_encode(array('code'=>0,'msg'=>'参数错误'));
-
 
 			$user = $this->User->GetOneData(array('user_openid'=>session::get('user')));
 
-			if(!$user) $this->redirect('Wechat/Login');
-
+            if(!$user) $this->redirect('Wechat/Login');
 			//if($user['user_type'] == $type) return json_encode(array('code'=>0,'msg'=>'您已提交申请'));
-
-			$this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
-			$this->assign('name',$type == 2 ? '骑手' : '团长');
-			$this->assign('type',$type);
-			$this->assign('user_id',$user['user_id']);
-			return view();
+            $this->userIndex($user, $type);
 		}
 	}
 
-	// 申请团长
-	public function applyHead ()
-    {
+    public function userIndex($user, $type = 2) {
+        // 判断用户状态
+        if($user['user_status'] != 1) {
+            $this->redirect(url('user/mess',['mess'=>"您的账号被禁用，请联系管理员"]));
+        }
 
-    }
+        // 如果是骑手
+        if (($user['user_type'] == 2 && $type == 2) || ($user['user_type'] == 4 && $type == 2)) {
+            // 判断审核状态
+            if($user['user_review'] != 1) {
+                $this->redirect(url('user/mess',['mess'=>"您的账号还未通过审核，请耐心等候"]));//分享商品
+            }
+            $this->redirect(url('user/index'));
 
-    // 申请骑手
-    public function applyTask ()
-    {
+        } else if (($user['user_type'] == 3 && $type == 3) || ($user['user_type'] == 4 && $type == 3)) { // 团长
+            // 判断审核状态
+            if($user['user_review_head'] != 1) {
+                $this->redirect(url('user/mess',['mess'=>"您的账号还未通过审核，请耐心等候"]));//分享商品
+            }
+            $this->redirect(url('head/goodslist'));
 
+        } else {
+            $this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
+            $this->assign('name',$type == 2 ? '骑手' : '团长');
+            $this->assign('type',$type);
+            $this->assign('user_id',$user['user_id']);
+            return view();
+        }
     }
 }

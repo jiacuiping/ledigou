@@ -40,7 +40,8 @@ class Wechat extends Base
         if ($openid) {
             $user = $this->User->GetOneData(array('user_openid'=>$openid));
             if ($user) {
-                $this->userIndex($user);
+                $login = new Login();
+                $login->userIndex($user);
             }
         } else {
             // 判断有没有code，有使用code换取access_token，没有去获取code。
@@ -130,36 +131,11 @@ class Wechat extends Base
                 $this->redirect(url('login/Registered'));
             }
         } else {
-            $this->userIndex($user);
+            $login = new Login();
+            $login->userIndex($user);
         }
     }
 
-
-    public function userIndex($user) {
-        // 判断用户状态
-        if($user['user_status'] != 1) {
-            $this->redirect(url('user/mess',['mess'=>"您的账号被禁用，请联系管理员"]));
-//                $this->error('此用户已被禁用', "user/mess");//被禁用 跳转到被禁用页面
-        }
-
-        if ($user['user_type'] == 1) { // 普通用户
-            $this->redirect(url('login/Registered'));
-        }
-
-        // 判断审核状态
-        if($user['user_review'] != 1) {
-            $this->redirect(url('user/mess',['mess'=>"您的账号还未通过审核，请耐心等候"]));//分享商品
-        }
-
-        // 用户状态正常，根据用户类型跳转页面
-        if ($user['user_type'] == 2) { // 骑手
-            $this->redirect(url('user/index'));
-        } else if ($user['user_type'] == 3) { // 团长
-            $this->redirect(url('head/goodslist'));
-        } else {
-            $this->redirect(url('login/Registered')); //未审核或者用户
-        }
-    }
 
 
     // ======================================================================================
