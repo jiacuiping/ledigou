@@ -22,10 +22,10 @@ class Head extends LoginBase
 	{
 		parent::__construct();
 
-		if(session::get('user.user_type') != 3)
+		if(session::get('user.user_type') != 3 && session::get('user.user_type') != 4)
 			$this->redirect('Login/Registered',array('type'=>3));
 
-		if(session::get('user.user_review') != 1)
+		if(session::get('user.user_review_head') != 1)
 			$this->error('您的资料未通过审核，请稍后重试');
 
         $this->Order = new Order();

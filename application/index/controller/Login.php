@@ -62,8 +62,11 @@ class Login extends LoginBase
 
 			$user = $this->User->GetOneData(array('user_openid'=>session::get('user')));
 
-            if(!$user) $this->redirect('Wechat/Login');
+            if(!$user) $this->redirect('Wechat/Login', ['type' => $type]);
 			//if($user['user_type'] == $type) return json_encode(array('code'=>0,'msg'=>'您已提交申请'));
+            session::set('user',$user);
+
+
             $this->userIndex($user, $type);
 		}
 	}
@@ -83,6 +86,7 @@ class Login extends LoginBase
             $this->redirect(url('user/index'));
 
         } else if (($user['user_type'] == 3 && $type == 3) || ($user['user_type'] == 4 && $type == 3)) { // 团长
+
             // 判断审核状态
             if($user['user_review_head'] != 1) {
                 $this->redirect(url('user/mess',['mess'=>"您的账号还未通过审核，请耐心等候"]));//分享商品
@@ -90,11 +94,21 @@ class Login extends LoginBase
             $this->redirect(url('head/goodslist'));
 
         } else {
+
             $this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
             $this->assign('name',$type == 2 ? '骑手' : '团长');
             $this->assign('type',$type);
             $this->assign('user_id',$user['user_id']);
             return view();
+
+            /*$schools = $this->School->GetDataList(array('school_status'=>1));
+            $name = $type == 2 ? '骑手' : '团长';
+            return view('registered', [
+                'schools' => $schools,
+                'name' => $name,
+                'type' => $type,
+                'user_id' => $user['user_id']
+            ]);*/
         }
     }
 }

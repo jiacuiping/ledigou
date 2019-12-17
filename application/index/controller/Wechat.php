@@ -33,21 +33,22 @@ class Wechat extends Base
 	//授权登陆
 	public function Login($is_share=0)
 	{
-		$this->is_share = $is_share == 0 ? 0 : $is_share;
+        $this->is_share = $is_share == 0 ? 0 : $is_share;
+        $type = input('param.type');
         ob_start();//打开输出控制缓冲
 
         $openid = Cookie::has('openid') ? Cookie::get('openid') : '';
         if ($openid) {
             $user = $this->User->GetOneData(array('user_openid'=>$openid));
             if ($user) {
+                session::set('user',$user);
                 $login = new Login();
-                $login->userIndex($user);
+                $login->userIndex($user, $type);
             }
         } else {
             // 判断有没有code，有使用code换取access_token，没有去获取code。
             if (!isset($_GET['code'])) {
-                $callback = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']; //微信服务器回调url，这里是本页url
-                $this->get_code($callback);
+                $this->get_code();
             } else {
                 $code = $_GET['code'];
                 // 获取网页授权access_token和用户openid
@@ -55,16 +56,15 @@ class Wechat extends Base
                 // 获取微信用户信息
                 $userInfo = $this->get_user_info($data['access_token'],$data['openid']);
                 // 存储用户
-                $this->saveUser($userInfo);
+                $this->saveUser($userInfo, $type);
             }
         }
 
 	}
 
 	// 获取token
-	public function get_code($callback) {
-//	    $redirectUri = "http://dxc.gqwlcm.com/index/wechat/getcode";
-	    $redirectUri = $callback;
+	public function get_code() {
+	    $redirectUri = "http://dxc.gqwlcm.com/index/wechat/login";
         $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$this->appid."&redirect_uri=" . $redirectUri . "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
         header('Location:'.$url);
         exit();
@@ -90,7 +90,6 @@ class Wechat extends Base
         $data = $this->curl($url);
         if(isset($data['openid'])) {
             // 授权成功
-            session::set('user',$data['openid']);
             return $data;
         } else {
             $this->error('授权失败');
@@ -98,7 +97,7 @@ class Wechat extends Base
     }
 
     // 存储用户信息，创建钱包
-    public function saveUser($data) {
+    public function saveUser($data, $type) {
 	    // 判断当前用户是否已存在
         $user = $this->User->GetOneData(array('user_openid'=>$data['openid']));
 
@@ -131,8 +130,9 @@ class Wechat extends Base
                 $this->redirect(url('login/Registered'));
             }
         } else {
+            session::set('user',$user);
             $login = new Login();
-            $login->userIndex($user);
+            return $login->userIndex($user, $type);
         }
     }
 
