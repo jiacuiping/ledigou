@@ -2,6 +2,7 @@
 
 namespace app\index\controller;
 
+use think\Cookie;
 use think\Session;
 use think\request;
 use app\index\controller\LoginBase;
@@ -27,6 +28,7 @@ class Login extends LoginBase
 	//申请骑手或团长
 	public function Registered($type='2')
 	{
+        Cookie::set('type',$type);
 		if(request()->isPost()){
 
 			$data = input('post.');

@@ -317,7 +317,6 @@ class User extends LoginBase
     // 骑手查看收益记录
     public function pricerecord($id = 0)
     {
-        // 根据团长id获取团长已完成的订单id
         $taskMap = [];
         $taskMap['task_ordersuser'] = $id;
         $taskMap['task_status'] = ['in', '30, 40'];

@@ -2,12 +2,16 @@
 
 namespace app\index\controller;
 
+use app\admin\model\Order;
+use app\admin\model\OrderItem;
+use think\Cookie;
 use think\Session;
 use think\request;
 use app\index\controller\LoginBase;
 use app\admin\model\User as UserModel;
 use app\admin\model\School;
 use app\admin\model\Task;
+use app\admin\model\Cash;
 
 /**
  * 前台基础方法（Justin：2019-03-12）
@@ -18,12 +22,14 @@ class User extends LoginBase
 	public $User;
 	public $Task;
 	public $School;
+    private $Cash;
 
-	public function __construct()
+    public function __construct()
 	{
 		parent::__construct();
 		$this->User = new UserModel();
 		$this->Task = new Task();
+		$this->Cash = new Cash();
 		$this->School = new School();
 	}
 
@@ -99,6 +105,74 @@ class User extends LoginBase
 		$this->assign('data',$data);
 		return view();
 	}
+
+    // 提现列表
+    public function cash($startdate='',$enddate='')
+    {
+        $userId = session::get('user.user_id');
+        $type = Cookie::get('type');
+
+        // 筛选
+        $date['startdate'] = $startdate == '' ? '开始日期' : $startdate;
+        $date['enddate'] = $enddate == '' ? '结束日期' : $enddate;
+        $time1 = $startdate != '' ? strtotime($startdate) : 0;
+        $time2 = $enddate != '' ? strtotime($enddate) + 86399 : time();
+        $map['cash_time'] = array('between',[$time1,$time2]);
+
+        $data = $this->Cash->GetDataList($map);
+        foreach ($data as $key => $value) {
+            $data[$key]['cash_status'] = $value['cash_status'] == 0 ? "未审核" : "审核通过";
+        }
+
+        // 总收入
+        $sum = array_sum(array_column($data, 'cash_money'));
+
+        $this->assign('date',$date);
+        $this->assign('data',$data);
+        $this->assign('sum',$sum);
+        return view();
+    }
+
+	// 申请提现页面
+    public function apply_cash()
+    {
+        $userId = session::get('user.user_id');
+        $type = Cookie::get('type');
+
+        // 获取可提现金额
+        if ($type == 2) {
+
+            $taskMap = [];
+            $taskMap['task_ordersuser'] = $userId;
+            $taskMap['task_status'] = ['in', '30, 40'];
+            $task = new Task;
+            $data = $task->GetDataList($taskMap);
+            $sum = array_sum(array_column($data, 'task_price'));
+
+            $this->assign('sum',$sum);
+            return view();
+
+        } else if ($type == 3) {
+            // 根据团长id获取团长已完成的订单id
+            $orderMap = [];
+            $orderMap['order_user'] = $userId;
+            $orderMap['order_status'] = ['in', '35, 40'];
+            $order = new Order;
+            $orderIds = $order->GetOrderIds($orderMap, 'order_id');
+
+            // 根据order_id查询佣金
+            $orderItem = new OrderItem;
+            $itemMap['item_order'] = ['in', $orderIds];
+            $itemMap['item_head'] = $userId;
+            $data = $orderItem->GetDataList($itemMap);
+            $sum = array_sum(array_column($data, 'item_commission'));
+
+            $this->assign('sum',$sum);
+            return view();
+        } else {
+            return json_encode(array('code'=>0,'msg'=>'参数错误'));
+        }
+    }
 
     //提示信息页面
     public function mess()
