@@ -112,6 +112,7 @@ class User extends LoginBase
         $userId = session::get('user.user_id');
         $type = Cookie::get('type');
 
+
         $map = [];
         $map['cash_user'] = $userId;
         $map['cash_type'] = $type;
@@ -131,13 +132,23 @@ class User extends LoginBase
             $data[$key]['cash_status'] = $value['cash_status'] == 0 ? "未审核" : "审核通过";
         }
 
-        // 总收入
-        $sum = array_sum(array_column($data, 'cash_money'));
+        // 提现审核中金额
+        $applyMoney = 0;
+        // 已提现金额
+        $cashMoney = 0;
+        foreach ($data as $value) {
+            if($value['cash_status'] == 0) {
+                $applyMoney += $value['cash_money'];
+            } else {
+                $cashMoney += $value['cash_money'];
+            }
+        }
 
 
         $this->assign('date',$date);
         $this->assign('data',$data);
-        $this->assign('sum',$sum);
+        $this->assign('applyMoney',$applyMoney);
+        $this->assign('cashMoney',$cashMoney);
         return view();
     }
 
@@ -147,9 +158,33 @@ class User extends LoginBase
         $userId = session::get('user.user_id');
         $type = Cookie::get('type');
 
-        if ($type == 2) {
+        // 总收入
+        $sum = $this->getSumMoney($userId, $type);
+        // 提现审核中金额
+        $applyMoney = $this->getApplyMoney($userId, $type);
+        // 已提现金额
+        $cashMoney = $this->getApplyMoney($userId, $type, 1);
+        // 可提现金额
+        $ableMoney = $sum - $applyMoney - $cashMoney;
 
-            // 总收入
+        // 视图
+        $this->assign('cash_user',$userId);
+        $this->assign('cash_type',$type);
+        $this->assign('cashMoney',$cashMoney);
+        $this->assign('applyMoney',$applyMoney);
+        $this->assign('ableMoney',$ableMoney);
+        return view();
+    }
+
+    /**
+     * @param $userId
+     * @param $type
+     * @return float|int
+     */
+    public function getSumMoney($userId, $type)
+    {
+        if($type == 2) {
+            // 骑手收入
             $taskMap = [];
             $taskMap['task_ordersuser'] = $userId;
             $taskMap['task_status'] = ['in', '30, 40'];
@@ -157,30 +192,15 @@ class User extends LoginBase
             $data = $task->GetDataList($taskMap);
             $sum = array_sum(array_column($data, 'task_price'));
 
-            // 审核中金额
-            $cashMap = [];
-            $cashMap['cash_user'] = $userId;
-            $cashMap['cash_type'] = $type;
-            $cashMap['cash_status'] = 0;
-            $applyMoney = $this->Cash->GetField($cashMap, 'sum(cash_money)');
+        } else {
+            // 团长收入
 
-            // 可提现金额
-            $ableMoney = $sum - $applyMoney;
-
-            $this->assign('cash_user',$userId);
-            $this->assign('cash_type',$type);
-            $this->assign('sum',$sum);
-            $this->assign('applyMoney',$applyMoney);
-            $this->assign('ableMoney',$ableMoney);
-            return view();
-
-        } else if ($type == 3) {
             // 根据团长id获取团长已完成的订单id
             $orderMap = [];
             $orderMap['order_user'] = $userId;
             $orderMap['order_status'] = ['in', '35, 40'];
             $order = new Order;
-            $orderIds = $order->GetOrderIds($orderMap, 'order_id');
+            $orderIds = $order->GetOrderIds($orderMap);
 
             // 根据order_id查询佣金
             $orderItem = new OrderItem;
@@ -188,27 +208,27 @@ class User extends LoginBase
             $itemMap['item_head'] = $userId;
             $data = $orderItem->GetDataList($itemMap);
             $sum = array_sum(array_column($data, 'item_commission'));
-
-            // 审核中金额
-            $cashMap = [];
-            $cashMap['cash_user'] = $userId;
-            $cashMap['cash_type'] = $type;
-            $cashMap['cash_status'] = 0;
-            $applyMoney = $this->Cash->GetField($cashMap, 'sum(cash_money)');
-
-            // 可提现金额
-            $ableMoney = $sum - $applyMoney;
-
-
-            $this->assign('cash_user',$userId);
-            $this->assign('cash_type',$type);
-            $this->assign('sum',$sum);
-            $this->assign('applyMoney',$applyMoney);
-            $this->assign('ableMoney',$ableMoney);
-            return view();
-        } else {
-            return json_encode(array('code'=>0,'msg'=>'参数错误'));
         }
+
+        return $sum;
+    }
+
+    /**
+     * 提现
+     * @param $userId
+     * @param $type
+     * @param $cashStatus 0-审核中 1-审核通过
+     * @return mixed
+     */
+    public function getApplyMoney($userId, $type = 2, $cashStatus = 0)
+    {
+        $cashMap = [];
+        $cashMap['cash_user'] = $userId;
+        $cashMap['cash_type'] = $type;
+        $cashMap['cash_status'] = $cashStatus;
+        $applyMoney = $this->Cash->GetField($cashMap, 'sum(cash_money)');
+        return is_null($applyMoney) ? 0 : $applyMoney;
+
     }
 
     //提示信息页面
