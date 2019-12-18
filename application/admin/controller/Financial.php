@@ -3,11 +3,14 @@
 namespace app\admin\controller;
 
 use app\admin\model\User as UserModel;
+use app\admin\model\Cash as CashModel;
 use app\admin\model\Task as TaskModel;
 use app\admin\model\Order as OrderModel;
 use app\admin\model\Goods as GoodsModel;
 use app\admin\model\School as SchoolModel;
 use app\admin\model\OrderItem as OrderItemModel;
+use app\admin\model\Wallet;
+
 /**
  * 财务明细
 
@@ -17,6 +20,7 @@ use app\admin\model\OrderItem as OrderItemModel;
 class Financial extends LoginBase
 {
     private $User;
+    private $Cash;
     private $Task;
     private $Order;
     private $Goods;
@@ -27,6 +31,7 @@ class Financial extends LoginBase
 	{
 		parent::__construct();
         $this->Task = new TaskModel;
+        $this->Cash = new CashModel;
         $this->User = new UserModel;
         $this->Order = new OrderModel;
         $this->Goods = new GoodsModel;
@@ -191,4 +196,107 @@ class Financial extends LoginBase
         return $this->fetch();
     }
 
+    // 提现申请记录
+    public function cashlist()
+    {
+        $map = [];
+        $condition = [];
+
+        $user = input('param.user');
+        if($user && $user !== ""){
+            $condition['user'] = $user;
+            $map['cash_user'] = $user;
+        }
+
+        $cashType = input('param.cash_type');
+        if($cashType != -1){
+            $condition['cash_type'] = $cashType;
+            $map['cash_type'] = $cashType;
+        }
+
+        $status = input('param.cash_status');
+        if($status != -1){
+            $condition['cash_status'] = $status;
+            $map['cash_status'] = $status;
+        }
+
+        $cashTime = input('param.cash_time');
+        if($cashTime && $cashTime !== ""){
+            $condition['cash_time'] = $cashTime;
+            $time = explode(' , ',$cashTime);
+            $map['cash_time'] = array('between',[strtotime($time[0]),strtotime($time[1])]);
+        }
+
+        $Nowpage 	= input('page') ? input('page') : 1;
+        $limits  	= input('limit') ? input('limit') : 15;
+        $count 		= $this->Cash->GetCount($map);
+        $allpage 	= intval(ceil($count / $limits));
+        $data 		= $this->Cash->GetListByPage($map,$Nowpage,$limits);
+        $users      = $this->User->GetDataList(array('user_status'=>1));
+
+        foreach ($data as $key => $value) {
+            if ($value['cash_status'] == 0) {
+                $data[$key]['check'] = "<button type='button' data-id=".$value['cash_id']." data-type='cash' class='layui-btn layui-btn-normal check'>通过审核</button>";
+            } else {
+                $data[$key]['check'] = "已通过审核";
+            }
+            $data[$key]['cash_status'] = $value['cash_status'] == 0 ? '未审核' : '审核通过';
+            $data[$key]['cash_type'] = $value['cash_type'] == 0 ? '骑手' : '团长';
+            $data[$key]['cash_pass_time'] = $value['cash_pass_time'] == 0 ? '--' : date('Y-m-d H:i',$value['cash_pass_time']);
+            $data[$key]['cash_user'] = $this->User->GetField(array('user_id'=>$value['cash_user']),'user_name');
+
+        }
+
+        if(input('page'))
+        {
+            return json(
+                ['code'=>0, 'msg'=>'', 'count'=>$count, 'data'=>$data,'datas'=>$map,'condition'=>$condition,'users'=>$users]
+            );
+        }
+        $this->assign('users',$users);
+        $this->assign('condition',$condition);
+        return $this->fetch();
+    }
+
+    // 修改审核状态
+    public function changeStatus()
+    {
+        // 判断数据是否存在
+        $cashId = input('post.cash_id');
+        $cash = $this->Cash->GetOneDataById($cashId);
+
+        if(!$cash) return ['code'=>0,'msg'=>'申请不存在'];
+
+        $cashId = $cash['cash_id'];
+        $cashMoney = $cash['cash_money'];
+        $userId = $cash['cash_user'];
+
+        // 查看用户钱包是否正常使用
+        $wallet = new Wallet();
+        $userWallet = $wallet->GetOneDataByUserId($userId);
+        if(!$userWallet) {
+            return ['code'=>0,'msg'=>'用户钱包已冻结'];
+        }
+
+        // 修改状态
+        $update = array('cash_id'=>$cashId,'cash_status'=>1,'cash_pass_time'=>time());
+        $cashRes = $this->Cash->UpdateData($update);
+        if($cashRes['code'] == 0) {
+            return ['code'=>0,'msg'=>'审核失败'];
+        }
+
+        // 提现到钱包
+        $walletRes = $wallet->DataSetInc(['wallet_user' => $userId], 'wallet_money', $cashMoney);
+        if($walletRes['code'] == 0) {
+            return ['code'=>0,'msg'=>'存入钱包失败'];
+        }
+
+        return ['code'=>0,'msg'=>'修改成功'];
+        /*$res = $this->Cash->passCheck($cash);
+        if($res['code']) {
+            return ['code'=>0,'msg'=>'修改成功'];
+        } else {
+            return ['code'=>1,'msg'=>'修改失败'];
+        }*/
+    }
 }

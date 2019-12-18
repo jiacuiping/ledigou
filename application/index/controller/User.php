@@ -115,7 +115,7 @@ class User extends LoginBase
 
         $map = [];
         $map['cash_user'] = $userId;
-        $map['cash_type'] = $type;
+        $map['cash_type'] = $type == 2 ? 0 : 1;
 
         // 时间筛选
         $startDate = trim($startdate);
@@ -129,8 +129,9 @@ class User extends LoginBase
 
         $data = $this->Cash->GetDataList($map);
         foreach ($data as $key => $value) {
-            $data[$key]['cash_status'] = $value['cash_status'] == 0 ? "未审核" : "审核通过";
+            $data[$key]['cash_status_text'] = $value['cash_status'] == 0 ? "未审核" : "审核通过";
         }
+
 
         // 提现审核中金额
         $applyMoney = 0;
@@ -156,7 +157,7 @@ class User extends LoginBase
     public function apply_cash()
     {
         $userId = session::get('user.user_id');
-        $type = Cookie::get('type');
+        $type = Cookie::get('type') ? 0 : 1;
 
         // 总收入
         $sum = $this->getSumMoney($userId, $type);
@@ -170,6 +171,7 @@ class User extends LoginBase
         // 视图
         $this->assign('cash_user',$userId);
         $this->assign('cash_type',$type);
+        $this->assign('sum',$sum);
         $this->assign('cashMoney',$cashMoney);
         $this->assign('applyMoney',$applyMoney);
         $this->assign('ableMoney',$ableMoney);
@@ -183,7 +185,7 @@ class User extends LoginBase
      */
     public function getSumMoney($userId, $type)
     {
-        if($type == 2) {
+        if($type == 0) {
             // 骑手收入
             $taskMap = [];
             $taskMap['task_ordersuser'] = $userId;
@@ -220,7 +222,7 @@ class User extends LoginBase
      * @param $cashStatus 0-审核中 1-审核通过
      * @return mixed
      */
-    public function getApplyMoney($userId, $type = 2, $cashStatus = 0)
+    public function getApplyMoney($userId, $type = 0, $cashStatus = 0)
     {
         $cashMap = [];
         $cashMap['cash_user'] = $userId;

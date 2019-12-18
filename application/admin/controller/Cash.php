@@ -3,78 +3,64 @@
 namespace app\admin\controller;
 
 use app\admin\model\User as UserModel;
-use app\admin\model\Task as TaskModel;
-use app\admin\model\Order as OrderModel;
-use app\admin\model\School as SchoolModel;
-use app\admin\model\OrderItem as OrderItemModel;
+use app\admin\model\Cash as CashModel;
 
 class Cash extends LoginBase
 {
     private $User;
-    private $Task;
-    private $Order;
-    private $School;
-    private $OrderItem;
+    private $Cash;
 
 	public function __construct()
 	{
 		parent::__construct();
-        $this->Task = new TaskModel;
         $this->User = new UserModel;
-        $this->Order = new OrderModel;
-        $this->School = new SchoolModel;
-        $this->OrderItem = new OrderItemModel;
+        $this->Cash = new CashModel;
 	}
 
-	//提现申请列表
-	public function index()
-	{
+    // 提现申请记录
+    public function index()
+    {
         $map = [];
-
-        $condition['sn'] = $condition['type'] = $condition['user'] = '';
-
-        $sn = input('param.sn');
-        if($sn && $sn !== ""){
-            $condition['sn'] = $sn;
-            $map['order_sn'] = ['like',"%" . $sn . "%"];
-        }
-
-        $type = input('param.type');
-        if($type && $type !== ""){
-        	$condition['type'] = $type;
-            $map['order_desc'] = $type;
-        }
+        $condition = [];
 
         $user = input('param.user');
         if($user && $user !== ""){
             $condition['user'] = $user;
-            $map['order_user'] = $user;
+            $map['cash_user'] = $user;
         }
 
-        $ispay = input('param.ispay');
-        if($ispay && $ispay !== ""){
-            $condition['ispay'] = $ispay;
-            $map['order_ispay'] = $ispay;
+        $type = input('param.cash_type');
+        if($type && $type !== -1){
+            $condition['cash_type'] = $type;
+            $map['cash_type'] = $type;
         }
 
-        $time = input('param.time');
-        if($time && $time !== ""){
-            $condition['time'] = $time;
-            $time = explode(' , ',$time);
-            $map['order_time'] = array('between',[strtotime($time[0]),strtotime($time[1])]);
+        $status = input('param.cash_status');
+        if($status && $status !== -1){
+            $condition['cash_status'] = $status;
+            $map['cash_status'] = $status;
+        }
+
+        $cashTime = input('param.cash_time');
+        if($cashTime && $cashTime !== ""){
+            $condition['cash_time'] = $cashTime;
+            $time = explode(' , ',$cashTime);
+            $map['cash_time'] = array('between',[strtotime($time[0]),strtotime($time[1])]);
         }
 
         $Nowpage 	= input('page') ? input('page') : 1;
         $limits  	= input('limit') ? input('limit') : 15;
-        $count 		= $this->Order->GetCount($map);
+        $count 		= $this->Cash->GetCount($map);
         $allpage 	= intval(ceil($count / $limits));
-        $data 		= $this->Order->GetListByPage($map,$Nowpage,$limits);
+        $data 		= $this->Cash->GetListByPage($map,$Nowpage,$limits);
         $users      = $this->User->GetDataList(array('user_status'=>1));
 
         foreach ($data as $key => $value) {
-            $data[$key]['order_paytime'] = $value['order_paytime'] == 0 ? '未支付' : date('Y-m-d H:i',$value['order_paytime']);
-            $data[$key]['order_user'] = $this->User->GetField(array('user_id'=>$value['order_user']),'user_name');
+            $data[$key]['cash_status'] = $value['cash_status'] == 0 ? '未审核' : '审核通过';
+            $data[$key]['cash_pass_time'] = $value['cash_pass_time'] == 0 ? '未审核' : $value['cash_pass_time'];
+            $data[$key]['cash_user'] = $this->User->GetField(array('user_id'=>$value['cash_user']),'user_name');
         }
+
 
         if(input('page'))
         {
@@ -84,7 +70,7 @@ class Cash extends LoginBase
         }
         $this->assign('users',$users);
         $this->assign('condition',$condition);
-        return $this->fetch();	
-	}
+        return $this->fetch();
+    }
 
 }

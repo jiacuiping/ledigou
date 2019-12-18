@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\prize\index.html";i:1575613752;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\prize\index.html";i:1575626923;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>

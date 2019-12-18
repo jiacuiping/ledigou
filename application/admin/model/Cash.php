@@ -1,5 +1,6 @@
 <?php
 namespace app\admin\model;
+use think\Db;
 use think\Model;
 use think\Validate;
 /*
@@ -21,7 +22,7 @@ class Cash extends Model
      * @param int   $page    第几页
      * @param int   $limit   每页的条数
      **/
-    public function GetListByPage($where=array(), $page=1, $limit=10, $order='goods_is_top desc,goods_rank desd')
+    public function GetListByPage($where=array(), $page=1, $limit=10, $order='cash_time')
     {   
         return $this->where($where)->page($page,$limit)->order($order)->select();
     }
@@ -47,7 +48,7 @@ class Cash extends Model
      **/
     public function GetOneDataById($id=0)
     {
-        return $this->where('goods_id',$id)->find();
+        return $this->where('cash_id',$id)->find();
     }
 
     /**
@@ -101,8 +102,39 @@ class Cash extends Model
     public function UpdateData($param)
     {
         
-        $res = $this->allowField(true)->save($param, ['goods_id' => $param['goods_id']]);
+        $res = $this->allowField(true)->save($param, ['cash_id' => $param['cash_id']]);
 
         return $res === false ? array('code'=>0,'msg'=>$this->getError()) : array('code'=>1,'msg'=>'修改成功');
+    }
+
+    // 通过审核
+    public function passCheck($cash)
+    {
+       $cashId = $cash['cash_id'];
+       $cashMoney = $cash['cash_money'];
+       $userId = $cash['cash_user'];
+
+        // 查看用户钱包是否正常使用
+        $wallet = new Wallet();
+        $userWallet = $wallet->GetOneDataByUserId($userId);
+        if(!$userWallet) {
+            return ['code'=>0,'msg'=>'用户钱包已冻结'];
+        }
+
+        // 修改状态
+        $update = array('cash_id'=>$cashId,'cash_status'=>1,);
+        $cashRes = $this->UpdateData($update);
+        if(!$cashRes) {
+            return ['code'=>0,'msg'=>'审核失败'];
+        }
+
+        // 提现到钱包
+        $walletRes = $wallet->DataSetInc(['wallet_user' => $userId], 'wallet_money', $cashMoney);
+        if(!$walletRes) {
+            return ['code'=>0,'msg'=>'存入钱包失败'];
+        }
+
+        return ['code'=>1,'msg'=>'审核成功'];
+
     }
 }
