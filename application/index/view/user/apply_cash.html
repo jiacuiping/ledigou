@@ -35,7 +35,9 @@
         <input type="hidden" name="cash_type" class="cash_type" value="{$cash_type}">
         <input type="hidden" name="cash_user" class="cash_user" value="{$cash_user}">
 
-        <div class="zong-money"><p>可提现金额: <span class="sum-money">{$sum}</span>元</p></div>
+        <div class="zong-money"><p>总收入: <span class="sum-money">{$sum}</span>元</p></div>
+        <div class="zong-money"><p>提现审核中金额: <span class="apply-money">{$applyMoney}</span>元</p></div>
+        <div class="zong-money"><p>可提现金额: <span class="able-money">{$ableMoney}</span>元</p></div>
 
         <div class="l-relative">
             <span class="l-absolute">提现金额</span>
@@ -52,8 +54,8 @@
 <script src="__STATIC__/index/js/jquery.min.js"></script>
 <script src="__STATIC__/index/js/mui.picker.min.js"></script>
 <script type="text/javascript">
-// 选择时间
-(function($) {
+    // 选择时间
+    (function($) {
         $.init();
         var result = $('#result')[0];
         var btns = $('#demo1');
@@ -112,7 +114,7 @@
       })(mui);
 
     $(".apply").click(function () {
-        var sum_money = $(".sum-money").text();
+        var able_money = $(".able-money").text();
         var cash_money = $(".cash_money").val();
         var cash_type = $(".cash_type").val();
         var cash_user = $(".cash_user").val();
@@ -121,7 +123,7 @@
             alert("请输入提现金额");
             return false;
         }
-        if(eval(cash_money) > eval(sum_money)) {
+        if(eval(cash_money) > eval(able_money)) {
             alert("提现金额不得大于可提现金额");
             return false;
         }

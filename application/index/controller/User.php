@@ -117,15 +117,16 @@ class User extends LoginBase
         $map['cash_type'] = $type;
 
         // 时间筛选
-        $date['startdate'] = $startdate == '' ? '开始日期' : $startdate;
-        $date['enddate'] = $enddate == '' ? '结束日期' : $enddate;
-        $startTime = ($startdate == '' || $startdate == '开始日期') ? 0 : strtotime($startdate);
-        $endTime = ($enddate == '' || $enddate == '结束日期') ? time() : strtotime($enddate);
+        $startDate = trim($startdate);
+        $endDate = trim($enddate);
+        $date['startDate'] = $startDate == '' ? '开始日期' : $startDate;
+        $date['endDate'] = $endDate == '' ? '结束日期' : $endDate;
+        $startTime = ($startDate == '' || $startDate == '开始日期') ? 0 : strtotime($startDate);
+        $endTime = ($endDate == '' || $endDate == '结束日期') ? time() : strtotime($endDate);
         $map['cash_time'] = array('between',[$startTime,$endTime]);
 
 
         $data = $this->Cash->GetDataList($map);
-//        echo db('cash')->getLastSql();die;
         foreach ($data as $key => $value) {
             $data[$key]['cash_status'] = $value['cash_status'] == 0 ? "未审核" : "审核通过";
         }
@@ -148,7 +149,7 @@ class User extends LoginBase
 
         if ($type == 2) {
 
-            // 获取总收入
+            // 总收入
             $taskMap = [];
             $taskMap['task_ordersuser'] = $userId;
             $taskMap['task_status'] = ['in', '30, 40'];
@@ -157,13 +158,20 @@ class User extends LoginBase
             $sum = array_sum(array_column($data, 'task_price'));
 
             // 审核中金额
+            $cashMap = [];
+            $cashMap['cash_user'] = $userId;
+            $cashMap['cash_type'] = $type;
+            $cashMap['cash_status'] = 0;
+            $applyMoney = $this->Cash->GetField($cashMap, 'sum(cash_money)');
 
             // 可提现金额
-
+            $ableMoney = $sum - $applyMoney;
 
             $this->assign('cash_user',$userId);
             $this->assign('cash_type',$type);
             $this->assign('sum',$sum);
+            $this->assign('applyMoney',$applyMoney);
+            $this->assign('ableMoney',$ableMoney);
             return view();
 
         } else if ($type == 3) {
@@ -181,10 +189,22 @@ class User extends LoginBase
             $data = $orderItem->GetDataList($itemMap);
             $sum = array_sum(array_column($data, 'item_commission'));
 
+            // 审核中金额
+            $cashMap = [];
+            $cashMap['cash_user'] = $userId;
+            $cashMap['cash_type'] = $type;
+            $cashMap['cash_status'] = 0;
+            $applyMoney = $this->Cash->GetField($cashMap, 'sum(cash_money)');
+
+            // 可提现金额
+            $ableMoney = $sum - $applyMoney;
+
 
             $this->assign('cash_user',$userId);
             $this->assign('cash_type',$type);
             $this->assign('sum',$sum);
+            $this->assign('applyMoney',$applyMoney);
+            $this->assign('ableMoney',$ableMoney);
             return view();
         } else {
             return json_encode(array('code'=>0,'msg'=>'参数错误'));

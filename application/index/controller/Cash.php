@@ -22,7 +22,8 @@ class Cash extends LoginBase
     {
         $res = $this->Cash->CreateData(input('post.'));
         if($res['code']) {
-            $this->redirect(url('user/cash',['mess'=>"申请信息已提交，等待后台审核"]));
+            return array('code'=>1,'msg'=>'提交成功');
+//            $this->redirect(url('user/cash',['mess'=>"申请信息已提交，等待后台审核"]));
         } else {
             return array('code'=>0,'msg'=>'提交失败');
         }
