@@ -32,18 +32,18 @@
   {include file='base/nav'}
 
     <div class="mui-content">
-        <div class="index3-chaxun clear">
-        </div>
+        <input type="hidden" name="cash_type" class="cash_type" value="{$cash_type}">
+        <input type="hidden" name="cash_user" class="cash_user" value="{$cash_user}">
 
-        <div class="zong-money"><p>可提现金额: <span>{$sum}</span>元</p></div>
+        <div class="zong-money"><p>可提现金额: <span class="sum-money">{$sum}</span>元</p></div>
 
         <div class="l-relative">
             <span class="l-absolute">提现金额</span>
-            <input type="number" name="cash_money" value="" placeholder="提现金额">
+            <input type="text" name="cash_money" class="cash_money" value="" placeholder="提现金额">
         </div>
 
         <div class="mui-col-xs-4 center">
-            <button class="mui-btn search">提交</button>
+            <button class="mui-btn apply">提交</button>
         </div>
     </div>
 
@@ -111,14 +111,33 @@
         });
       })(mui);
 
-      $(".search").click(function(){
-        var time1 = $("#result").text();
-        var time2 = $("#result2").text();
+    $(".apply").click(function () {
+        var sum_money = $(".sum-money").text();
+        var cash_money = $(".cash_money").val();
+        var cash_type = $(".cash_type").val();
+        var cash_user = $(".cash_user").val();
 
-        if($.trim(time1) == '开始日期' && $.trim(time2) == '结束日期'){
-          alert('请至少选择一个日期');
-        }else{
-          window.location.href="{:url('income')}?startdate="+time1+"&enddate="+time2;
+        if(cash_money == 0 || cash_money == '') {
+            alert("请输入提现金额");
+            return false;
         }
-      })
+        if(eval(cash_money) > eval(sum_money)) {
+            alert("提现金额不得大于可提现金额");
+            return false;
+        }
+
+        $.ajax({
+            url:"{:url('cash/apply_cash')}",
+            type:"POST",
+            data:{cash_money:cash_money,cash_type:cash_type,cash_user:cash_user},
+            success:function(res){
+                alert(res.msg);
+                if(res.code)
+                    setTimeout(function(){window.location.reload()},2000);
+            },error:function(){
+                alert('服务器错误，请稍后重试');
+            }
+        })
+    });
+
 </script>

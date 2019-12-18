@@ -8,7 +8,12 @@ use think\Validate;
 class Cash extends Model
 {
     protected $autoWriteTimestamp = true;
-    protected $createTime = 'goods_time';
+    protected $createTime = 'cash_time';
+    protected $rule = [
+        'cash_user|提交用户'    => 'require',
+        'cash_money|提现金额'    => 'require',
+        'cash_type|提现类型'    => 'require',
+    ];
 
     /**
      * 分页读取数据

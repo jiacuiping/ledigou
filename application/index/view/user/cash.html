@@ -57,7 +57,7 @@
                 <div class="mui-col-xs-9 left rider-xiadan2 rider-xiadan30">
                     <p class="h-yichu">提现金额: {$item.cash_money}</p>
                     <p class="h-yichu">审核状态: {$item.cash_status}</p>
-                    <p class="h-yichu" style="color: #918f92">{:date('Y-m-d H:i',$item.task_complete)}</p>
+                    <p class="h-yichu" style="color: #918f92">{$item.cash_time}</p>
                 </div>
             </div>
         </div>
@@ -135,7 +135,7 @@
         if($.trim(time1) == '开始日期' && $.trim(time2) == '结束日期'){
           alert('请至少选择一个日期');
         }else{
-          window.location.href="{:url('income')}?startdate="+time1+"&enddate="+time2;
+          window.location.href="{:url('cash')}?startdate="+time1+"&enddate="+time2;
         }
       })
 </script>
