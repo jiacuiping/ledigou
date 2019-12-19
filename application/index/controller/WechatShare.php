@@ -29,7 +29,8 @@ class WechatShare extends Base
 
 		$ticket = $config['wechat_jsapi_ticket'] == '' || $config['wechat_ticket_time'] < time() ? $this->GetTicket($token) : $config['wechat_jsapi_ticket'];
 
-		$url = "http://dxc.gqwlcm.com/index/head/release/ids/".$ids;
+//		$url = "http://dxc.gqwlcm.com/index/head/release/ids/".$ids;
+		$url = "https://dxc.gqwlcm.com/index/head/release.html?ids=".$ids;
 
 		//"//dxc.gqwlcm.com/index/head/shareList/head/".session::get('user.user_id');
 
@@ -51,7 +52,6 @@ class WechatShare extends Base
 	        "ticket" => $ticket,
 	        "token" => $token
 	    );
-	    dump($signPackage);die;
 	    // 提供数据给前端
 	    return array('code' => 1, 'data' => $signPackage);
 	}

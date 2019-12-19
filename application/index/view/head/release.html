@@ -41,7 +41,7 @@
         <div class="l-zong l-zong2">
           <div class="idbox" data-id="{$item.goods_id}"></div>
           <div class="l-img">
-              <img src="{$item.goods_image}" alt="">
+              <img class="head_image" src="{$item.goods_image}" alt="">
           </div>
           <div class="l-zi">
               <p>{$item.goods_name}</p>
@@ -52,12 +52,13 @@
       {/volist}
       <!-- 分享按钮 -->
       <a href="#forward" title="">
-          <button type="button" class="shenqing-btn shenqing-btn2">分享</button>
+          <button type="button" class="shenqing-btn shenqing-btn2">点击右上角分享</button>
       </a>
+
     </div>
 
     <!-- 分享到某某处 -->
-    <div id="forward" class="mui-popover mui-popover-action mui-popover-bottom">
+    <!--<div id="forward" class="mui-popover mui-popover-action mui-popover-bottom">
       <ul class="mui-table-view">
       <div style="padding: 20px 15px">
           <p style="font-size: 16px;margin-bottom: 20px">选择要分享到的平台</p>
@@ -80,11 +81,13 @@
             <a href="#forward"><b>取消分享</b></a>
         </li>
       </ul>
-    </div>
+    </div>-->
 </body>
 <script src="__STATIC__/layui/layui.js"></script>
 <script src="__STATIC__/index/js/jquery.min.js"></script>
 <script src="__STATIC__/layui/layui.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+
 <script type="text/javascript">
 
   $(function(){
@@ -94,101 +97,77 @@
     $.ajax({
       url:"{:url('WechatShare/GetSigna')}",
       type:"GET",
+      async:false,
       data:{ids:$("#idsbox").val()},
       success:function(res){
         if(res.code){
           config = res.data;
+          console.log(config)
           wx.config({
-            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
             appId: config.appId, // 必填，公众号的唯一标识
             timestamp: config.timestamp, // 必填，生成签名的时间戳
             nonceStr: config.nonceStr, // 必填，生成签名的随机串
             signature: config.signature,// 必填，签名
-            jsApiList: ['updateAppMessageShareData','updateTimelineShareData'] // 必填，需要使用的JS接口列表
+            jsApiList: [
+                'updateAppMessageShareData', // 分享到朋友圈
+                'updateTimelineShareData' // 分享到微信好友
+            ] // 必填，需要使用的JS接口列表
           });
+
         }
       }
     });
-  })
 
-
-  //点击改变样式
-  $(document).ready(function() {
-
-    $(".l-jia").click(function() {
-      if($(this).hasClass('gaibian1'))
-        $(this).removeClass("gaibian1");
-      else
-        $(this).addClass("gaibian1");
-    });
-
-    //移除商品
-    $(".removeGoods").click(function(){
-      $(this).parents('.l-zong').remove();
-    });
-
-    layui.use('layer', function(){
-      var layer = layui.layer;
-
-      if($("#idsbox").val() == ''){
-        layer.msg('请先选择要分享的商品');
-        setTimeout(function(){location.href="{:url('goodslist')}"},2000);
-      }
-
-      $("ul#shareul").on('click','li',function(){
-
-        var type = $(this).attr('data-type');
-
-        var ids = '';
-
-        $(".idbox").each(function(){
-          ids += $(this).attr("data-id")+',';
-        });
-
-        if(ids != ''){
-          $.ajax({
-            url:"{:url('Share')}",
-            type:"GET",
-            data:{ids:ids.substring(0,ids.length-1),type:type},
-            success:function(res){
-              if(res.code)
-                share(type,res.user_id);
-              else
-                layer.msg(res.msg);
-            },error:function(){
-              layer.msg('服务器错误，请刷新重试');
-            }
-          });
-        }else
-          layer.msg('请至少分享一个商品');
-
-        function share(type,user_id){
-          if(type == 1){
-            wx.ready(function () {      //需在用户可能点击分享按钮前就先调用
-                wx.updateTimelineShareData({
-                    title: '快来看看我分享的商品！', // 分享标题
-                    link: 'http://dxc.gqwlcm.com/index/headshare/list/head/'+user_id, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                    imgUrl: 'http://dxc.gqwlcm.com/uploads/20190722/e65ea675b8051c048325bd994e3154cf.jpeg', // 分享图标
-                    success: function () {
-                      layer.msg('分享成功');
-                    }
-                })
-            });
-          }else{
-            wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
-                wx.updateAppMessageShareData({ 
-                    title: '快来看看我分享的商品！', // 分享标题
-                    desc: '我在乐迪购发现了一些有趣的商品！', // 分享描述
-                    link: 'http://dxc.gqwlcm.com/index/headshare/list/head/'+user_id, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                    imgUrl: 'http://dxc.gqwlcm.com/uploads/20190722/e65ea675b8051c048325bd994e3154cf.jpeg', // 分享图标
-                    success: function () {
-                      layer.msg('分享成功');
-                    }
-                })
-            });
-          }
-        } 
+      var imgSrc = $(".mui-content").children(":eq(0)").find(".head_image").attr('src')
+      var imgUrl = window.location.protocol + "//" + window.location.host + imgSrc;
+      var all_share_info = {
+        title:'快来看看我分享的商品！',
+        desc:'我在乐迪购发现了一些有趣的商品！',
+        link:window.location.href,
+        imgUrl:imgUrl
+    };
+      wx.ready(function () {
+          all_share_event(all_share_info);
       });
-    });
+
+      /*wx.error(function (res) {
+          alert(res.errMsg);
+      });*/
+      function all_share_event(all_share_info2) {
+          //监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+          wx.updateAppMessageShareData({
+              title: all_share_info2.title,
+              desc: all_share_info2.desc,
+              link: all_share_info2.link,
+              imgUrl: all_share_info2.imgUrl,
+              success: function (res) {
+                  alert('已分享1');
+                  // $(".maskgroup_show").hide();
+              },
+              cancel: function (res) {
+                  alert('已取消');
+                  // $(".maskgroup_show").hide();
+              }
+
+          });
+          //“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+          wx.updateTimelineShareData({
+              title: all_share_info2.title,
+              link: all_share_info2.link,
+              imgUrl: all_share_info2.imgUrl,
+              success: function (res) {
+                  alert('已分享2');
+                  // $(".maskgroup_show").hide();
+              },
+              cancel: function (res) {
+                  alert('已取消');
+                  // $(".maskgroup_show").hide();
+              }
+
+          });
+
+      }
   });
+
 </script>

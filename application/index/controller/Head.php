@@ -3,6 +3,7 @@ namespace app\index\controller;
 
 use think\Session;
 use app\index\controller\LoginBase;
+use app\index\controller\WechatShare;
 
 use app\admin\model\Goods;
 use app\admin\model\Order;
@@ -52,7 +53,8 @@ class Head extends LoginBase
     //分享商品
     public function Share($ids,$type)
     {
-    	if(session::get('user.user_type') != 3) return array('code'=>0,'msg'=>'您不是团长，无法分享商品');
+        $userType = session::get('user.user_type');
+    	if($userType != 3 && $userType != 4) return array('code'=>0,'msg'=>'您不是团长，无法分享商品');
 
     	$result = $this->GoodsShare->CreateData(array('share_user'=>session::get('user.user_id'),'share_goods'=>$ids,'share_type'=>$type));
 

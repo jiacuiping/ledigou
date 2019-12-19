@@ -95,7 +95,7 @@ class Login extends LoginBase
             }
             $this->redirect(url('head/goodslist'));
 
-        } else {
+        } else if (($user['user_type'] == 2 && $type == 3) || ($user['user_type'] == 3 && $type == 2)){
 
             $this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
             $this->assign('name',$type == 2 ? '骑手' : '团长');
