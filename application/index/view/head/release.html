@@ -110,8 +110,10 @@
             nonceStr: config.nonceStr, // 必填，生成签名的随机串
             signature: config.signature,// 必填，签名
             jsApiList: [
-                'updateAppMessageShareData', // 分享到朋友圈
-                'updateTimelineShareData' // 分享到微信好友
+                'onMenuShareTimeline', // 分享到朋友
+                'onMenuShareAppMessage', // 分享到朋友圈
+                // 'updateAppMessageShareData', // 分享到朋友圈
+                // 'updateTimelineShareData' // 分享到微信好友
             ] // 必填，需要使用的JS接口列表
           });
 
@@ -119,67 +121,100 @@
       }
     });
 
-      if($("#idsbox").val() == ''){
-          layer.msg('请先选择要分享的商品');
-          setTimeout(function(){location.href="{:url('goodslist')}"},2000);
-      }
+      // 获取第一个商品图片
+      var imgPre = window.location.protocol + "//" + window.location.host;
+      var imgUrl = imgPre + $(".mui-content").children(":eq(0)").find(".head_image").attr('src');
 
-      var imgSrc = $(".mui-content").children(":eq(0)").find(".head_image").attr('src')
-      var imgUrl = window.location.protocol + "//" + window.location.host + imgSrc;
-      var all_share_info = {
-        title:'快来看看我分享的商品！',
-        desc:'我在乐迪购发现了一些有趣的商品！',
-        link:window.location.href,
-        imgUrl:imgUrl
-    };
-      wx.ready(function () {
-          all_share_event(all_share_info);
-      });
-
-      function all_share_event(all_share_info2, type, user_id) {
-          if (type == 1) {
-              //“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
-              wx.updateTimelineShareData({
-                  title: all_share_info2.title,
-                  link: all_share_info2.link,
-                  imgUrl: all_share_info2.imgUrl,
-                  success: function (res) {
-                      // alert('已分享2');
-                      // $(".maskgroup_show").hide();
-                  },
-                  cancel: function (res) {
-                      alert('已取消');
-                      // $(".maskgroup_show").hide();
-                  }
-
-              });
-          } else {
-              //监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
-              wx.updateAppMessageShareData({
-                  title: all_share_info2.title,
-                  desc: all_share_info2.desc,
-                  link: all_share_info2.link,
-                  imgUrl: all_share_info2.imgUrl,
-                  success: function (res) {
-                      // alert('已分享1');
-                      // $(".maskgroup_show").hide();
-                  },
-                  cancel: function (res) {
-                      alert('已取消');
-                      // $(".maskgroup_show").hide();
-                  }
-
-              });
-          }
-      }
 
       layui.use('layer', function(){
-          var layer = layui.layer;
+          if($("#idsbox").val() == ''){
+              layer.msg('请先选择要分享的商品');
+              setTimeout(function(){location.href="{:url('goodslist')}"},2000);
+          }
+      });
 
 
-          $("ul#shareul").on('click','li',function(){
+      //移除商品
+      $(".removeGoods").click(function(){
+          $(this).parents('.l-zong').remove();
+      });
 
-              var type = $(this).attr('data-type');
+
+      wx.ready(function () {
+          // all_share_event(all_share_info);
+          // saveRelease();
+      });
+
+      // 自定义分享内容
+      var all_share_info = {
+          title:'快来看看我分享的商品！',
+          desc:'我在乐迪购发现了一些有趣的商品！',
+          link:window.location.href,
+          imgUrl:imgPre + $(".mui-content").children(":eq(0)").find(".head_image").attr('src')
+      };
+
+      wx.ready(function () {
+          //“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+          wx.onMenuShareTimeline({
+              title: all_share_info.title,
+              link: all_share_info.link,
+              imgUrl: all_share_info.imgUrl,
+              success: function (res) {
+                  saveRelease(1)
+              }
+          });
+          wx.onMenuShareAppMessage({
+              title: all_share_info.title,
+              desc: all_share_info.desc,
+              link: all_share_info.link,
+              imgUrl: all_share_info.imgUrl,
+              success: function (res) {
+                  saveRelease(2)
+              }
+          });
+      })
+
+
+
+      // 新版接口
+      function all_share_event(all_share_info2, type) {
+          //“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+          wx.updateTimelineShareData({
+              title: all_share_info2.title,
+              link: all_share_info2.link,
+              imgUrl: all_share_info2.imgUrl,
+              success: function (res) {
+                  alert('已分享2');
+                  // $(".maskgroup_show").hide();
+              },
+              cancel: function (res) {
+                  alert('已取消');
+                  // $(".maskgroup_show").hide();
+              }
+          });
+
+          //监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+          wx.updateAppMessageShareData({
+              title: all_share_info2.title,
+              desc: all_share_info2.desc,
+              link: all_share_info2.link,
+              imgUrl: all_share_info2.imgUrl,
+              success: function (res) {
+                  alert('已分享1');
+                  // $(".maskgroup_show").hide();
+              },
+              cancel: function (res) {
+                  alert('已取消');
+                  // $(".maskgroup_show").hide();
+              }
+
+          });
+      }
+
+      // 存储
+      function saveRelease(type = 1) {
+          layui.use('layer', function(){
+              var layer = layui.layer;
 
               var ids = '';
 
@@ -204,9 +239,9 @@
                   });
               }else
                   layer.msg('请至少分享一个商品');
-
           });
-      });
+      }
+
   });
 
 </script>
