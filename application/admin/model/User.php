@@ -110,4 +110,17 @@ class User extends Model
     {
         return $this->where('user_id',$id)->delete() ? array('code'=>1,'msg'=>'删除成功') : array('code'=>0,'msg'=>'删除失败');
     }
+
+    /**
+     * 用户支付金额到达300时，获得一次抽奖机会
+     * @param $param
+     * @param $orderPrice
+     * @throws \think\Exception
+     */
+    public function getPriceChance($param, $orderPrice)
+    {
+        if ($orderPrice > 300 || $orderPrice == 300) {
+            $this->where($param)->setInc('user_price_num',1);
+        }
+    }
 }

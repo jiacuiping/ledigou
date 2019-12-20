@@ -281,8 +281,9 @@ class User extends Base
     /**
      * 获取用户购物车
      * @param string 	$unionid 		用户unionid
+     * @param int 	    $is_all         是否全选
      **/
-	public function GetCars($unionid)
+	public function GetCars($unionid, $is_all = -1, $cars = [])
 	{
 		$user = $this->CheckUser($unionid);
 
@@ -311,13 +312,52 @@ class User extends Base
 
 		}
 
-		$freight = session::get('config.website_freight');
-																									//加运费
-		$countPrice = empty($data) ? 0 : round(array_sum(array_map(function($val){return $val['offer_price'];}, $data))+$freight,2);
+		// 取消全选
+        if ($is_all == 0) {
+            return  json_encode(array('code'=>1,'msg'=>'获取成功','car'=>$data,'countPrice'=>0,'countNumber'=>0,'freight'=>0));
+        }
 
-		$countNumber = empty($data) ? 0 : array_sum(array_map(function($val){return $val['car_number'];}, $data));
+        // 全选
+        if ($is_all == 1) {
+            $freight = session::get('config.website_freight');
+            //加运费
+            $countPrice = empty($data) ? 0 : round(array_sum(array_map(function($val){return $val['offer_price'];}, $data))+$freight,2);
 
-		return  json_encode(array('code'=>1,'msg'=>'获取成功','car'=>$data,'countPrice'=>$countPrice,'countNumber'=>$countNumber,'freight'=>$freight));
+            $countNumber = empty($data) ? 0 : array_sum(array_map(function($val){return $val['car_number'];}, $data));
+
+            return  json_encode(array('code'=>1,'msg'=>'获取成功','car'=>$data,'countPrice'=>$countPrice,'countNumber'=>$countNumber,'freight'=>$freight));
+        }
+
+        // 单个选择商品
+        $carsIdWhere = [];
+        $carsIdWhere['car_id'] = ['in', $cars];
+        $selectGoods = $this->Shoppingcar
+            -> alias('s')
+            -> join('__GOODS__ g','s.car_goods = g.goods_id')
+            -> where(array('s.car_user'=>$user['user']['user_id'],'car_type'=>1))
+            -> where($carsIdWhere)
+            -> select();
+
+        foreach ($selectGoods as $key => $value) {
+
+            if($value['car_is_offer'] != 0)
+                $selectGoods[$key]['offer_price'] = $this->Limited->GetField(array('limited_id'=>$value['car_is_offer']),'limited_money')*$value['car_number'];
+            else
+                $selectGoods[$key]['offer_price'] = $value['goods_price'] * $value['car_number'];
+
+            $selectGoods[$key]['count_price'] = $value['goods_price'] * $value['car_number'];
+
+        }
+
+        $freight = empty($selectGoods) ? 0 : session::get('config.website_freight');
+        //加运费
+        $countPrice = empty($selectGoods) ? 0 : round(array_sum(array_map(function($val){return $val['offer_price'];}, $selectGoods))+$freight,2);
+
+        $countNumber = empty($selectGoods) ? 0 : array_sum(array_map(function($val){return $val['car_number'];}, $selectGoods));
+
+        return  json_encode(array('code'=>1,'msg'=>'获取成功','car'=>$data,'countPrice'=>$countPrice,'countNumber'=>$countNumber,'freight'=>$freight));
+
+
 	}
 
 
@@ -519,7 +559,7 @@ class User extends Base
 		$carids = implode(',',$cars);
 
 		$carsInfo = $this->Shoppingcar->GetDataList(array('car_id'=>array('in',$carids)));
-		
+
 		//判断是否是一个仓库
 		$goodsIds = array_column($carsInfo, 'car_goods');
 

@@ -35,15 +35,16 @@ class Goods extends Base
 	}
 
 	//获取商品列表
-	public function GetGoodsList($unionid,$keyword='',$sort=0,$is_top=false,$ordername='complex',$ordertype='desc',$page=1,$limit=10)
+	public function GetGoodsList($unionid,$keyword='',$sort=0,$is_top=false,$ordername='complex',$ordertype='desc',$page=1,$limit=10,$school = 0)
 	{
 		$user = $this->User->GetOneData(array('user_unionid'=>$unionid));
 
 		if(!$user) return json_encode(array('code'=>0,'msg'=>'用户信息不存在'));
 
 		//if($user['user_school'] == '') return json_encode(array('code'=>0,'msg'=>'您还未填写学校信息'));
+        $school = $school == 0 ? $user['user_school'] : $school;
 
-		$ware = $this->Warehouse->GetColumn(array('ware_school'=>$user['user_school']),'ware_id');
+		$ware = $this->Warehouse->GetColumn(array('ware_school'=>$school),'ware_id');
 
 		$where['goods_warehouse'] = array('in',implode(',',$ware));
 

@@ -119,6 +119,11 @@
       }
     });
 
+      if($("#idsbox").val() == ''){
+          layer.msg('请先选择要分享的商品');
+          setTimeout(function(){location.href="{:url('goodslist')}"},2000);
+      }
+
       var imgSrc = $(".mui-content").children(":eq(0)").find(".head_image").attr('src')
       var imgUrl = window.location.protocol + "//" + window.location.host + imgSrc;
       var all_share_info = {
@@ -131,43 +136,77 @@
           all_share_event(all_share_info);
       });
 
-      /*wx.error(function (res) {
-          alert(res.errMsg);
-      });*/
-      function all_share_event(all_share_info2) {
-          //监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
-          wx.updateAppMessageShareData({
-              title: all_share_info2.title,
-              desc: all_share_info2.desc,
-              link: all_share_info2.link,
-              imgUrl: all_share_info2.imgUrl,
-              success: function (res) {
-                  alert('已分享1');
-                  // $(".maskgroup_show").hide();
-              },
-              cancel: function (res) {
-                  alert('已取消');
-                  // $(".maskgroup_show").hide();
-              }
+      function all_share_event(all_share_info2, type, user_id) {
+          if (type == 1) {
+              //“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+              wx.updateTimelineShareData({
+                  title: all_share_info2.title,
+                  link: all_share_info2.link,
+                  imgUrl: all_share_info2.imgUrl,
+                  success: function (res) {
+                      // alert('已分享2');
+                      // $(".maskgroup_show").hide();
+                  },
+                  cancel: function (res) {
+                      alert('已取消');
+                      // $(".maskgroup_show").hide();
+                  }
 
-          });
-          //“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
-          wx.updateTimelineShareData({
-              title: all_share_info2.title,
-              link: all_share_info2.link,
-              imgUrl: all_share_info2.imgUrl,
-              success: function (res) {
-                  alert('已分享2');
-                  // $(".maskgroup_show").hide();
-              },
-              cancel: function (res) {
-                  alert('已取消');
-                  // $(".maskgroup_show").hide();
-              }
+              });
+          } else {
+              //监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+              wx.updateAppMessageShareData({
+                  title: all_share_info2.title,
+                  desc: all_share_info2.desc,
+                  link: all_share_info2.link,
+                  imgUrl: all_share_info2.imgUrl,
+                  success: function (res) {
+                      // alert('已分享1');
+                      // $(".maskgroup_show").hide();
+                  },
+                  cancel: function (res) {
+                      alert('已取消');
+                      // $(".maskgroup_show").hide();
+                  }
 
-          });
-
+              });
+          }
       }
+
+      layui.use('layer', function(){
+          var layer = layui.layer;
+
+
+          $("ul#shareul").on('click','li',function(){
+
+              var type = $(this).attr('data-type');
+
+              var ids = '';
+
+              $(".idbox").each(function(){
+                  ids += $(this).attr("data-id")+',';
+              });
+
+              if(ids != ''){
+
+                  $.ajax({
+                      url:"{:url('Share')}",
+                      type:"GET",
+                      data:{ids:ids.substring(0,ids.length-1),type:type},
+                      success:function(res){
+                          if(res.code)
+                              share(type,res.user_id);
+                          else
+                              layer.msg(res.msg);
+                      },error:function(){
+                          layer.msg('服务器错误，请刷新重试');
+                      }
+                  });
+              }else
+                  layer.msg('请至少分享一个商品');
+
+          });
+      });
   });
 
 </script>

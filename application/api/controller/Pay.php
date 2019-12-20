@@ -178,6 +178,7 @@ class Pay extends Base
 	//支付回调
 	public function Callback()
 	{
+	    // 单次购买一定金额获得一次大转盘抽机会
 
 	}
 
