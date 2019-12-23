@@ -112,15 +112,12 @@ class User extends Model
     }
 
     /**
-     * 用户支付金额到达300时，获得一次抽奖机会
-     * @param $param
-     * @param $orderPrice
+     * 获得一次抽奖机会
+     * @param $userId
      * @throws \think\Exception
      */
-    public function getPriceChance($param, $orderPrice)
+    public function getPriceChance($userId)
     {
-        if ($orderPrice > 300 || $orderPrice == 300) {
-            $this->where($param)->setInc('user_price_num',1);
-        }
+        $this->where(['user_id' => $userId])->setInc('user_price_num',1);
     }
 }

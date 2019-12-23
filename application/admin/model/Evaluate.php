@@ -11,7 +11,7 @@ class Evaluate extends Model
     protected $createTime = 'eval_time';
     protected $rule = [
         'eval_user|评价人'    => 'require',
-        'eval_goods|评价商品'    => 'require',
+//        'eval_goods|评价商品'    => 'require',
     ];
 
     /**

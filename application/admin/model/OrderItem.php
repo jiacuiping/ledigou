@@ -50,6 +50,15 @@ class OrderItem extends Model
     }
 
     /**
+     * 通过订单id获取用户组信息
+     * @param array $orderId
+     **/
+    public function GetOneDataByOrderId($orderId=0)
+    {
+        return $this->where('item_order',$orderId)->find();
+    }
+
+    /**
      * 通过主键获取用户组名称
      * @param array $id 主键
      **/

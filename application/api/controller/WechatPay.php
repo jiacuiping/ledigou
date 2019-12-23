@@ -127,6 +127,11 @@ class WechatPay extends WechatBase
         $order = $this->Order->GetOneData(array('order_sn'=>$order_sn));
         $orderId = $order['order_id'];
 
+        // 获取抽奖机会
+        $money = $order['order_money'];
+        if($money > 0) {
+            $this->User->getPriceChance($order['order_user']);
+        }
 
         $change = array(
             'order_id'          => $order['order_id'],
@@ -166,8 +171,8 @@ class WechatPay extends WechatBase
 
         $this->Message->CreateData($message);
 
-//        return $order['order_id'];
-        return $this->success("支付成功", 'order/GetOrderInfo', ['order_id' => $orderId]);
+
+        return $order['order_id'];
     }
 
 }

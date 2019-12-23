@@ -106,7 +106,7 @@ class Pay extends Base
 
 		$itemResult =  $this->Item->insertAll($item);
 
-        $freight = empty($selectGoods) ? 0 : session::get('config.website_freight');
+        $freight = session::get('config.website_freight');
 
         $this->Order->UpdateData(array('order_id'=>$orderResult['id'],'order_money'=>$this->Item->where('item_order',$orderResult['id'])->sum('item_money')+$freight));
 

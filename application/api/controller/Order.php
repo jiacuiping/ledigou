@@ -114,9 +114,9 @@ class Order extends Base
 
 		$countNumber = array_sum(array_map(function($val){return $val['item_number'];}, $info['goods']));
 
-        $freight = empty($selectGoods) ? 0 : session::get('config.website_freight');
+        $freight = session::get('config.website_freight');
 
-        return json_encode(array('code'=>1,'msg'=>'获取成功','info'=>$info,'number'=>$countNumber,'address'=>$address,'freight'=>$freight));
+        return json_encode(array('code'=>1,'msg'=>'获取成功','info'=>$info,'number'=>$countNumber,'address'=>$address,'freight'=>session::get('config.website_freight')));
 	}
 
 	//订单详情
