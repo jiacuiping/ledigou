@@ -106,7 +106,9 @@ class Pay extends Base
 
 		$itemResult =  $this->Item->insertAll($item);
 
-		$this->Order->UpdateData(array('order_id'=>$orderResult['id'],'order_money'=>$this->Item->where('item_order',$orderResult['id'])->sum('item_money')+session::get('config.website_freight')));
+        $freight = empty($selectGoods) ? 0 : session::get('config.website_freight');
+
+        $this->Order->UpdateData(array('order_id'=>$orderResult['id'],'order_money'=>$this->Item->where('item_order',$orderResult['id'])->sum('item_money')+$freight));
 
 		//如果是来自购物车  则删除相应商品
 		if($is_car != '') $this->Shoppingcar->where('car_id','in',$is_car)->delete();
@@ -179,7 +181,7 @@ class Pay extends Base
 	public function Callback()
 	{
 	    // 单次购买一定金额获得一次大转盘抽机会
-
+        return json_encode(array('code'=>1,'msg'=>'支付成功'));
 	}
 
 	//生成订单编号

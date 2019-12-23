@@ -43,7 +43,7 @@ class Wechat extends Base
             if ($user) {
                 session::set('user',$user);
                 $login = new Login();
-                $login->userIndex($user, $type);
+                $login->user($user, $type);
             }
         } else {
             // 判断有没有code，有使用code换取access_token，没有去获取code。
@@ -132,7 +132,7 @@ class Wechat extends Base
         } else {
             session::set('user',$user);
             $login = new Login();
-            return $login->userIndex($user, $type);
+            return $login->user($user, $type);
         }
     }
 

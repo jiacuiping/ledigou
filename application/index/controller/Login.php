@@ -69,11 +69,11 @@ class Login extends LoginBase
             session::set('user',$user);
 
 
-            $this->userIndex($user, $type);
+            $this->user($user, $type);
 		}
 	}
 
-    public function userIndex($user, $type = 2) {
+    public function user($user, $type = 2) {
         // 判断用户状态
         if($user['user_status'] != 1) {
             $this->redirect(url('user/mess',['mess'=>"您的账号被禁用，请联系管理员"]));
@@ -101,7 +101,7 @@ class Login extends LoginBase
             $this->assign('name',$type == 2 ? '骑手' : '团长');
             $this->assign('type',$type);
             $this->assign('user_id',$user['user_id']);
-            return view();
+            return $this->fetch();
 
             /*$schools = $this->School->GetDataList(array('school_status'=>1));
             $name = $type == 2 ? '骑手' : '团长';

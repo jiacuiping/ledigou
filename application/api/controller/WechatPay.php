@@ -57,7 +57,7 @@ class WechatPay extends WechatBase
         if(!$order) return json_encode(array('code'=>0,'msg'=>'订单不存在'));
         if($order['order_ispay'] == 1) return json_encode(array('code'=>0,'msg'=>'订单已支付'));
         if($order['order_status'] > 9) return json_encode(array('code'=>0,'msg'=>'订单已支付'));
-        if(strtotime($order['order_time']) < time()-180) return json_encode(array('code'=>0,'msg'=>'订单已失效'));
+        if(strtotime($order['order_time']) < time()-18000) return json_encode(array('code'=>0,'msg'=>'订单已失效'));
 
         return $this->unifiedorder($order['order_money']*100,'商品购买',$this->User->GetField(array('user_id'=>$order['order_user']),'user_wxid'));
     }
@@ -125,6 +125,8 @@ class WechatPay extends WechatBase
     public function CallBack($order_sn)
     {
         $order = $this->Order->GetOneData(array('order_sn'=>$order_sn));
+        $orderId = $order['order_id'];
+
 
         $change = array(
             'order_id'          => $order['order_id'],
@@ -164,6 +166,8 @@ class WechatPay extends WechatBase
 
         $this->Message->CreateData($message);
 
-        return $order['order_id'];
+//        return $order['order_id'];
+        return $this->success("支付成功", 'order/GetOrderInfo', ['order_id' => $orderId]);
     }
+
 }

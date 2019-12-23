@@ -16,7 +16,7 @@ class WechatBase extends Controller
 	protected $appid = 'wxf24c79e7f9eb5a96';
 	protected $mchid = '1545804761';
 	protected $key = '78901fd7992fb7e5bc3323b4cb48ef8c';
-	protected $notify_url = 'http://dxc.gqwlcm.com/api/pay/Callback';
+	protected $notify_url = 'http://dxc.gqwlcm.com/api/wechat_pay/Callback';
   	protected $secret = '3ba543b6783c16958d95f0c441df0a05';
 
 	public function __construct()

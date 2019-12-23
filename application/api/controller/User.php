@@ -319,7 +319,7 @@ class User extends Base
 
         // 全选
         if ($is_all == 1) {
-            $freight = session::get('config.website_freight');
+            $freight = empty($selectGoods) ? 0 : session::get('config.website_freight');
             //加运费
             $countPrice = empty($data) ? 0 : round(array_sum(array_map(function($val){return $val['offer_price'];}, $data))+$freight,2);
 
