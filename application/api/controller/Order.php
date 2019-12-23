@@ -211,6 +211,24 @@ class Order extends Base
 
 	}
 
+	// 申请退款
+	public function ApplyRefund($order_id)
+    {
+        $order = $this->Order->GetOneDataById($order_id);
+
+        if(!$order) return array('code'=>0,'msg'=>'订单不存在');
+
+        // 修改订单申请退款状态
+        $update = [
+            'order_id' => $order['order_id'],
+            'order_status' => 50,
+            'order_refund' => 10
+        ];
+
+        return json_encode($this->Order->UpdateData($update));
+
+    }
+
 	//状态码转文字
 	public function CodeConversionText($data,$type="order")
 	{
