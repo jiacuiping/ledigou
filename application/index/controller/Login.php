@@ -28,6 +28,7 @@ class Login extends LoginBase
 	//申请骑手或团长
 	public function Registered($type='2')
 	{
+        $type = input('param.type');
         Cookie::set('type',$type);
 		if(request()->isPost()){
 
@@ -62,7 +63,7 @@ class Login extends LoginBase
 		}else{
 			if($type != 2 && $type != 3) return json_encode(array('code'=>0,'msg'=>'参数错误'));
 
-			$user = $this->User->GetOneData(array('user_openid'=>session::get('user')));
+			$user = $this->User->GetOneData(array('user_openid'=>session::get('user.user_openid')));
 
             if(!$user) $this->redirect('Wechat/Login', ['type' => $type]);
 			//if($user['user_type'] == $type) return json_encode(array('code'=>0,'msg'=>'您已提交申请'));
@@ -95,22 +96,8 @@ class Login extends LoginBase
             }
             $this->redirect(url('head/goodslist'));
 
-        } else if (($user['user_type'] == 2 && $type == 3) || ($user['user_type'] == 3 && $type == 2)){
-
-            $this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
-            $this->assign('name',$type == 2 ? '骑手' : '团长');
-            $this->assign('type',$type);
-            $this->assign('user_id',$user['user_id']);
-            return $this->fetch();
-
-            /*$schools = $this->School->GetDataList(array('school_status'=>1));
-            $name = $type == 2 ? '骑手' : '团长';
-            return view('registered', [
-                'schools' => $schools,
-                'name' => $name,
-                'type' => $type,
-                'user_id' => $user['user_id']
-            ]);*/
+        } else {
+            $this->redirect(url('user/mess',['mess'=>"错误账号"]));
         }
     }
 }

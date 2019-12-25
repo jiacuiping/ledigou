@@ -5,6 +5,7 @@ use think\Session;
 use app\index\controller\LoginBase;
 use app\index\controller\WechatShare;
 
+use app\admin\model\User;
 use app\admin\model\Goods;
 use app\admin\model\Order;
 use app\admin\model\OrderItem;
@@ -15,6 +16,7 @@ use app\admin\model\GoodsShare;
 class Head extends LoginBase
 {
 	private $Item;
+	private $User;
     private $Order;
     private $Goods;
 	private $GoodsShare;
@@ -29,6 +31,7 @@ class Head extends LoginBase
 		if(session::get('user.user_review_head') != 1)
 			$this->error('您的资料未通过审核，请稍后重试');
 
+        $this->User = new User();
         $this->Order = new Order();
         $this->Goods = new Goods();
         $this->Item = new OrderItem();
@@ -39,12 +42,14 @@ class Head extends LoginBase
     public function GoodsList()
     {
     	$this->assign('goods',$this->Goods->GetDataList(array('goods_status'=>1)));
+    	$this->assign('userId',session::get('user.user_id'));
         return view();
     }
 
     //发布分享
     public function release($ids='',$is_share=0)
     {
+        var_dump();
         $this->assign('goods',$this->Goods->GetDataList(array('goods_id'=>array('in',$ids))));
         $this->assign('ids',$ids);
     	return view();
@@ -79,6 +84,26 @@ class Head extends LoginBase
 
 
         $this->assign('order',$data);
+        return view();
+    }
+
+    // 获取推广记录
+    public function ShareList()
+    {
+        $userId = session::get('user.user_id');
+        $user = $this->User->GetOneData(['user_id' => $userId]);
+        if(!$user)  return array('code'=>0,'msg'=>'用户不存在');
+
+        if($user['user_type'] != 3 && $user['user_type'] != 4) return array('code'=>0,'msg'=>'您不是团长，没有推广记录');
+
+        $shareList = $this->GoodsShare->GetDataList(['share_user' => $userId]);
+        foreach ($shareList as $key => $value) {
+            $goodIds = $value['share_goods'];
+            $where['goods_id'] = ['in', $goodIds];
+            $goods = $this->Goods->GetColumn($where,'goods_name');
+            $shareList[$key]['goods_names'] = implode('、', $goods);
+        }
+        $this->assign('shareList',$shareList);
         return view();
     }
 

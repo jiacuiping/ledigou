@@ -100,6 +100,10 @@ class Goods extends Base
 
 			$goods['offerInfo'] = empty($offerInfo) ? array() : $offerInfo;
 
+			$host = $_SERVER['SERVER_NAME'];
+            $goods['goods_info'] = str_replace('/ueditor/',"https://" . $host . "/ueditor/",$goods['goods_info']); // 处理图片路径
+            $goods['goods_info'] = str_replace("<img ", "<img style='max-width:80%;height:auto;'", $goods['goods_info']); // 处理图片样式
+
 			$goods['goods_image'] = session::get('config.website_indexurl').$goods['goods_image'];
 			return json_encode(array('code'=>1,'msg'=>'获取成功','goods'=>$goods));
 		}else

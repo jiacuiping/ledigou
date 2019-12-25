@@ -7,6 +7,7 @@ use think\request;
 use app\index\controller\Base;
 //用户表模型
 use app\admin\model\User;
+use app\admin\model\School;
 /**
  * 授权登陆方法
  */
@@ -16,6 +17,7 @@ class Wechat extends Base
 	private $appid;
 	private $appsecret;
 	private $User;
+	private $School;
 	private $is_share = 0;
 	static $time = 0;
 
@@ -24,6 +26,7 @@ class Wechat extends Base
 	{
 		parent::__construct();
 		$this->User = new User();
+		$this->School = new School();
 		$this->appid = 'wxf8d6a2af2002f997';
 		$this->appsecret = 'c92650db267d39ae5c4c0d603177883e';
 
@@ -34,7 +37,7 @@ class Wechat extends Base
 	public function Login($is_share=0)
 	{
         $this->is_share = $is_share == 0 ? 0 : $is_share;
-        $type = input('param.type');
+        $type = Cookie::has('type') ? Cookie::get('type') : 0;
         ob_start();//打开输出控制缓冲
 
         $openid = Cookie::has('openid') ? Cookie::get('openid') : '';
@@ -50,13 +53,17 @@ class Wechat extends Base
             if (!isset($_GET['code'])) {
                 $this->get_code();
             } else {
+
                 $code = $_GET['code'];
                 // 获取网页授权access_token和用户openid
                 $data = $this->get_access_token($code);
                 // 获取微信用户信息
-                $userInfo = $this->get_user_info($data['access_token'],$data['openid']);
+//                $userInfo = $this->get_user_info($data['access_token'],$data['openid']);
                 // 存储用户
-                $this->saveUser($userInfo, $type);
+//                $this->saveUser($userInfo, $type);
+//                $this->saveUser($data['access_token'],$data['openid'],$type);
+
+                $this->redirect('Wechat/saveUser', ['token' => $data['access_token'], 'openid'=> $data['openid'], 'type' => $type]);
             }
         }
 
@@ -97,8 +104,17 @@ class Wechat extends Base
     }
 
     // 存储用户信息，创建钱包
-    public function saveUser($data, $type) {
-	    // 判断当前用户是否已存在
+    public function saveUser() {
+	    // 参数
+        $token = input('param.token');
+        $openid = input('param.openid');
+        $type = input('param.type');
+
+
+        // 获取微信用户信息
+        $data = $this->get_user_info($token,$openid);
+
+        // 判断当前用户是否已存在
         $user = $this->User->GetOneData(array('user_openid'=>$data['openid']));
 
         if (!$user) {
@@ -131,12 +147,26 @@ class Wechat extends Base
             }
         } else {
             session::set('user',$user);
-            $login = new Login();
-            return $login->user($user, $type);
+
+            // 从分享链接进入
+            $head = Cookie::has('head') ? Cookie::get('head') : 0;
+            if($head) {
+                $this->redirect('Headshare/list', ['head' => $head]);//团长
+            } elseif (($user['user_type'] == 2 && $type == 3) || ($user['user_type'] == 3 && $type == 2) || $user['user_type'] == 1){ // 普通用户  骑手申请团长 团长申请骑手
+
+                $this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
+                $this->assign('name',$type == 2 ? '骑手' : '团长');
+                $this->assign('type',$type);
+                $this->assign('user_id',$user['user_id']);
+                return $this->fetch('login/registered');
+
+            } else {  // 已注册
+                $login = new Login();
+                $login->user($user, $type);
+            }
+
         }
     }
-
-
 
     // ======================================================================================
 	//获取code

@@ -3,6 +3,7 @@
 namespace app\index\controller;
 
 use think\Controller;
+use think\Cookie;
 use think\Session;
 use think\Request;
 
@@ -30,6 +31,11 @@ class LoginBase extends Controller
 			session::set('ismobile',ismobile() ? true : false);
 
 		//检测登陆信息
+
+        $type = input('param.type');
+        $head = input('param.head');
+        Cookie::set('type',$type);
+        Cookie::set('head',$head);
 		if(!session::has('user'))
 			$this->redirect('Wechat/Login');
 	}
