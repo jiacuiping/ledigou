@@ -110,7 +110,6 @@ class Headshare extends LoginBase
             $goods[$key]['price'] = $goodsInfo['goods_price'] * $value['item_number'];
             $goods[$key]['goods_face'] = $goodsInfo['goods_image'];
         }
-        var_dump($goods);die;
 
         $this->assign('freight',session::get('config.website_freight'));
         $this->assign('order',$order);
