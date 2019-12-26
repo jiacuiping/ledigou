@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"/www/wwwroot/ledigou/public/../application/index/view/head/order.html";i:1563852485;s:61:"/www/wwwroot/ledigou/application/index/view/base/headnav.html";i:1563864365;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"/www/wwwroot/ledigou/public/../application/index/view/head/order_info.html";i:1563852485;s:61:"/www/wwwroot/ledigou/application/index/view/base/headnav.html";i:1563864365;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>

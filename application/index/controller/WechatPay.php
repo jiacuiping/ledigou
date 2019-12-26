@@ -61,18 +61,18 @@ class WechatPay extends WechatBase
         if($order['order_status'] > 9) return array('code'=>0,'msg'=>'订单已支付');
         // if(strtotime($order['order_time']) < time()-180) return array('code'=>0,'msg'=>'订单已失效');
 
-        return $this->unifiedorder($order['order_money']*100,'商品购买',$this->User->GetField(array('user_id'=>$order['order_user']),'user_openid'));
+        return $this->unifiedorder($order['order_money']*100,'商品购买',$this->User->GetField(array('user_id'=>$order['order_user']),'user_openid'), $order_sn);
     }
 
     //统一下单
-    public function unifiedorder($total_fee=0, $body='', $openid='')
+    public function unifiedorder($total_fee=0, $body='', $openid='', $order_sn = '')
     {
         $data = [
             'appid' => $this->appid,
             'body' => $body,
             'mch_id' => $this->mchid,
             'nonce_str' => $this->nonce_str,
-            'notify_url' => $this->notify_url,
+            'notify_url' => $this->notify_url . "/order_sn/" . $order_sn,
             'openid' => $openid,
             'out_trade_no' => time() . rand(11, 99),
             'sign_type' => $this->sign_type,

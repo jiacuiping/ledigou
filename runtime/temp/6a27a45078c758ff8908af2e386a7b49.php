@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\financial\order.html";i:1576030301;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\financial\order_info.html";i:1576030301;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>

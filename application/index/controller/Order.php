@@ -114,7 +114,7 @@ class Order extends LoginBase
 
 		if(session::get('user.user_status') != 1) return array('code'=>0,'msg'=>'该账号已被禁用，无法接单');
 
-		if(session::get('user.user_type') != 2) return array('code'=>0,'msg'=>'非骑手无法接单');
+		if(session::get('user.user_type') != 2 && session::get('user.user_type') != 4) return array('code'=>0,'msg'=>'非骑手无法接单');
 
 		if(session::get('user.user_review') != 1) return array('code'=>0,'msg'=>'您提交的信息暂未审核，无法接单');
 

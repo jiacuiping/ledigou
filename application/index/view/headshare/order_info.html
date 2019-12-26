@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>购买</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="__STATIC__/index/css/mui.min.css" rel="stylesheet">
+    <link href="__STATIC__/index/css/iconfont.css" rel="stylesheet" >
+    <link href="__STATIC__/index/css/style.css" rel="stylesheet" >
+</head>
+<body>
+
+<style>
+    .xq-btn{width: 100%; height: 45px;position: fixed; right: 0; left: 0; bottom: 0; border-top: 1px solid #ccc }
+    .xq-btn>button{background:#ffb212;height: 100%; color: #fff;font-size: 18px;border: none;border-radius: 0;}
+    .heji{font-size: 16px;line-height: 45px;color: #e24000;}
+    .maijia{padding: 10px; margin: 10px 0; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+    .maijia-p1{font-size: 17px;margin:0 0 10px 0}
+    .maijia-p2,.maijia-p3{margin: 5px 0;color: #666;}
+    .maijia-p2 span:nth-child(1){margin: 0 5px 0 20px}
+    .maijia-p2 span:nth-child(2){color: #fff;background: #e24000;border-radius: 3px;font-size: 12px;padding: 0 5px;}
+    .shangjia-p1{margin-bottom: 10px;}
+    .shangjia-p2,.shangjia-p3{color: #999;}
+    .shangjia3,.shangjia3 p{text-align: right}
+    .ju{color:#e24000; font-weight: bold; margin-bottom: 10px}
+    .ju-del{color:#999; margin-left: 5px;font-size: 12px}
+    .beizhu-qr textarea{min-height: 100px;margin-bottom: 0}
+    .youhuiquan{font-weight: 17px}
+    .youhuiquan a{color:#e24000;font-size: 15px; font-weight: bold}
+</style>
+  <header class="mui-bar mui-bar-nav">
+      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+      <h1 class="mui-title">购买</h1>
+  </header>
+
+
+
+  <div class="mui-content">
+      <div class="maijia">
+          <p class="maijia-p1">收货信息</p>
+          <p class="maijia-p2">{$address.address_contact}<span>{$address.address_mobile}</span><span>默认</span></p>
+          <p class="maijia-p3">{$address.address_info}</p>
+      </div>
+      <div class="maijia">
+          <p class="maijia-p1">商品信息</p>
+          <div class="shangjia clear">
+              {volist name="goods" id="item"}
+              <div class="mui-col-xs-3 left">
+                  <img src="{$item.goods_face}" alt="" width="100%" height="90px">
+              </div>
+              <div class="mui-col-xs-6 left" style="padding-left: 7px">
+                  <p class="shangjia-p1">{$item.goods_name}</p>
+              </div>
+              <div class="mui-col-xs-3 left shangjia3">
+                  <p class="ju">x{$item.item_number}</p>
+                  <p><span class="ju">￥{$item.offer_price}</span><del class="ju-del">￥{$item.price}</del></p>
+              </div>
+              {/volist}
+          </div>
+          <div class="beizhu-qr">
+              <div class="mui-col-xs-10 left heji" style="text-align:left;padding-left: 25px;">付款成功:￥{$order.order_money} <span style="color:#000">（含运费{$freight}元）</span> </div>
+          </div>
+      </div>
+  </div>
+</body>
+<script type="text/javascript">
+
+</script>

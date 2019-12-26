@@ -94,6 +94,31 @@ class Headshare extends LoginBase
         return view();
     }
 
+    // 订单信息
+    public function orderInfo($order_sn)
+    {
+        $order = $this->Order->GetOneData(array('order_sn'=>$order_sn));
+        $goods = $this->Item->GetDataList(array('item_order'=>$order['order_id']));
+        $address = $this->Address->GetOneData(array('address_user'=>session::get('user.user_id'),'address_default'=>1));
+
+        foreach ($goods as $key => $value) {
+
+            $goodsInfo = $this->Goods->GetOneDataById($value['item_goods']);
+
+            $goods[$key]['goods_name'] = $goodsInfo['goods_name'];
+            $goods[$key]['offer_price'] = $goodsInfo['goods_offer_price'] * $value['item_number'];
+            $goods[$key]['price'] = $goodsInfo['goods_price'] * $value['item_number'];
+            $goods[$key]['goods_face'] = $goodsInfo['goods_image'];
+        }
+        var_dump($goods);die;
+
+        $this->assign('freight',session::get('config.website_freight'));
+        $this->assign('order',$order);
+        $this->assign('goods',$goods);
+        $this->assign('address',$address);
+        return view();
+    }
+
     //改变订单数量
     // public function changenumber($goods,$number,$type)
     // {

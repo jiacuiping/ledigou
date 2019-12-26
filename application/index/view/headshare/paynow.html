@@ -103,7 +103,11 @@
             function(result){
                 // changeOrder(order_sn)
                 if (result.err_msg == "get_brand_wcpay_request:ok") {     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
-                    changeOrder(order_sn)
+                    alert("支付成功");
+                    setTimeout(function(){
+                        window.location.href="{:url('orderInfo')}?order_sn="+order_sn;
+                    },1000);
+                    // changeOrder(order_sn)
 
                 } else if (result.err_msg == "get_brand_wcpay_request:cancel") {
                     alert('已取消微信支付!');
@@ -122,10 +126,12 @@
     function changeOrder(order_sn) {
         $.ajax({
             url:"{:url('WechatPay/CallBack')}",
-            type:"POST",
+            type:"GET",
             data:{order_sn:order_sn},
             success:function(res){
-                alert("支付成功")
+                setTimeout(function(){
+                    window.location.href="{:url('orderInfo')}?order_sn="+order_sn;
+                    },1000);
             },error:function(){
                 layer.msg('服务器错误，请刷新重试');
             }

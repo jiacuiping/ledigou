@@ -28,7 +28,7 @@ class Login extends LoginBase
 	//申请骑手或团长
 	public function Registered($type='2')
 	{
-        $type = input('param.type');
+        $type = input('param.type') ? input('param.type') : 2;
         Cookie::set('type',$type);
 		if(request()->isPost()){
 
@@ -68,6 +68,14 @@ class Login extends LoginBase
             if(!$user) $this->redirect('Wechat/Login', ['type' => $type]);
 			//if($user['user_type'] == $type) return json_encode(array('code'=>0,'msg'=>'您已提交申请'));
             session::set('user',$user);
+
+            if ($user['user_type'] == 1) {
+                $this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
+                $this->assign('name',$type == 2 ? '骑手' : '团长');
+                $this->assign('type',$type);
+                $this->assign('user_id',$user['user_id']);
+                return $this->fetch('login/registered');
+            }
 
 
             $this->user($user, $type);
