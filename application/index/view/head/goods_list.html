@@ -35,7 +35,7 @@
   {include file='base/headnav'}
 
     <div class="mui-content">
-        <input type="hidden" id="userId" value="{$userId}">
+
 		<!-- 商品列表 -->
       <div class="mui-input-row mui-search l-select">
           <input type="search" class="mui-input-clear" placeholder="在商城内搜索">
@@ -78,10 +78,10 @@
         ids += $(this).attr("data-id")+',';
        });
 
-      var userId = $("#userId").val();
 
       if(ids != ''){
-        window.location.href="{:url('release')}?head="+userId+"&ids="+ids.substring(0,ids.length-1);
+          var host = window.location.protocol+"//"+window.location.host;
+        window.location.href="{:url('release')}?ids="+ids.substring(0,ids.length-1);
       }else
         layer.msg('请选择至少一个商品！');
     });

@@ -13,7 +13,7 @@ use app\admin\model\GoodsShare;
 
 //团长控制器
 
-class Headshare extends Base
+class Headshare extends LoginBase
 {
     private $Item;
     private $Head;
@@ -36,6 +36,8 @@ class Headshare extends Base
     //分享商品列表
     public function list($head=0)
     {
+        // 用户是否存在
+
         if($head != 0) $this->Head = $head;
 
     	$data = $this->GoodsShare->where('share_user',$head)->order('share_id desc')->find();
@@ -58,7 +60,13 @@ class Headshare extends Base
     public function CreateOrder($goods_id,$number)
     {
         $Pay = new Pay();
-        return $Pay->CreateOrder(session::get('user.user_id'),0,$this->Head,0,array(0=>array('goods_id'=>$goods_id,'number'=>$number,'is_offer'=>0)));
+        $payRes = $Pay->CreateOrder(session::get('user.user_id'),0,$this->Head,0,array(0=>array('goods_id'=>$goods_id,'number'=>$number,'is_offer'=>0)));
+
+        if ($payRes['code']) {
+            return ['code' => 1, 'msg' => $payRes['msg'], 'order_sn' => $payRes['order_sn']];
+        } else {
+            return ['code' => 0, 'msg' => $payRes['msg']];
+        }
     }
 
 

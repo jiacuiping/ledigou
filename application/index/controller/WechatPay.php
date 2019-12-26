@@ -7,7 +7,11 @@ use app\index\controller\WechatBase;
 //用户表模型
 use app\admin\model\User;
 use app\admin\model\Task;
+use app\admin\model\Goods;
 use app\admin\model\Order;
+use app\admin\model\Limited;
+use app\admin\model\Message;
+use app\admin\model\MessageModel;
 use app\admin\model\OrderItem;
 use app\admin\model\WechatConfig;
 
@@ -17,7 +21,11 @@ class WechatPay extends WechatBase
     private $sign;
     private $User;
     private $Task;
+    private $Goods;
     private $Order;
+    private $Limited;
+    private $Message;
+    private $MessageModel;
     private $OrderItem;
     private $WechatConfig;
 
@@ -28,6 +36,10 @@ class WechatPay extends WechatBase
 
         $this->User = new User();
         $this->Task = new Task();
+        $this->Goods = new Goods();
+        $this->Limited = new Limited();
+        $this->Message = new Message();
+        $this->MessageModel = new MessageModel();
         $this->Order = new Order();
         $this->OrderItem = new OrderItem();
         $this->timestamp = time();
@@ -112,8 +124,10 @@ class WechatPay extends WechatBase
     }
 
     //小程序支付完成修改订单
-    public function CallBack($order_sn)
+    /*public function CallBack($order_sn)
     {
+        $text = json_encode(input());
+        file_put_contents(ROOT_PATH . 'runtime/log/201912/pay.txt', $text);
         $order = $this->Order->GetOneData(array('order_sn'=>$order_sn));
 
         $change = array(
@@ -129,6 +143,59 @@ class WechatPay extends WechatBase
 
         if($order['order_desc'] == '跑腿任务')
             $this->Task->UpdateData(array('task_id'=>$order['order_task'],'task_status'=>10));
+
+        return $order['order_id'];
+    }*/
+
+    public function CallBack($order_sn)
+    {
+        $order = $this->Order->GetOneData(array('order_sn'=>$order_sn));
+        $orderId = $order['order_id'];
+
+        // 获取抽奖机会
+        $money = $order['order_money'];
+        if($money > 0) {
+            $this->User->getPriceChance($order['order_user']);
+        }
+
+        $change = array(
+            'order_id'          => $order['order_id'],
+            'order_ispay'       => 1,
+            'order_paymoney'    => $order['order_money'],
+            'order_paytime'     => time(),
+            'order_schedule'    => 10,
+            'order_status'      => 10
+        );
+
+        $this->Order->UpdateData($change);
+
+        if($order['order_desc'] == '跑腿任务')
+            $this->Task->UpdateData(array('task_id'=>$order['order_task'],'task_status'=>10));
+
+        if($order['order_desc'] == '商品购买'){
+            $item = $this->OrderItem->GetDataList(array('item_order'=>$order['order_id']));
+            foreach ($item as $key => $value) {
+                $this->Goods->DataSetInc(array('goods_id'=>$value['item_goods']),'goods_sales',$value['item_number']);
+                $this->Goods->DataSetDec(array('goods_id'=>$value['item_goods']),'goods_reserve',$value['item_number']);
+            }
+
+            if($value['item_is_offer'] != 0)
+                $this->Limited->DataSetInc(array('limited_id'=>$value['item_is_offer']),'limited_sold',$value['item_number']);
+        }
+
+
+        $msgmodel = $this->MessageModel->GetOneData(array('model_type'=>'支付成功'));
+
+        $message = array(
+            'message_type'      => '支付成功',
+            'message_title'     => $msgmodel['model_title'],
+            'message_icon'      => $msgmodel['model_icon'],
+            'message_text'      => $msgmodel['model_text'],
+            'message_user'      => $order['order_user'],
+        );
+
+        $this->Message->CreateData($message);
+
 
         return $order['order_id'];
     }

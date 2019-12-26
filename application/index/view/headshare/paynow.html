@@ -101,14 +101,35 @@
                "paySign":res.paySign        //微信签名 
             },
             function(result){
-              console.log(result);
-              if(result.err_msg == "get_brand_wcpay_request:ok" ){
-                 
-              }
+                // changeOrder(order_sn)
+                if (result.err_msg == "get_brand_wcpay_request:ok") {     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+                    changeOrder(order_sn)
+
+                } else if (result.err_msg == "get_brand_wcpay_request:cancel") {
+                    alert('已取消微信支付!');
+                } else {
+
+                    alert('支付失败！' + result.err_msg)
+                }
             });
         },error:function(){
           layer.msg('服务器错误，请刷新重试');
         }
       })
     }
+
+    // 支付成功修改订单
+    function changeOrder(order_sn) {
+        $.ajax({
+            url:"{:url('WechatPay/CallBack')}",
+            type:"POST",
+            data:{order_sn:order_sn},
+            success:function(res){
+                alert("支付成功")
+            },error:function(){
+                layer.msg('服务器错误，请刷新重试');
+            }
+        })
+    }
+
 </script>

@@ -46,7 +46,7 @@ class Wechat extends Base
 
 	    //处理是否存在用户信息
 	    //根据用户唯一标识查找是否有当前用户
-	    $user = $this->User->GetOneData(array('user_openid'=>$data['openid']));
+	    $user = $this->User->GetOneData(array('user_unionid'=>$data['unionid']));
 
 	    if($user){
 	    	if($user['user_status'] != 1)

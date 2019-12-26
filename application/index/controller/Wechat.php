@@ -40,31 +40,21 @@ class Wechat extends Base
         $type = Cookie::has('type') ? Cookie::get('type') : 0;
         ob_start();//打开输出控制缓冲
 
-        $openid = Cookie::has('openid') ? Cookie::get('openid') : '';
-        if ($openid) {
-            $user = $this->User->GetOneData(array('user_openid'=>$openid));
-            if ($user) {
-                session::set('user',$user);
-                $login = new Login();
-                $login->user($user, $type);
-            }
+        // 判断有没有code，有使用code换取access_token，没有去获取code。
+        if (!isset($_GET['code'])) {
+            $this->get_code();
         } else {
-            // 判断有没有code，有使用code换取access_token，没有去获取code。
-            if (!isset($_GET['code'])) {
-                $this->get_code();
-            } else {
 
-                $code = $_GET['code'];
-                // 获取网页授权access_token和用户openid
-                $data = $this->get_access_token($code);
-                // 获取微信用户信息
+            $code = $_GET['code'];
+            // 获取网页授权access_token和用户openid
+            $data = $this->get_access_token($code);
+            // 获取微信用户信息
 //                $userInfo = $this->get_user_info($data['access_token'],$data['openid']);
-                // 存储用户
+            // 存储用户
 //                $this->saveUser($userInfo, $type);
 //                $this->saveUser($data['access_token'],$data['openid'],$type);
 
-                $this->redirect('Wechat/saveUser', ['token' => $data['access_token'], 'openid'=> $data['openid'], 'type' => $type]);
-            }
+            $this->redirect('Wechat/saveUser', ['token' => $data['access_token'], 'openid'=> $data['openid'], 'type' => $type]);
         }
 
 	}
@@ -79,16 +69,12 @@ class Wechat extends Base
 
     // 获取access_token
     public function get_access_token($code) {
-	    $access_token = Session::has('access_token') ? Session::get('access_token') : '';
-	    if(!$access_token) {
-            $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this->appid."&secret=".$this->appsecret."&code=$code&grant_type=authorization_code";
-            $data =  $this->curl($url);
-            session::set('access_token',$data['access_token']);
-            Cookie::set('openid',$data['openid']);
-            return $data;
-        } else {
-	        return $access_token;
-        }
+        $url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$this->appid."&secret=".$this->appsecret."&code=$code&grant_type=authorization_code";
+        $data =  $this->curl($url);
+        session::set('access_token',$data['access_token']);
+        session::set('openid',$data['openid']);
+        Cookie::set('openid',$data['openid']);
+        return $data;
     }
 
     // 获取微信用户信息
@@ -105,10 +91,14 @@ class Wechat extends Base
 
     // 存储用户信息，创建钱包
     public function saveUser() {
-	    // 参数
+
+        // 参数
         $token = input('param.token');
         $openid = input('param.openid');
         $type = input('param.type');
+
+        // 从分享链接进入
+        $head = Cookie::has('head') ? Cookie::get('head') : 0;
 
 
         // 获取微信用户信息
@@ -141,18 +131,27 @@ class Wechat extends Base
             // 存储成功，跳转页面
             if($saveUserRes['code'] == 1 && $walletRes){
                 Cookie::set('openid',$data['openid']);
+
+                // 分享链接进入
+                if($head) {
+                    $this->redirect('Headshare/list', ['head' => $head]);//团长
+                }
+
                 if($this->is_share)
                     $this->redirect(url('head/shareList',['head'=>$this->is_share]));//分享商品
                 $this->redirect(url('login/Registered'));
+            } else {
+                $this->redirect(url('login/Registered'));
             }
+
         } else {
             session::set('user',$user);
-
-            // 从分享链接进入
-            $head = Cookie::has('head') ? Cookie::get('head') : 0;
+            // 分享链接进入
             if($head) {
                 $this->redirect('Headshare/list', ['head' => $head]);//团长
-            } elseif (($user['user_type'] == 2 && $type == 3) || ($user['user_type'] == 3 && $type == 2) || $user['user_type'] == 1){ // 普通用户  骑手申请团长 团长申请骑手
+            }
+
+            if (($user['user_type'] == 2 && $type == 3) || ($user['user_type'] == 3 && $type == 2) || $user['user_type'] == 1){ // 普通用户  骑手申请团长 团长申请骑手
 
                 $this->assign('schools',$this->School->GetDataList(array('school_status'=>1)));
                 $this->assign('name',$type == 2 ? '骑手' : '团长');

@@ -34,15 +34,20 @@
                 <span class="right">合计 ￥{$sum}</span>
             </div>
             {volist name="order" id="item"}
-              <div class="l-zong">
-                  <div class="l-img l-img2">
-                      <img src="__STATIC__/index/imgs/yongjin.png" alt="">
-                  </div>
-                  <div class="l-zi l-zi2">
-                      <p>交易单号: {$item.order_sn}<span>+{$item.income}</span></p>
-                      <p>{:date('Y-m-d H:i',$item.order_paytime)}</p>
-                  </div>
-              </div>
+            <div id="c-tuiguang">
+                <div class="c-tuiguang">
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            <i class="mui-icon iconfont">&#xe606;</i>交易单号:{$item.order_sn}
+                        </a>
+                    </li>
+                    <p>销售价格: <span>{$item.order_paymoney}</span></p>
+                    <p>佣金: {$item.sumprice}元</p>
+                    <p class="h-yichu">货物名称: {$item.goods_names}</p>
+                    <p>交易时间: <span>{:date('Y-m-d H:i:s',$item.order_paytime)}</span></p>
+                </div>
+                <div class="c-hui"></div>
+            </div>
             {/volist}
         </div>  
     </div>

@@ -31,7 +31,6 @@ class LoginBase extends Controller
 			session::set('ismobile',ismobile() ? true : false);
 
 		//检测登陆信息
-
         $type = input('param.type');
         $head = input('param.head');
         Cookie::set('type',$type);

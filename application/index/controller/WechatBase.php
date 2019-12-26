@@ -16,7 +16,7 @@ class WechatBase extends Controller
 	protected $appid = 'wxf8d6a2af2002f997';
 	protected $mchid = '1545804761';
 	protected $key = '78901fd7992fb7e5bc3323b4cb48ef8c';
-	protected $notify_url = 'http://dxc.gqwlcm.com/api/pay/Callback';
+	protected $notify_url = 'http://dxc.gqwlcm.com/index/wechat_pay/Callback';
 
 	public function __construct()
 	{
@@ -84,6 +84,7 @@ class WechatBase extends Controller
 		}else{
 			$xmlstr = $xml;
 		}
+
 		$result= json_decode(json_encode(simplexml_load_string($xmlstr, 'SimpleXMLElement', LIBXML_NOCDATA)), true);        
 		return $result;
 	}

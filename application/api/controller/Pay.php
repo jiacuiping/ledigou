@@ -63,6 +63,9 @@ class Pay extends Base
 
 		if(empty($goods)) return json_encode(array('code'=>0,'msg'=>'请至少选择一种商品'));
 
+		$orderAddress = $this->Address->GetField(array('address_user'=>$user,'address_default'=>1),'address_id');
+		if(!$orderAddress)  return array('code'=>0,'msg'=>'请先到小程序添加收货地址');
+
 		//创建订单
 		$order = array(
 			'order_sn'				=> $this->CreateOrderSn($user),
@@ -78,7 +81,7 @@ class Pay extends Base
 			'order_deliverymethod'	=> 0,
 			'order_task'			=> 0,
 			'order_schedule'		=> 0,
-			'order_address'			=> $this->Address->GetField(array('address_user'=>$user,'address_default'=>1),'address_id'),
+			'order_address'			=> $orderAddress,
 			'order_time'			=> time()
 		);
 
@@ -88,10 +91,14 @@ class Pay extends Base
 			
 			$goodsinfo = $this->Goods->GetOneDataById($value['goods_id']);
 
-			if($value['is_offer'] == 0)
-				$summoney = $goodsinfo['goods_price'] * $value['number'];
-			else
-				$summoney = $this->Limited->GetField(array('limited_id'=>$value['is_offer']),'limited_money') * $value['number'];
+			if($is_share) {
+                $summoney = $goodsinfo['goods_offer_price'] * $value['number'];
+            } else {
+                if($value['is_offer'] == 0)
+                    $summoney = $goodsinfo['goods_price'] * $value['number'];
+                else
+                    $summoney = $this->Limited->GetField(array('limited_id'=>$value['is_offer']),'limited_money') * $value['number'];
+            }
 
 			$item[] = array(
 				'item_order'		=> $orderResult['id'],
@@ -180,8 +187,6 @@ class Pay extends Base
 	//支付回调
 	public function Callback()
 	{
-	    // 单次购买一定金额获得一次大转盘抽机会
-        return json_encode(array('code'=>1,'msg'=>'支付成功'));
 	}
 
 	//生成订单编号

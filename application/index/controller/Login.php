@@ -97,7 +97,8 @@ class Login extends LoginBase
             $this->redirect(url('head/goodslist'));
 
         } else {
-            $this->redirect(url('user/mess',['mess'=>"错误账号"]));
+//            $this->redirect(url('user/mess',['mess'=>"错误账号"]));
+            $this->redirect(url('login/Registered'));
         }
     }
 }

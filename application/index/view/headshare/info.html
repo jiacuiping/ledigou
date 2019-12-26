@@ -103,7 +103,7 @@
             layer.msg('订单创建成功，正在跳转支付');
             setTimeout(function(){location.href="{:url('paynow','',false)}/order_sn/" + res.order_sn;},2000);
           }else
-            layer.msg('订单创建失败，请刷新重试');
+            layer.msg(res.msg);
         },error:function(){
           layer.msg('服务器错误，请刷新重试');
         }

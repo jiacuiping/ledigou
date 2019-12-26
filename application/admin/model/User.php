@@ -11,7 +11,7 @@ class User extends Model
     protected $createTime = 'user_time';
     protected $rule = [
         'user_mobile|手机号'  => 'unique:user',
-        'user_openid|令牌'    => 'unique:user',
+//        'user_openid|令牌'    => 'unique:user',
         'user_unionid|唯一标识'    => 'unique:user',
         'user_wxid|令牌'    => 'unique:user',
         'user_idcare|身份证号'  => 'unique:user',
