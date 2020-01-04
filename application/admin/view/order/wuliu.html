@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>物流下单</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="__STATIC__/layui/css/layui.css" media="all">
+        <link rel="stylesheet" href="__CSS__/admin.css" media="all">
+    </head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">创建仓库</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <input type="hidden" id="orderId" value="{$orderId}">
+
+            <form class="layui-form" action="" lay-filter="component-form-group" id="myform">
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">发货人名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="send_man"  autocomplete="off" placeholder="请输入发货人名称" class="layui-input send_man">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">发货人电话</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="send_phone"  autocomplete="off" placeholder="请输入发货人电话" class="layui-input send_phone">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">仓库</label>
+                    <div class="layui-input-block">
+                        <select class="ware" lay-verify="required">
+                            {volist name="wareHouse" id="item"}
+                            <option value="{$item.ware_id}">{$item.ware_name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item layui-layout-admin">
+                    <div class="layui-input-block">
+                        <div class="layui-footer" style="left: 0;">
+                            <div class="layui-btn" lay-submit="" lay-filter="component-form-demo1" id="submit">确认下单</div>
+                            <!-- <button type="reset" class="layui-btn layui-btn-primary">重置</button> -->
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+  
+    <script src="__STATIC__/layui/layui.js"></script>  
+    <script>
+
+        layui.config({
+            base: '__STATIC__/admin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index' //主入口模块
+        }).use(['index', 'table', 'form', 'layer', 'laydate'], function(){
+            var table = layui.table
+            ,laydate = layui.laydate
+            ,admin = layui.admin
+            ,layer = layui.layer
+            ,form = layui.form
+            ,$ = layui.$;
+
+
+            laydate.render({
+                elem: '#test10'
+                ,type: 'datetime'
+                ,range: ','
+            });
+            
+            $('#submit').click(function () {
+                var send_man = $('.send_man').val();
+                var send_phone = $('.send_phone').val();
+                var wareId = $('.ware').val();
+                var orderId = $('#orderId').val();
+                $.ajax({
+                    url:"{:url('addWuliu')}",
+                    data:{orderId:orderId, send_man:send_man, send_phone:send_phone, wareId:wareId},
+                    type:"POST",
+                    success:function(res){
+                        layer.msg(res.msg);
+                        if(res.code)
+                            setTimeout(function(){window.parent.location.reload()},2000);
+                    },error:function(){
+                        layer.msg('服务器错误，请稍后重试！');
+                    }
+                })
+            });
+
+
+        });
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\order\index.html";i:1575619076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy_pro\WWW\ledigou\public/../application/admin\view\order\index.html";i:1578052408;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -101,8 +101,10 @@
 
                         <script type="text/html" id="test-table-operate-barDemo">
                             <a class="layui-btn layui-btn-xs" lay-event="update">查看订单</a>
+                            {{ d.order_desc == '商品购买' && d.order_ispay == 1 && d.order_schedule == 10 ? '<a class="layui-btn layui-btn-xs wuliu" lay-event="wuliu">物流下单</a>' : '' }}
                             <!-- <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a> -->
                         </script>
+
                     </div>
                 </div>
             </div>
@@ -232,9 +234,21 @@
                         //     })
                         //     layer.close(index);
                         // });
+                    } else if (obj.event === 'wuliu'){
+                        var url = "<?php echo url('wuliu','',false); ?>/id/" + dataid;
+                        layer.open({
+                            type: 2
+                            ,title:'物流下单'
+                            ,content: url
+                            ,shadeClose: true
+                            ,area: ['70%', '80%']
+                            ,maxmin: true
+                        });
+
                     }
                 }
             });
+
 
             //筛选
             function RenderingTable(status=-1,where=array())

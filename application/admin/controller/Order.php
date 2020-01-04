@@ -2,11 +2,15 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\Address;
+use app\admin\model\Area;
 use app\admin\model\User as UserModel;
 use app\admin\model\Task as TaskModel;
 use app\admin\model\Order as OrderModel;
 use app\admin\model\School as SchoolModel;
 use app\admin\model\OrderItem as OrderItemModel;
+use think\Config;
+
 /**
  * 后台主页（Justin：2019-03-12）
 
@@ -261,5 +265,137 @@ class Order extends LoginBase
     public function delete($id)
     {
         return $this->Order->DeleteData($id);
+    }
+
+    public function wuliu($id)
+    {
+        // 仓库列表
+        $wareModel = new \app\admin\model\Warehouse();
+        $data = $wareModel->GetDataList(['ware_status' => 1]);
+
+        $this->assign('wareHouse',$data);
+        $this->assign('orderId',$id);
+        return $this->fetch();
+    }
+
+    // 物流
+    public function addWuliu()
+    {
+        $info = input('post.');
+
+        // 根据订单id获取订单资料
+        $orderInfo = $this->Order->GetOneDataById($info['orderId']);
+
+        // 订单详细资料
+        $itemInfo = $this->OrderItem->GetOneDataByOrderId($orderInfo['order_id']);
+
+        // 发货人资料
+        $wareModel = new \app\admin\model\Warehouse();
+        $wareInfo = $wareModel->GetOneDataById($info['wareId']);
+        $schoolInfo = $this->School->GetOneDataById($wareInfo['ware_school']);
+
+        // 下单用户资料
+        $orderUser = $this->User->GetOneDataById($orderInfo['order_user']);
+
+        // 收货人资料
+        $addressModel = new Address();
+        $receiveInfo = $addressModel->GetOneDataById($orderInfo['order_address']);
+
+        $areaModel = new Area();
+        $where['id'] = ['in', [$receiveInfo['address_province'], $receiveInfo['address_city'], $receiveInfo['address_area'], $schoolInfo['school_province'], $schoolInfo['school_city'], $schoolInfo['school_area']]];
+
+        $areaInfo = $areaModel->GetDataList($where);
+        $areaInfo = array_column($areaInfo, 'name', 'id');
+
+        $wuliuData = [
+            "ccode" => $orderInfo['order_sn'],
+            "code" => $orderInfo['order_sn'],
+            "send_man" => $info['send_man'],
+            "send_phone" => $info['send_phone'],
+            "send_province" => $areaInfo[$schoolInfo['school_province']],
+            "send_city" => $areaInfo[$schoolInfo['school_city']],
+            "send_district" => $areaInfo[$schoolInfo['school_area']],
+            "send_town" => "",
+            "send_street_no" => $wareInfo['ware_address'],
+            "receive_man" => $this->User->GetField(['user_id' => $receiveInfo['address_user']], 'user_name'),
+            "receive_phone" => $receiveInfo['address_mobile'],
+            "receive_province" => $areaInfo[$receiveInfo['address_province']],
+            "receive_city" => $areaInfo[$receiveInfo['address_city']],
+            "receive_district" => $areaInfo[$receiveInfo['address_area']],
+            "receive_town" => "",
+            "receive_street_no" => $receiveInfo['address_info'],
+            "amount" => $itemInfo['item_number'],
+            "volume" => 10.00,
+            "weight" => 10.00,
+            "service_mode" => "派送",
+            "insurance_limit" => 00.00,
+//            "pay_type" => "寄付",
+            "cod" => 00.00,
+            "if_visit" => true,
+            "if_fast" => "",
+            "remark" => "",
+            "settle_type" => "寄付"
+        ];
+        $uName = Config::get('boudata.uName');
+        $uToken = Config::get('boudata.uToken');
+        $url = Config::get('boudata.url');
+        $timestamp = date("Y-m-d H:i:s", time());
+        $uSign = md5($uToken . $timestamp);
+
+        $data = [];
+        $data['uName'] = $uName;
+        $data['uSign'] = $uSign;
+        $data['timestamp'] = $timestamp;
+        $data['params'] = json_encode($wuliuData);
+
+
+//        $data['params'] = '{"ccode":"Erp0000005","code":"Erp0000005","send_man":"张三","send_phone":"18767166222","send_province":"浙江省","send_city":"杭州市","send_district":"江干区","send_town":"","send_street_no":"11","receive_man":"李四","receive_phone":"18767166333","receive_province":"江苏省","receive_city":"扬州市","receive_district":"高邮市","receive_town":"","receive_street_no":"22","amount":1,"volume":10.00,"weight":10.00,"service_mode":"派送","insurance_limit":10.00,"pay_type":"寄付","cod":10.00,"if_visit":true,"if_fast":"","remark":"","settle_type":"1"}';
+
+        $res = $this->curl($url, $data);
+        if (isset($res['result']) && $res['result']) {
+            // 修改订单状态和order_ocode
+            $update = [
+                'order_id' => $info['orderId'],
+                'order_ocode' => $res['data'],
+                'order_schedule' => 20
+            ];
+            $order = $this->Order->UpdateData($update);
+            return ['code' => 1, 'msg' => '下单成功'];
+
+        } else {
+            return ['code' => 0, 'msg' => $res['errorMsg']];
+        }
+    }
+
+    //请求方法
+    public function curl($url,$data=array())
+    {
+        //初始化
+        $curl = curl_init();
+        //设置抓取的url
+        curl_setopt($curl, CURLOPT_URL,$url);
+        // 设置header头
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application/x-www-form-urlencoded; charset=utf-8'));
+
+        //设置获取的信息以文件流的形式返回，而不是直接输出。
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        // 自动设置Referer
+        curl_setopt($curl, CURLOPT_AUTOREFERER, 1);
+        //设置post方式提交
+        curl_setopt($curl, CURLOPT_POST, 1);
+        //设置post数据
+        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+
+        //执行命令
+        $json = curl_exec($curl);
+
+        if (curl_errno($curl)) {
+            return 'Errno' . curl_error($curl);
+        }
+        //关闭URL请求
+        curl_close($curl);
+
+        $data = json_decode($json,true);
+        return $data;
     }
 }
